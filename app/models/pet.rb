@@ -3,7 +3,6 @@ class Pet < ApplicationRecord
   has_one_attached :photo
   belongs_to :shelter, class_name: "User"
 
-
   validates :name, presence: true
   validates :type, presence: true
   validates :breed, presence: true
