@@ -6,5 +6,5 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   has_many :appointments
-  has_many :pets, dependent: :destroy
+  has_many :shelters, dependent: :destroy
 end
