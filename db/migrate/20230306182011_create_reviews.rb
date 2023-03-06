@@ -6,6 +6,7 @@ class CreateReviews < ActiveRecord::Migration[7.0]
       t.string :title
       t.string :comment
       t.timestamps
+
     end
   end
 end
