@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_05_112212) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_06_182544) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,6 +37,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_05_112212) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "id_shelter"
+    t.bigint "shelter_id"
+    t.string "status", default: "not adopted"
+    t.index ["shelter_id"], name: "index_pets_on_shelter_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "shelter_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shelter_id"], name: "index_reviews_on_shelter_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,4 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_05_112212) do
 
   add_foreign_key "appointments", "pets"
   add_foreign_key "appointments", "users"
+  add_foreign_key "pets", "users", column: "shelter_id"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "reviews", "users", column: "shelter_id"
 end
