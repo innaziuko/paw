@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_05_112212) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_06_182011) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -34,9 +34,33 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_05_112212) do
     t.string "description"
     t.integer "age"
     t.string "image"
+    t.string "status", default: "not adopted"
+    t.bigint "shelter_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "id_shelter"
+    t.index ["shelter_id"], name: "index_pets_on_shelter_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "appointment_id", null: false
+    t.string "title"
+    t.string "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["appointment_id"], name: "index_reviews_on_appointment_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "shelters", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "description"
+    t.integer "phone_number"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_shelters_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,4 +77,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_05_112212) do
 
   add_foreign_key "appointments", "pets"
   add_foreign_key "appointments", "users"
+  add_foreign_key "pets", "shelters"
+  add_foreign_key "reviews", "appointments"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "shelters", "users"
 end
