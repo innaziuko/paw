@@ -1,7 +1,7 @@
 class Pet < ApplicationRecord
-  belongs_to :user
+  belongs_to :shelter
+  has_many :appointments, dependent: :destroy
   has_one_attached :photo
-  belongs_to :shelter, class_name: "User"
 
   validates :name, presence: true
   validates :type, presence: true
@@ -9,5 +9,4 @@ class Pet < ApplicationRecord
   validates :gender, presence: true
   validates :description, presence: true
   validates :age, presence: true
-
 end
