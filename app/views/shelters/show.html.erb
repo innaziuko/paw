@@ -1,0 +1,7 @@
+<h1>Shelter <%= @shelter.name %></h1>
+
+<%= link_to 'Back to all shelters', shelters_path %>
+<%= link_to 'Delete',
+shelter_path(@shelter),
+data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>

@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Here are all the shelters</h1>
+<ul>
+  <% @shelters.each do |shelter| %>
+    <%= link_to shelter.name, shelter_path(shelter) %>
+  <% end %>
+</ul>
+
+</div>

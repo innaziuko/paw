@@ -1,5 +1,6 @@
 class SheltersController < ApplicationController
-  before_action :set_shelter, only: %i[ show edit update destroy ]
+  skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_shelter, only: %I[show destroy edit update]
 
   def index
     @shelters = Shelter.all
@@ -12,50 +13,39 @@ class SheltersController < ApplicationController
     @shelter = Shelter.new
   end
 
-  def edit
-  end
-
   def create
     @shelter = Shelter.new(shelter_params)
-
-    respond_to do |format|
-      if @shelter.save
-        format.html { redirect_to shelter_url(@shelter), notice: "shelter was successfully created." }
-        format.json { render :show, status: :created, location: @shelter }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @shelter.errors, status: :unprocessable_entity }
-      end
+    @shelter.user = current_user
+    if @shelter.save
+      redirect_to shelter_path(@shelter)
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
+  def edit
+  end
+
   def update
-    respond_to do |format|
-      if @shelter.update(shelter_params)
-        format.html { redirect_to shelter_url(@shelter), notice: "Shelter was successfully updated." }
-        format.json { render :show, status: :ok, location: @shelter }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @shelter.errors, status: :unprocessable_entity }
-      end
+    if @shelter.update(shelter_params)
+      redirect_to shelter_path(@shelter)
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
     @shelter.destroy
-
-    respond_to do |format|
-      format.html { redirect_to shelters_url, notice: "Shelter was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to shelters_path, status: :see_other
   end
 
   private
+
   def set_shelter
-    @shelter = shelter.find(params[:id])
+    @shelter = Shelter.find(params[:id])
   end
 
   def shelter_params
-    params.require(:shelter).permit(:name, :address, :phone_number, :description)
+    params.require(:shelter).permit(:name, :phone_number, :description, :address)
   end
 end
