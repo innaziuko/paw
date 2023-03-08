@@ -4,6 +4,6 @@ class Shelter < ApplicationRecord
 
   validates :name, presence: true
   validates :address, presence: true
-  validates :phone, presence: true
+  validates :phone_number, presence: true
   validates :description, presence: true
 end
