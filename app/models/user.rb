@@ -7,4 +7,6 @@ class User < ApplicationRecord
 
   has_many :appointments
   has_many :shelters, dependent: :destroy
+
+  has_one_attached :photo
 end
