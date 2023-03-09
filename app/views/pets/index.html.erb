@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Here are all the pets</h1>
+<ul>
+  <% @pets.each do |pet| %>
+    <%= link_to pet.name, pet_path(pet) %>
+  <% end %>
+</ul>
+
+</div>

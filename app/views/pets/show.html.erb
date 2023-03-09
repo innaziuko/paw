@@ -1,0 +1,16 @@
+<h1>pet <%= @pet.name %></h1>
+<div>
+  <%= link_to 'Back to all pets', pets_path %>
+
+  <% if policy(@pet).destroy? %>
+    <%= link_to 'Delete',
+    pet_path(@pet),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %>
+  <% end %>
+
+  <% if policy(@pet).edit? %>
+    <%= link_to 'Edit this pet', edit_pet_path(@pet) %>
+  <% end %>
+
+</div>
