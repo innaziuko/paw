@@ -1,9 +1,13 @@
-<div class="container">
-  <h1>Here are all the pets</h1>
-<ul>
+<ol>
   <% @pets.each do |pet| %>
-    <%= link_to pet.name, pet_path(pet) %>
+  <li>
+  <%= image_tag(pet.photo, style: 'height:20%;width:20%;') %>
+    <p><%= pet.name %></p>
+   <p><%= pet.species %></p>
+   <p> <%= pet.breed %></p>
+    <p><%= pet.age %></p>
+    <p><%= pet.status %></p>
+     <p> <%= pet.description %></p>
+  </li>
   <% end %>
-</ul>
-
-</div>
+</ol>
