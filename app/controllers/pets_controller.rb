@@ -3,7 +3,7 @@ class PetsController < ApplicationController
   before_action :set_pet, only: %I[show destroy edit update]
 
   def index
-    @pets = policy_scope(Pet).all
+    @pets = policy_scope(Pet)
   end
 
   def show
@@ -53,4 +53,5 @@ class PetsController < ApplicationController
 
   def pet_params
     params.require(:pet).permit(:name, :phone_number, :description, :address)
+  end
 end
