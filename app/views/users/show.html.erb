@@ -1,0 +1,6 @@
+<h1>User Profile</h1>
+
+<%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
+<p><strong>Email:</strong> <%= @user.email %></p>
+<p><strong>Created at:</strong> <%= @user.created_at %></p>
+<p><strong>Updated at:</strong> <%= @user.updated_at %></p>
