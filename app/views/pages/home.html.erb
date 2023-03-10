@@ -1,2 +1,69 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+
+  <h1>One Paw Across</h1>
+  <p>Find your fur-ever friend with us</p>
+  <%= image_tag "dog_cat.jpg", alt: "", height: "620px" %>
+  <br>
+  <br>
+  <br>
+  <h1>Search Your New Best Friend</h1>
+  <div class="search-bar">
+    <form action="" class="form-inline padded">
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <select name="location" id="location" class="form-control border-radius input-lg">
+          <option value="">Select</option>
+          <option value="1">France</option>
+          <option value="2">Germany</option>
+          <option value="3">Poland</option>
+          <option value="3">Hungary</option>
+          <option value="3">Latvia</option>
+          <option value="3">Romania</option>
+          <option value="3">Slovenia</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <select name="gender" id="gender" class="form-control border-radius input-lg">
+          <option value="">Select</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="breed">Breed:</label>
+        <input type="text" name="breed" id="breed" class="form-control border-radius input-lg" placeholder="Enter breed">
+      </div>
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" class="form-control border-radius input-lg" placeholder="Enter age">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-outline-primary mb-2 mt-0">Search</button>
+      </div>
+    </form>
+  </div>
+
+  <section id="about" style="width:50%;">
+    <h2>About Us</h2>
+    <p>Paws is platform brings together shelters from all over Europe onto one webpage, allowing users to easily find and adopt pets from different countries.</p>
+    <h2>Find Your Perfect Match</h2>
+    <p>Are you looking for a furry friend to join your family, but can't find the perfect match in your local shelter? Our platform makes it easy for you to search for pets across Europe and find your perfect match. Whether you're in Germany looking to adopt a Polish dog or in France looking for a Spanish cat, we've got you covered.</p>
+    <h2>Seamless Adoption Process</h2>
+    <p>Our platform also makes the adoption process seamless by connecting you directly with the shelter where your potential new pet is located. You can easily communicate with the shelter, ask any questions you may have, and complete the adoption process online, all through our platform.</p>
+    <h2>Make a Positive Impact</h2>
+    <p>At the same time, we are proud to help shelters all over Europe find loving homes for their animals. By bringing shelters together onto one webpage, we increase their exposure and make it easier for them to find adopters across borders. This means that by adopting through our platform, you're not only finding your perfect furry friend, but you're also making a positive impact on animal welfare across Europe.</p>
+  </section>
+
+  <h1 id="cats">Cats</h1>
+  <%= image_tag "dog_cat.jpg", alt: "", height: "620px" %>
+
+  <h1 id="dogs">Dogs</h1>
+  <%= image_tag "dog_cat.jpg", alt: "", height: "620px" %>
+
+  <h1>Shelters</h1>
+  <section style="width:50%;">
+    <p>Paws is platform brings together shelters from all over Europe onto one webpage, allowing users to easily find and adopt pets from different countries.</p>
+  </div>
+
+</div>

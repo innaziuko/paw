@@ -1,1 +1,25 @@
 // Specific CSS for your home-page
+.search-bar {
+  max-width: 55%;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.form-group label {
+  width: 100px;
+  margin-right: 10px;
+  text-align: left;
+}
+
+.form-group select,
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group input[type="text"] {
+  flex: 1;
+}
