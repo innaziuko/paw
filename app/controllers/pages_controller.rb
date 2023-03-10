@@ -3,4 +3,14 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def profile
+    @shelters = Shelter.where(user: current_user)
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:photo)
+  end
 end
