@@ -2,7 +2,7 @@ class PetPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
-     Pet.all #scope.where(species: "cat").limit(10) + scope.where(species: "dog").limit(10)
+     Pet.all
     end
   end
 
