@@ -26,6 +26,10 @@
       <%= f.input :age %>
     </div>
 
+    <div class="form-inputs">
+      <%= f.input :photo, as: :file, label: "Image of Pet" %>
+    </div>
+
     <div class="form-actions mb-2">
       <%= f.button :submit, class: "btn btn-outline-primary" %>
     </div>

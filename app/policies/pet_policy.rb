@@ -2,7 +2,7 @@ class PetPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
-      scope.where(species: "cat").limit(5) + scope.where(species: "dog").limit(5)
+     Pet.all
     end
   end
 
@@ -23,10 +23,10 @@ class PetPolicy < ApplicationPolicy
   end
 
   def update?
-    record.shelter == user
+    record.shelter.user == user
   end
 
   def destroy?
-    record.shelter == user
+    record.shelter.user == user
   end
 end

@@ -1,4 +1,11 @@
-<h1>pet <%= @pet.name %></h1>
+<h1> <%= @pet.name %></h1>
+<%= image_tag(@pet.photo, :alt => "Avatar", :style => 'height:50%;width:50%;') %>
+    <p><%= @pet.name %></p>
+   <p><%= @pet.species %></p>
+   <p> <%= @pet.breed %></p>
+    <p><%= @pet.age %></p>
+    <p><%= @pet.status %></p>
+     <p> <%= @pet.description %></p>
 <div>
   <%= link_to 'Back to all pets', pets_path %>
 
