@@ -19,4 +19,47 @@
       </div>
     </div>
   </div>
+  <div class="profile-main" style="background-color: white">
+    <div class="user-description">
+      <h5><strong>More About Me</strong></h5>
+      <p class="text-justify">Sarah is looking to adopt a dog to provide her with companionship and encourage her to get outside and be more active. She is open to adopting either a puppy or an adult dog, but prefers a breed that is known for being affectionate and good with people.</p>
+    </div>
+    <div class="user-function">
+      <div class="user-btn-shelter">
+        <% if @shelters.empty? %>
+          <h5><strong>Wanna Create A Shelter?</strong></h5>
+          <%= button_to "Create Shelter", new_shelter_path, method: :get, class: "polish-button" %>
+        <% else %>
+          <h5><strong>Your Shelters</strong></h5>
+          <ul class="list-dot">
+            <% @shelters.each do |shelter| %>
+              <li><a href=<%= "/shelters/#{shelter.id}" %> class="list-decoration"><%= shelter.name %></a></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
+      <div class="appointment-list">
+        <h5><strong>Your Appointments</strong></h5>
+        <% if @appointments.empty? %>
+          <p>You have no appointment yet</p>
+        <% else %>
+          <% @appointments.each do |appointment| %>
+            <% pet = Pet.find_by(id: appointment.pet_id) %>
+              <div class="appointment-card">
+                <div class="appointment-avatar">
+                  <%= cl_image_tag pet.photo.key, width: 65, height: 65, class: "pet-avatar" %>
+                </div>
+                <div class="appointment-info">
+                  <h6><strong><%= appointment.date %></strong></h6>
+                  <h6><strong>Pet:</strong>  <%= pet.name %></h6>
+                </div>
+                <div class="appointment-time">
+                  <h6><strong>Time:</strong>  <%= appointment.time.strftime("%H:%M") %></h6>
+                </div>
+              </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 <% end %>

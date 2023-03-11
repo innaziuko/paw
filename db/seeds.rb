@@ -408,7 +408,7 @@ pet9 = Pet.create!(
 pet9.photo.attach(io: file, filename: 'ruby.jpg', content_type: 'image/jpg')
 pet9.save!
 
-file = URI.open("https://images.squarespace-cdn.com/content/v1/56a777c25a5668e7cc61b33f/1673697298968-RD9QOWB3IOUIR7C5DV06/D6B06411-4CEA-4E9A-864F-EF92354B3B9C.jpeg?format=1000w")
+file = URI.open("https://res.cloudinary.com/ddhk82zn8/image/upload/v1678363497/development/e07hwbqnona7xvgf96iaqlya4y8p.jpg")
 pet10 = Pet.create!(
   name: "Shambu",
   age: 1,
@@ -761,9 +761,11 @@ appointment7 = Appointment.create!(
 )
 appointment7.save!
 
+time_string = "2023-5-30 17:00"
+time = Time.zone.parse(time_string)
 appointment8 = Appointment.create!(
   date: "2023-5-30",
-  time: "17:00",
+  time: time.strftime("%H:%M"),
   status: "pending",
   pet: pet8,
   user: user4

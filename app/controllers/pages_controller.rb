@@ -6,6 +6,8 @@ class PagesController < ApplicationController
 
   def profile
     @shelters = Shelter.where(user: current_user)
+    @pets = Pet.where(user: current_user)
+    @appointments = Appointment.where(user: current_user)
   end
 
   private
