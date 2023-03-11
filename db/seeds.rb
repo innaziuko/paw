@@ -408,7 +408,7 @@ pet9 = Pet.create!(
 pet9.photo.attach(io: file, filename: 'ruby.jpg', content_type: 'image/jpg')
 pet9.save!
 
-file = URI.open("https://images.squarespace-cdn.com/content/v1/56a777c25a5668e7cc61b33f/1673697298968-RD9QOWB3IOUIR7C5DV06/D6B06411-4CEA-4E9A-864F-EF92354B3B9C.jpeg?format=1000w")
+file = URI.open("https://res.cloudinary.com/ddhk82zn8/image/upload/v1678363497/development/e07hwbqnona7xvgf96iaqlya4y8p.jpg")
 pet10 = Pet.create!(
   name: "Shambu",
   age: 1,
@@ -697,3 +697,88 @@ pet31.photo.attach(io: file, filename: 'jean.jpg', content_type: 'image/jpg')
 pet31.save!
 
 puts "pets created"
+
+appointment1 = Appointment.create!(
+  date: "2023-4-09",
+  time: "10:00",
+  status: "pending",
+  pet: pet1,
+  user: user1
+)
+appointment1.save!
+
+appointment2 = Appointment.create!(
+  date: "2023-4-17",
+  time: "11:00",
+  status: "pending",
+  pet: pet2,
+  user: user1
+)
+appointment2.save!
+
+appointment3 = Appointment.create!(
+  date: "2023-5-5",
+  time: "12:00",
+  status: "pending",
+  pet: pet3,
+  user: user2
+)
+appointment3.save!
+
+appointment4 = Appointment.create!(
+  date: "2023-5-10",
+  time: "13:00",
+  status: "pending",
+  pet: pet4,
+  user: user2
+)
+appointment4.save!
+
+appointment5 = Appointment.create!(
+  date: "2023-5-15",
+  time: "14:00",
+  status: "pending",
+  pet: pet5,
+  user: user2
+)
+appointment5.save!
+
+appointment6 = Appointment.create!(
+  date: "2023-5-20",
+  time: "15:00",
+  status: "pending",
+  pet: pet6,
+  user: user3
+)
+appointment6.save!
+
+appointment7 = Appointment.create!(
+  date: "2023-5-25",
+  time: "16:00",
+  status: "pending",
+  pet: pet7,
+  user: user3
+)
+appointment7.save!
+
+time_string = "2023-5-30 17:00"
+time = Time.zone.parse(time_string)
+appointment8 = Appointment.create!(
+  date: "2023-5-30",
+  time: time.strftime("%H:%M"),
+  status: "pending",
+  pet: pet8,
+  user: user4
+)
+appointment8.save!
+
+appointment9 = Appointment.create!(
+  date: "2023-6-5",
+  time: "18:00",
+  status: "pending",
+  pet: pet9,
+  user: user4
+)
+appointment9.save!
+
+puts "appointments created"

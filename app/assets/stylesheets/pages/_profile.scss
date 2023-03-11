@@ -1,0 +1,97 @@
+.profile-banner {
+  display: flex;
+  padding: 50px;
+  justify-content: space-between;
+}
+
+.profile-left {
+  display: flex;
+}
+
+.profile-right {
+  display: flex;
+  text-align: center;
+}
+
+.round-avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-info {
+  margin-left: 10px;
+  // padding-top: 5px;
+}
+
+.polish-button{
+  padding-left: 0px;
+  border: none;
+  background-color: #BFACE2;
+  text-decoration: none;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 5px;
+  &:hover {
+    background-color: #A68BC2;
+  }
+}
+
+.small-info {
+  margin-bottom: 8px;
+}
+
+.user-description {
+  padding: 40px 550px 40px 50px;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.user-function {
+  display: flex;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.list-dot {
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+
+.list-decoration {
+  text-decoration: none;
+}
+
+.appointment-list {
+  padding-left: 550px;
+}
+
+.appointment-card {
+  display: flex;
+  border: #BFACE2;
+  border-style: solid;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.pet-avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.appointment-avatar {
+  padding-left: 20px;
+}
+
+.appointment-info {
+  padding-left: 25px;
+}
+
+.appointment-time {
+  padding-left: 70px;
+  padding-right: 20px;
+}
