@@ -1,15 +1,21 @@
-
 <div class="container">
-  <% @shelters.each do |shelter| %>
-  <% if shelter.photo.attached? %>
-    <div class="card-deck">
-      <div class="border mb-3" style= "max-width: 25rem;">
-        <%= cl_image_tag shelter.photo.key, crop: :fill, class: "card-img-top img-border" %>
-          <h5 class="card-title title-inline" style="color: #6096B4";><%= shelter.name %></h5>
-          <p class="card-text mb-0"><%= shelter.address %></p>
-          <a href=<%= "/shelters/#{shelter.id}" %> class="btn btn-outline-primary" role="button">Discover more</a>
-      </div>
-    </div>
-  <% end %>
-  <% end %>
+  <div class="row row-cols-1 row-cols-md-4 g-0">
+    <% @shelters.each do |shelter| %>
+      <% if shelter.photo.attached? %>
+        <div class="col">
+          <div class="card card-border m-3">
+              <%= link_to(shelter) do %>
+              <%= cl_image_tag shelter.photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top img-border" %>
+              <% end %>
+            <div class="card-body">
+              <h5 class="card-title title-inline" style="color: #6096B4";><%= shelter.name %></h5>
+              <p class="card-text mb-0"><%= shelter.address %></p>
+              <p class="card-text mt-0"><%= shelter.phone_number %></p>
+              <a href=<%= "/shelters/#{shelter.id}" %> class="btn btn-primary btn-sm" role="button">Discover more</a>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>

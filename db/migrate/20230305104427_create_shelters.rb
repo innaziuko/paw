@@ -4,7 +4,7 @@ class CreateShelters < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :address
       t.string :description
-      t.integer :phone_number
+      t.string :phone_number
 
       t.references :user, null: false, foreign_key: true
 
