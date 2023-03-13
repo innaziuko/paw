@@ -10,6 +10,30 @@
     <p><strong>📝 </strong> <%= @shelter.description %></p>
   </div>
 
+<p><strong>Pets</strong></p>
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-4 g-0">
+  <% @shelter.pets.each do |pet| %>
+    <div class="col">
+          <div class="card card-border m-3">
+              <%= link_to(pet) do %>
+              <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top img-border" %>
+              <% end %>
+            <div class="card-body">
+              <h5 class="card-title title-inline" style="color: #6096B4";><%= pet.name %></h5>
+              <p class="card-text mb-0"><%= pet.species %></p>
+              <p class="card-text mt-0"><%= pet.breed %></p>
+              <p class="card-text mt-0"><%= "#{pet.age} years old" %></p>
+              <a href=<%= "/pets/#{pet.id}" %> class="btn btn-primary btn-sm" role="button">Discover more</a>
+              <button class="btn btn-secondary btn-sm"> <%= pet.status%> </button>
+            </div>
+          </div>
+        </div>
+  <% end %>
+  </div>
+</div>
+
+<br>
   <%= link_to 'Back to all shelters', shelters_path %>
   <% if policy(@shelter).destroy? %>
     <%= link_to 'Delete',

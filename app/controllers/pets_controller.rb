@@ -2,13 +2,13 @@ class PetsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_pet, only: %I[show destroy edit update]
 
+
   def index
     if params[:species].present?
     @pets = policy_scope(Pet).where(species: params[:species])
     else
       @pets = policy_scope(Pet)
     end
-
   end
 
   def show

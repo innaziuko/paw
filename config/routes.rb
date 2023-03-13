@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :shelters
+  resources :shelters do
+    resources :pets, only: [:show]
+  end
   resources :pets
   devise_for :users
   root to: "pages#home"
