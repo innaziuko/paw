@@ -408,7 +408,7 @@ pet9 = Pet.create!(
 pet9.photo.attach(io: file, filename: 'ruby.jpg', content_type: 'image/jpg')
 pet9.save!
 
-file = URI.open("https://res.cloudinary.com/ddhk82zn8/image/upload/v1678363497/development/e07hwbqnona7xvgf96iaqlya4y8p.jpg")
+file = URI.open("https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&quality=85&auto=format&fit=max&s=a52bbe202f57ac0f5ff7f47166906403")
 pet10 = Pet.create!(
   name: "Shambu",
   age: 1,
@@ -782,3 +782,77 @@ appointment9 = Appointment.create!(
 appointment9.save!
 
 puts "appointments created"
+
+review1 = Review.create!(
+  title: "Great experience",
+  comment: "I had a great experience with this shelter. They were very helpful and friendly. I would recommend them to anyone looking for a pet.",
+  user: user1,
+  appointment: appointment1
+)
+review1.save!
+
+review2 = Review.create!(
+  title: "Great experience",
+  comment: "I had a great experience with this shelter. They were very helpful and friendly. I would recommend them to anyone looking for a pet.",
+  user: user1,
+  appointment: appointment2
+)
+review2.save!
+
+review3 = Review.create!(
+  title: "Great experience",
+  comment: "I had a great experience with this shelter. They were very helpful and friendly. I would recommend them to anyone looking for a pet.",
+  user: user2,
+  appointment: appointment3
+)
+review3.save!
+
+review4 = Review.create!(
+  title: "Great experience",
+  comment: "I had a great experience with this shelter. They were very helpful and friendly. I would recommend them to anyone looking for a pet.",
+  user: user2,
+  appointment: appointment4
+)
+review4.save!
+
+review5 = Review.create!(
+  title: "Great experience",
+  comment: "I had a great experience with this shelter. They were very helpful and friendly. I would recommend them to anyone looking for a pet.",
+  user: user2,
+  appointment: appointment5
+)
+review5.save!
+
+review6 = Review.create!(
+  title: "Great experience",
+  comment: "I had a great experience with this shelter. They were very helpful and friendly. I would recommend them to anyone looking for a pet.",
+  user: user3,
+  appointment: appointment6
+)
+review6.save!
+
+review7 = Review.create!(
+  title: "Great experience",
+  comment: "I had a great experience with this shelter. They were very helpful and friendly. I would recommend them to anyone looking for a pet.",
+  user: user3,
+  appointment: appointment7
+)
+review7.save!
+
+review8 = Review.create!(
+  title: "Great experience",
+  comment: "I had a great experience with this shelter. They were very helpful and friendly. I would recommend them to anyone looking for a pet.",
+  user: user4,
+  appointment: appointment8
+)
+review8.save!
+
+review9 = Review.create!(
+  title: "Great experience",
+  comment: "I had a great experience with this shelter. They were very helpful and friendly. I would recommend them to anyone looking for a pet.",
+  user: user4,
+  appointment: appointment9
+)
+review9.save!
+
+puts "reviews created"

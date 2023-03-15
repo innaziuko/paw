@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   resources :shelters do
     resources :pets, only: [:show]
   end
-  resources :pets
+  get "shelters/:id/dashboard", to: "shelters#dashboard", as: "shelter_dashboard"
+  resources :pets, except: [:create]
+  post "pets", to: "pets#create", as: "create_pet"
   devise_for :users
   root to: "pages#home"
   resources :pets, only: %i[index]
