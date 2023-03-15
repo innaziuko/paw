@@ -13,4 +13,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   get "pages/profile", to: "pages#profile"
+  resources :pets do
+    collection do
+      get :all
+    end
+    resources :appointments, only: %i[create destroy]
+  end
+
+  resources :appointments, only: [:index]
 end
