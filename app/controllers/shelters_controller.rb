@@ -8,7 +8,8 @@ class SheltersController < ApplicationController
       {
         lat: shelter.latitude,
         lng: shelter.longitude,
-        info: render_to_string(partial: "pages/popup", locals: { shelter: shelter })
+        info: render_to_string(partial: "pages/popup", locals: { shelter: shelter }),
+        marker_html: render_to_string(partial: "pages/marker")
       }
     end
   end
