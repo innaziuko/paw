@@ -1,0 +1,244 @@
+<div class="border-bottom">
+  <div class="shelter-banner" style="background-color: #ECF2FF">
+    <div class="shelter-left">
+      <div>
+        <%= cl_image_tag @shelter.photo.key, width: 100, height: 100, class: "round-avatar" %>
+      </div>
+      <div class="shelter-info">
+        <h4><strong><%= @shelter.name %></strong></h4>
+        <p><%= @shelter.address %></p>
+        <%= button_to "Edit", edit_shelter_path(@shelter), method: :get, class: "polish-button" %>
+      </div>
+    </div>
+    <div class="shelter-right">
+      <div>
+        <h4>Cats</h4>
+        <h4><%= @pets.where(species: "cat").count %></h4>
+      </div>
+      <div class="dog-margin">
+        <h4>Dogs</h4>
+        <h4><%= @pets.where(species: "dog").count %></h4>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="dashboard-main" style="background-color: white">
+  <h4 class="text-center"><strong>Create a New Pet Profile</strong></h4>
+  <div class="create-pet-card">
+    <form class="justify-form">
+      <div class="flex-form">
+        <div>
+          <div class="mb-3">
+            <label for="NameInput" class="form-label">Name</label>
+            <input type="Name" class="form-control" id="NameInput" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="AgeInput" class="form-label">Age</label>
+            <input type="age" class="form-control" id="AgeInput">
+          </div>
+        </div>
+        <div class="padding-blank">
+          <div class="mb-3">
+            <label for="BreedInput" class="form-label">Breed</label>
+            <input type="breed" class="form-control" id="BreedInput" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="GenderInput" class="form-label">Gender</label>
+            <input type="gender" class="form-control" id="GenderInput">
+          </div>
+        </div>
+        <div class="padding-blank">
+          <div class="mb-3">
+            <label for="SpeciesInput" class="form-label">Species</label>
+            <input type="species" class="form-control" id="SpeciesInput">
+          </div>
+          <div>
+            <label for="DescriptionInput" class="form-label">Description</label>
+            <input type="description" class="form-control" id="DescriptionInput">
+          </div>
+        </div>
+      </div>
+      <div class="upload-photo">
+        <div class="mb-3">
+          <label for="photo" class="form-label">Photo</label>
+          <input type="file" id="photo" name="photo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="position-btn">
+          <button type="submit" class="btn polish-button">Create</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="review-appointment">
+    <div class="review">
+      <h4 class="margin-btm"><strong>Recent Reviews</strong></h4>
+      <% if @reviews.empty? %>
+        <p>You have no reviews yet</p>
+      <% else %>
+        <% recent_review = @reviews.last %>
+        <h5><strong><%= recent_review.title %></strong></h5>
+        <p><%= recent_review.comment %></p>
+      <% end %>
+    </div>
+    <div class="appointment">
+      <h4 class="margin-btm"><strong>Upcoming Appointment</strong></h4>
+      <% if @appointments.empty? %>
+        <p>You have no upcoming appointments</p>
+      <% else %>
+        <% @appointments.each do |appointment| %>
+          <% pet = Pet.find_by(id: appointment.pet_id) %>
+          <div class="appointment-card">
+            <div class="appointment-avatar">
+              <%= cl_image_tag pet.photo.key, width: 65, height: 65, class: "pet-avatar" %>
+            </div>
+            <div class="appointment-info">
+              <h6><strong><%= appointment.date %></strong></h6>
+              <h6><strong>Pet:</strong>  <%= pet.name %></h6>
+            </div>
+            <div class="appointment-time">
+              <h6><strong>Time:</strong>  <%= appointment.time.strftime("%H:%M") %></h6>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="pet-card">
+    <h4 class="pet-card-title"><strong>Shelter's Pets</strong></h4>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true">All</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="catall-tab" data-bs-toggle="tab" data-bs-target="#cats" type="button" role="tab" aria-controls="cats" aria-selected="false">Cats</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="dogall-tab" data-bs-toggle="tab" data-bs-target="#dogs" type="button" role="tab" aria-controls="dogs" aria-selected="false">Dogs</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="adopted-tab" data-bs-toggle="tab" data-bs-target="#adopted" type="button" role="tab" aria-controls="adopted" aria-selected="false">Adopted</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active pet-index-container" id="all" role="tabpanel" aria-labelledby="all-tab">
+        <%= render "pet_card" %>
+      </div>
+      <div class="tab-pane fade pet-index-container" id="cats" role="tabpanel" aria-labelledby="catall-tab">
+        <% cats = @pets.where(species: "cat") %>
+        <% if cats.empty? %>
+          <h4 calss="text-center"><strong>This shelter has no cat yet.</strong></h4>
+        <% else %>
+          <div class="pet-index">
+            <% cats.each do |cat| %>
+              <div class="pet-index-card">
+                <div class="pet-index-card-avatar">
+                  <%= cl_image_tag cat.photo.key, width: 85, class: "pet-index-avatar" %>
+                </div>
+                <div class="pet-index-info">
+                  <h5><strong><%= cat.name %></strong></h5>
+                  <h6><%= cat.breed %></h6>
+                  <h6>Age:  <%= cat.age %></h6>
+                  <h6>Gender:  <%= cat.gender %></h6>
+                </div>
+                <div class="pet-index-btn">
+                  <div class="edit-btn">
+                    <%= button_to "Edit", edit_pet_path(cat), method: :get, class: "polish-button" %>
+                  </div>
+                  <div class="status-btn">
+                    <div class="dropdown status-btn-purple">
+                      <button class="btn dropdown-toggle" style="color: #BFACE2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Adopted
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Pending</a></li>
+                        <li><a class="dropdown-item" href="#">Available</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="tab-pane fade pet-index-container" id="dogs" role="tabpanel" aria-labelledby="dogall-tab">
+        <% dogs = @pets.where(species: "dog") %>
+        <% if dogs.empty? %>
+          <h4 calss="text-center"><strong>This shelter has no dog yet.</strong></h4>
+        <% else %>
+          <div class="pet-index">
+            <% dogs.each do |dog| %>
+              <div class="pet-index-card">
+                <div class="pet-index-card-avatar">
+                  <%= cl_image_tag dog.photo.key, width: 85, class: "pet-index-avatar" %>
+                </div>
+                <div class="pet-index-info">
+                  <h5><strong><%= dog.name %></strong></h5>
+                  <h6><%= dog.breed %></h6>
+                  <h6>Age:  <%= dog.age %></h6>
+                  <h6>Gender:  <%= dog.gender %></h6>
+                </div>
+                <div class="pet-index-btn">
+                  <div class="edit-btn">
+                    <%= button_to "Edit", edit_pet_path(dog), method: :get, class: "polish-button" %>
+                  </div>
+                  <div class="status-btn">
+                    <div class="dropdown status-btn-purple">
+                      <button class="btn dropdown-toggle" style="color: #BFACE2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Adopted
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Pending</a></li>
+                        <li><a class="dropdown-item" href="#">Available</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="tab-pane fade pet-index-container" id="adopted" role="tabpanel" aria-labelledby="adopted-tab">
+        <% adopted = @pets.where(status: "adopted") %>
+        <% if adopted.empty? %>
+          <h4 class="text-center"><strong>Waiting for adoption...</strong></h4>
+        <% else %>
+          <div class="pet-index">
+            <% adopted.each do |adopt| %>
+              <div class="pet-index-card">
+                <div class="pet-index-card-avatar">
+                  <%= cl_image_tag adopt.photo.key, width: 85, class: "pet-index-avatar" %>
+                </div>
+                <div class="pet-index-info">
+                  <h5><strong><%= adopt.name %></strong></h5>
+                  <h6><%= adopt.breed %></h6>
+                  <h6>Age:  <%= adopt.age %></h6>
+                  <h6>Gender:  <%= adopt.gender %></h6>
+                </div>
+                <div class="pet-index-btn">
+                  <div class="edit-btn">
+                    <%= button_to "Edit", edit_pet_path(adopt), method: :get, class: "polish-button" %>
+                  </div>
+                  <div class="status-btn">
+                    <div class="dropdown status-btn-purple">
+                      <button class="btn dropdown-toggle" style="color: #BFACE2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Adopted
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Pending</a></li>
+                        <li><a class="dropdown-item" href="#">Available</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

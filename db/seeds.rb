@@ -408,7 +408,7 @@ pet9 = Pet.create!(
 pet9.photo.attach(io: file, filename: 'ruby.jpg', content_type: 'image/jpg')
 pet9.save!
 
-file = URI.open("https://res.cloudinary.com/ddhk82zn8/image/upload/v1678363497/development/e07hwbqnona7xvgf96iaqlya4y8p.jpg")
+file = URI.open("https://woodgreen.org.uk/wp-content/uploads/2023/02/093742.jpg")
 pet10 = Pet.create!(
   name: "Shambu",
   age: 1,
@@ -572,7 +572,7 @@ pet22 = Pet.create!(
   age: 3,
   breed: "Crossbreed",
   description: "Alfred is a gorgeous 3 year old Bichon crossbreed. He's a sensitive little guy who would benefit from a nice calm home where he can come out of his shell at his own speed. He takes a little to warm to new people but won't say no to a tasty treat. Alfred needs an adult only home with owners who have previous experience around dogs. He must be the only pet in the home but can have doggy friends out and about so long as they are calm. Alfred would prefer not to live with cats. He enjoys a fuss but this needs to be built up as he can get a little overwhelmed if it's too much or too rough. He will tell you if he wants more though and nudge your hand for more attention or sit in your lap when he is comfortable. He can be left for a few hours at a time but this will need to be built up and is toilet trained.",
-  species: "dog",
+  species: "rabbit",
   gender: "Male",
   shelter: shelter9
 )
@@ -676,7 +676,7 @@ pet30 = Pet.create!(
   age: 2,
   breed: "Collie (Border)",
   description: "Flissie is a sensitive 2 year old Border Collie looking for an active home where everyone is aged 16 years and over. She can be protective over her own things like her food and toys so owners will need to be comfortable managing this in the home and follow the training advice given by our team. Flissie can be anxious around other dogs, she will need continued work on her socialisation and to be walked in quieter areas. She can have calm doggy friends out and about but must be the only pet in the home. She can be left for up to four hours and is house trained. She would benefit from a breed experienced home who are used to collie behaviors. She’s a fun girl who loves her walks and is super smart. Flissie will need several meets here at the centre before going home so will need a home within reasonable distance of our centre.",
-  species: "dog",
+  species: "Lizard",
   gender: "Female",
   shelter: shelter12
 )
@@ -782,3 +782,77 @@ appointment9 = Appointment.create!(
 appointment9.save!
 
 puts "appointments created"
+
+review1 = Review.create!(
+  title: "Great experience",
+  comment: "I had a great experience with this shelter. They were very helpful and friendly. I would recommend them to anyone looking for a pet.",
+  user: user1,
+  appointment: appointment1
+)
+review1.save!
+
+review2 = Review.create!(
+  title: "Great experience",
+  comment: "I had a great experience with this shelter. They were very helpful and friendly. I would recommend them to anyone looking for a pet.",
+  user: user1,
+  appointment: appointment2
+)
+review2.save!
+
+review3 = Review.create!(
+  title: "Great experience",
+  comment: "I had a great experience with this shelter. They were very helpful and friendly. I would recommend them to anyone looking for a pet.",
+  user: user2,
+  appointment: appointment3
+)
+review3.save!
+
+review4 = Review.create!(
+  title: "Great experience",
+  comment: "I had a great experience with this shelter. They were very helpful and friendly. I would recommend them to anyone looking for a pet.",
+  user: user2,
+  appointment: appointment4
+)
+review4.save!
+
+review5 = Review.create!(
+  title: "Great experience",
+  comment: "I had a great experience with this shelter. They were very helpful and friendly. I would recommend them to anyone looking for a pet.",
+  user: user2,
+  appointment: appointment5
+)
+review5.save!
+
+review6 = Review.create!(
+  title: "Great experience",
+  comment: "I had a great experience with this shelter. They were very helpful and friendly. I would recommend them to anyone looking for a pet.",
+  user: user3,
+  appointment: appointment6
+)
+review6.save!
+
+review7 = Review.create!(
+  title: "Great experience",
+  comment: "I had a great experience with this shelter. They were very helpful and friendly. I would recommend them to anyone looking for a pet.",
+  user: user3,
+  appointment: appointment7
+)
+review7.save!
+
+review8 = Review.create!(
+  title: "Great experience",
+  comment: "I had a great experience with this shelter. They were very helpful and friendly. I would recommend them to anyone looking for a pet.",
+  user: user4,
+  appointment: appointment8
+)
+review8.save!
+
+review9 = Review.create!(
+  title: "Great experience",
+  comment: "I had a great experience with this shelter. They were very helpful and friendly. I would recommend them to anyone looking for a pet.",
+  user: user4,
+  appointment: appointment9
+)
+review9.save!
+
+puts "reviews created"

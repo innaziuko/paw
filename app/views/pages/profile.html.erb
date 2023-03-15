@@ -33,7 +33,7 @@
           <h5><strong>Your Shelters</strong></h5>
           <ul class="list-dot">
             <% @shelters.each do |shelter| %>
-              <li><a href=<%= "/shelters/#{shelter.id}" %> class="list-decoration"><%= shelter.name %></a></li>
+              <li><a href=<%= "/shelters/#{shelter.id}/dashboard" %> class="list-decoration"><%= shelter.name %></a></li>
             <% end %>
           </ul>
         <% end %>

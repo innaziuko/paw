@@ -1,0 +1,169 @@
+.round-avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.shelter-banner {
+  display: flex;
+  padding: 50px;
+  justify-content: space-between;
+}
+
+.shelter-left {
+  display: flex;
+}
+
+.shelter-info {
+  margin-left: 10px;
+}
+
+.polish-button{
+  padding-left: 0px;
+  border: none;
+  background-color: #BFACE2;
+  text-decoration: none;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 5px;
+  &:hover {
+    background-color: #A68BC2;
+    color: white;
+  }
+}
+
+.shelter-right {
+  display: flex;
+  text-align: center;
+}
+
+.dog-margin {
+  margin-left: 40px;
+}
+
+.text-center {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-main {
+  padding: 50px;
+}
+
+.create-pet-card {
+  border: solid #BFACE2;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 3px 3px 3px #BFACE2;
+}
+
+.tab-form {
+  display: flex;
+  padding: 50px;
+  justify-content: space-around;
+}
+
+.flex-form {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.padding-blank {
+  padding-left: 65px;
+}
+
+.upload-photo {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 95px;
+  padding-right: 95px;
+}
+
+.position-btn {
+  padding-top: 35px;
+}
+
+.justify-form {
+  justify-content: space-evenly;
+}
+
+.review-appointment {
+  display: flex;
+  width: 1200px;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.review {
+  width: 500px;
+}
+
+.margin-btm {
+  margin-bottom: 15px;
+}
+
+.pet-card {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.pet-index-container {
+  padding: 20px;
+}
+
+.pet-index {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.pet-card-title {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.pet-index-card {
+  display: flex;
+  border: #BFACE2;
+  border-style: solid;
+  border-radius: 15px;
+  width: 360px;
+  height: 130px;
+}
+
+.pet-index-avatar {
+  border-radius: 13px 0px 0px 13px;
+  object-fit: cover;
+  height: 100%;
+}
+
+.pet-index-info {
+  padding: 5px 0 5px 15px;
+}
+
+.pet-index-btn {
+  padding-top: 10px;
+}
+
+.edit-btn {
+  padding-left: 85px;
+}
+
+.status-btn {
+  padding-left: 20px;
+  padding-top: 25px;
+}
+
+.status-btn-purple {
+  padding-left: 0px;
+  border: solid #BFACE2;
+  text-decoration: none;
+  color: white;
+  padding: 1px 2px;
+  border-radius: 5px;
+  &:hover {
+    color: #A68BC2;
+  }
+}

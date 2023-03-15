@@ -29,4 +29,8 @@ class ShelterPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def dashboard?
+    record.user == user
+  end
 end
