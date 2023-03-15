@@ -2,7 +2,7 @@ class PetPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
-     Pet.all
+      Pet.all
     end
   end
 
