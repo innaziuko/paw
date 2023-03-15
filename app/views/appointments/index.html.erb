@@ -1,0 +1,21 @@
+<div class="container w-75">
+  <% if current_user %>
+  <p>Hello <%= current_user.email %>!</p>
+  <p>Nice to see you 😁 </p>
+  <% else %>
+  <p>You are not signed in</p>
+  <% end %>
+
+  <div class="list-group">
+    <% @appointments.each do |appointment| %>
+      <% pet = Pet.find_by(id: appointment.pet_id) %>
+      <a href=<%= "/pets/#{pet.id}" %> class="list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1" style="color: #6096B4";><%= pet.name %></h5>
+          <small>Status: <%= appointment.status %></small>
+        </div>
+        <p class="mb-1"><strong>Date:</strong> <%= appointment.date.strftime('%d %B %Y') %> <strong>Time:</strong> <%= appointment.time.strftime('%l:%M%p') %></p>
+      </a>
+    <% end %>
+  </div>
+</div>
