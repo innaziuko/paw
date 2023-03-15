@@ -2,14 +2,25 @@ class PetsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_pet, only: %I[show destroy edit update]
 
-
   def index
+    @pets = policy_scope(Pet)
     if params[:species].present?
-    @pets = policy_scope(Pet).where(species: params[:species])
-    else
-      @pets = policy_scope(Pet)
+      @pets = @pets.where(species: params[:species])
+    end
+    if params[:gender].present?
+      @pets = @pets.where(gender: params[:gender])
+    end
+    if params[:age_from].present? && params[:age_to].present?
+      @pets = @pets.where(age: params[:age_from]..params[:age_to])
+    end
+    if params[:location].present?
+      # location accept country name for now
+      @pets = @pets.select do |pet|
+        Geocoder.search([pet.shelter.latitude, pet.shelter.longitude]).first.country == params[:location]
+      end
     end
   end
+
 
   def show
     authorize @pet

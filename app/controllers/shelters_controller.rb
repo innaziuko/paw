@@ -4,6 +4,13 @@ class SheltersController < ApplicationController
 
   def index
     @shelters = policy_scope(Shelter).all
+    @markers = @shelters.geocoded.map do |shelter|
+      {
+        lat: shelter.latitude,
+        lng: shelter.longitude,
+        info: render_to_string(partial: "pages/popup", locals: { shelter: shelter })
+      }
+    end
   end
 
   def show
