@@ -10,6 +10,7 @@ class PagesController < ApplicationController
         info: render_to_string(partial: "popup", locals: { shelter: shelter })
       }
     end
+    @pet_types = Pet.all.pluck(:species).uniq
   end
 
   def profile
