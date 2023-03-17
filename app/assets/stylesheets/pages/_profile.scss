@@ -55,14 +55,37 @@
 }
 
 .list-dot {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
   padding: 0px;
   margin: 0px;
   list-style-type: none;
+  line-height: 60px;
+  a {
+    display: block;
+    text-decoration: none;
+    color: #BFACE2;
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    background-image: url("https://www.toptal.com/designers/subtlepatterns/uploads/leaves.png");
+    background-repeat: no-repeat;
+    text-align: center;
+    border-radius: 20px;
+    border: solid #BFACE2;
+    transition: .3s ease;
+    &:hover {
+      transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+    }
+  }
 }
 
-.list-decoration {
-  text-decoration: none;
-}
+// .list-decoration {
+//   text-decoration: none;
+// }
 
 .appointment-list {
   padding-left: 550px;
