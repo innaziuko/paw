@@ -1,11 +1,8 @@
 <div class="container">
 
+  <%= image_tag "dog_cat.jpg", alt: "", width:"100%" %>
   <h1>One Paw Across</h1>
   <p>Find your fur-ever friend with us</p>
-  <%= image_tag "dog_cat.jpg", alt: "", height: "620px" %>
-  <br>
-  <br>
-  <br>
   <h1>Search Your New Best Friend</h1>
   <div class="search-bar">
     <form action="/pets" method="get" class="form-inline padded">
@@ -79,12 +76,12 @@
 
   <h1 id="cats">Cats</h1>
   <a href="/pets?species=cat">
-    <%= image_tag "dog_cat.jpg", alt: "", height: "620px" %>
+    <%= image_tag "cat.jpg", alt: "", height: "720px" %>
   </a>
 
   <h1 id="dogs">Dogs</h1>
   <a href="/pets?species=dog">
-    <%= image_tag "dog_cat.jpg", alt: "", height: "620px" %>
+    <%= image_tag "dog.jpg", alt: "", height: "720px" %>
   </a>
 
   <h1>Shelters</h1>
