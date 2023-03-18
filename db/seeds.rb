@@ -8,6 +8,8 @@
 require "open-uri"
 
 puts "Cleaning database..."
+Review.destroy_all
+Appointment.destroy_all
 Pet.destroy_all
 Shelter.destroy_all
 User.destroy_all
@@ -572,7 +574,7 @@ pet22 = Pet.create!(
   age: 3,
   breed: "Crossbreed",
   description: "Alfred is a gorgeous 3 year old Bichon crossbreed. He's a sensitive little guy who would benefit from a nice calm home where he can come out of his shell at his own speed. He takes a little to warm to new people but won't say no to a tasty treat. Alfred needs an adult only home with owners who have previous experience around dogs. He must be the only pet in the home but can have doggy friends out and about so long as they are calm. Alfred would prefer not to live with cats. He enjoys a fuss but this needs to be built up as he can get a little overwhelmed if it's too much or too rough. He will tell you if he wants more though and nudge your hand for more attention or sit in your lap when he is comfortable. He can be left for a few hours at a time but this will need to be built up and is toilet trained.",
-  species: "rabbit",
+  species: "dog",
   gender: "Male",
   shelter: shelter9
 )
@@ -670,12 +672,12 @@ pet29 = Pet.create!(
 pet29.photo.attach(io: file, filename: 'dora.jpg', content_type: 'image/jpg')
 pet29.save!
 
-file = URI.open("https://www.dogstrust.org.uk/images/800x600/dogs/1264022/0686M00000XUVErQAP.jpg")
+file = URI.open("https://cdn.pixabay.com/photo/2020/01/13/19/43/lizard-4763351_1280.jpg")
 pet30 = Pet.create!(
   name: "Flissie",
   age: 2,
-  breed: "Collie (Border)",
-  description: "Flissie is a sensitive 2 year old Border Collie looking for an active home where everyone is aged 16 years and over. She can be protective over her own things like her food and toys so owners will need to be comfortable managing this in the home and follow the training advice given by our team. Flissie can be anxious around other dogs, she will need continued work on her socialisation and to be walked in quieter areas. She can have calm doggy friends out and about but must be the only pet in the home. She can be left for up to four hours and is house trained. She would benefit from a breed experienced home who are used to collie behaviors. She’s a fun girl who loves her walks and is super smart. Flissie will need several meets here at the centre before going home so will need a home within reasonable distance of our centre.",
+  breed: "Gecko",
+  description: "My name is Flissie and I am a friendly Leopard Gecko looking for a 40+ gallon tank. I have two buddies if you'd like a few geckos!",
   species: "Lizard",
   gender: "Female",
   shelter: shelter12
@@ -695,6 +697,66 @@ pet31 = Pet.create!(
 )
 pet31.photo.attach(io: file, filename: 'jean.jpg', content_type: 'image/jpg')
 pet31.save!
+
+file = URI.open("https://www.homestead-acres.com/wp-content/uploads/2021/04/Rooster.jpg")
+pet32 = Pet.create!(
+  name: "Molly",
+  age: 3,
+  breed: "Rooster",
+  description: "This cute little rooster needs a forever home! He is a very young silkie, just started crowing a couple weeks ago.",
+  species: "Chicken",
+  gender: "Male",
+  shelter: shelter12
+)
+pet32.photo.attach(io: file, filename: 'molly.jpg', content_type: 'image/jpg')
+pet32.save!
+
+file = URI.open("https://cdn.pixabay.com/photo/2014/06/21/08/43/rabbit-373691_1280.jpg")
+pet33 = Pet.create!(
+  name: "Dolly",
+  age: 3,
+  breed: "rabbit",
+  description: "Meet little Dolly! Dolly needs a friend! This poor baby girl was dumped outside and begs for attention. She wants to be held and comforted. She also loves to play.",
+  species: "rabbit",
+  gender: "Male",
+  shelter: shelter12
+)
+pet33.photo.attach(io: file, filename: 'dolly.jpg', content_type: 'image/jpg')
+pet33.save!
+
+file = URI.open("https://cdn.pixabay.com/photo/2020/04/07/20/36/bunny-5014814_1280.jpg")
+pet34 = Pet.create!(
+  name: "Barry",
+  age: 1,
+  breed: "rabbit",
+  description: "Barry is a living breathing firecracker, who ADORES exploring his space. He will pay you in binkies, zoomies and extravagant acrobatics for the space he gets. He is the true definition of an entertainer!
+
+  Like his siblings, he appreciates a good and mixed veggie bowl, although toys and floor time are his absolute favorite. He can be a bit skittish around new people, but with enough time to adapt, and of course, you guessed it, space, he will become a perfect companion.
+
+  Barry was recently neutered, so his litter skills are expected to improve even more, and has received the 1st dose of the RHDV vaccine.",
+  species: "rabbit",
+  gender: "Male",
+  shelter: shelter12
+)
+pet34.photo.attach(io: file, filename: 'barry.jpg', content_type: 'image/jpg')
+pet34.save!
+
+file = URI.open("https://cdn.pixabay.com/photo/2023/03/12/17/35/hare-7847442_1280.jpg")
+pet35 = Pet.create!(
+  name: "Brinn",
+  age: 1,
+  breed: "rabbit",
+  description: "Despite the horrible conditions she was rescued from, Brinn is a very gentle and sweet girl, who loves cuddles just as much as she loves exploring. She is not shy to ask for affection, and will delicately nudge you when she wants your company. She is a calm and relaxed bunny, with tons of love to give a special someone.
+
+  Brinn loves her food, and is not picky at all. Dandelion greens, cilantro, lettuce, cucumber, you name it, she'll devour it. The only thing that matches her appetite is her love of life.
+
+  Brinn is spayed and has received the 1st dose of the RHDV vaccine. Her litter skills are quite good, and are expected to improve even more.",
+  species: "rabbit",
+  gender: "Female",
+  shelter: shelter12
+)
+pet35.photo.attach(io: file, filename: 'brinn.jpg', content_type: 'image/jpg')
+pet35.save!
 
 puts "pets created"
 
