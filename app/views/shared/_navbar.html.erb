@@ -19,8 +19,9 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href="/pets" role="button">All</a></li>
-            <li><a class="dropdown-item" href="/pets?species=dog" role="button">Dogs</a></li>
-            <li><a class="dropdown-item" href="/pets?species=cat" role="button">Cats</a></li>
+            <% @pet_types.each do |type| %>
+              <li><a class="dropdown-item" href=<%= "/pets?species=#{type}" %> role="button"><%= type.capitalize %></a></li>
+            <% end %>
           </ul>
         </li>
     </ul>

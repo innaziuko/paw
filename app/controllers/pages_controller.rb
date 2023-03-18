@@ -11,7 +11,6 @@ class PagesController < ApplicationController
         marker_html: render_to_string(partial: "marker")
       }
     end
-    @pet_types = Pet.all.pluck(:species).uniq
   end
 
   def profile
