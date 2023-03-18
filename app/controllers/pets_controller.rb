@@ -1,6 +1,7 @@
 class PetsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_pet, only: %I[show destroy edit update]
+  before_action :set_shelter, only: %I[new create]
 
   def index
     @pets = policy_scope(Pet)
@@ -41,12 +42,13 @@ class PetsController < ApplicationController
 
   def create
     @pet = Pet.new(pet_params)
-    @pet.user = current_user
+    @pet.shelter = @shelter
     authorize @pet
     if @pet.save
-      redirect_to pet_path(@pet)
+      redirect_to shelter_dashboard_path(@shelter), notice: 'Pet was successfully created.'
     else
-      render :new, status: :unprocessable_entity
+      flash[:alert] = 'Unable to create pet.Be sure to fill in all fields.'
+      redirect_to shelter_dashboard_path(@shelter), status: :unprocessable_entity
     end
   end
 
@@ -76,6 +78,10 @@ class PetsController < ApplicationController
   end
 
   def pet_params
-    params.require(:pet).permit(:name, :phone_number, :description, :address, :photo)
+    params.require(:pet).permit(:name, :age, :description, :photo, :species, :breed, :gender)
+  end
+
+  def set_shelter
+    @shelter = Shelter.find(params[:shelter_id])
   end
 end

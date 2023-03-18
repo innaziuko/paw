@@ -25,49 +25,51 @@
 <div class="dashboard-main" style="background-color: white">
   <h4 class="text-center"><strong>Create a New Pet Profile</strong></h4>
   <div class="create-pet-card">
-    <form class="justify-form">
-      <div class="flex-form">
+    <%= simple_form_for [@shelter, @pet], url: shelter_pets_path(shelter_id: @shelter.id) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+      <div class="form-inputs flex-form">
         <div>
           <div class="mb-3">
-            <label for="NameInput" class="form-label">Name</label>
-            <input type="Name" class="form-control" id="NameInput" aria-describedby="emailHelp">
+            <%= f.input :name %>
           </div>
           <div class="mb-3">
-            <label for="AgeInput" class="form-label">Age</label>
-            <input type="age" class="form-control" id="AgeInput">
+            <%= f.input :species %>
           </div>
         </div>
+
         <div class="padding-blank">
           <div class="mb-3">
-            <label for="BreedInput" class="form-label">Breed</label>
-            <input type="breed" class="form-control" id="BreedInput" aria-describedby="emailHelp">
+            <%= f.input :description %>
           </div>
+
           <div class="mb-3">
-            <label for="GenderInput" class="form-label">Gender</label>
-            <input type="gender" class="form-control" id="GenderInput">
+            <%= f.input :breed %>
           </div>
         </div>
+
         <div class="padding-blank">
           <div class="mb-3">
-            <label for="SpeciesInput" class="form-label">Species</label>
-            <input type="species" class="form-control" id="SpeciesInput">
+            <%= f.input :gender %>
           </div>
-          <div>
-            <label for="DescriptionInput" class="form-label">Description</label>
-            <input type="description" class="form-control" id="DescriptionInput">
+
+          <div class="mb-3">
+            <%= f.input :age %>
           </div>
         </div>
       </div>
+
       <div class="upload-photo">
-        <div class="mb-3">
-          <label for="photo" class="form-label">Photo</label>
-          <input type="file" id="photo" name="photo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div class="form-inputs mb-3">
+          <%= f.input :photo, as: :file, label: "Image of Pet" %>
         </div>
-        <div class="position-btn">
-          <button type="submit" class="btn polish-button">Create</button>
+
+        <div class="form-actions mb-2">
+          <%= f.button :submit, class: "btn polish-button position-btn" %>
         </div>
       </div>
-    </form>
+    <% end %>
   </div>
 
   <div class="review-appointment">
