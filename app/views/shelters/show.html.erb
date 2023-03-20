@@ -1,49 +1,80 @@
-<div class="container">
-<h1>Shelter <%= @shelter.name %></h1>
-  <div class="banner-content">
-      <%= cl_image_tag @shelter.photo.key, height: 300, width: 400, crop: :fill %>
-  </div>
 
-  <div class="banner-content">
-    <p><strong>🏡 </strong> <%= @shelter.address %></p>
-    <p><strong>📞 </strong> <%= @shelter.phone_number %></p>
-    <p><strong>📝 </strong> <%= @shelter.description %></p>
-  </div>
-
-<p><strong>Pets</strong></p>
 <div class="container">
-  <div class="row row-cols-1 row-cols-md-4 g-0">
-  <% @shelter.pets.each do |pet| %>
-    <div class="col">
-          <div class="card card-border m-3">
-              <%= link_to(pet) do %>
-              <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top img-border" %>
-              <% end %>
-            <div class="card-body">
-              <h5 class="card-title title-inline" style="color: #6096B4";><%= pet.name %></h5>
-              <p class="card-text mb-0"><%= pet.species %></p>
-              <p class="card-text mt-0"><%= pet.breed %></p>
-              <p class="card-text mt-0"><%= "#{pet.age} years old" %></p>
-              <a href=<%= "/pets/#{pet.id}" %> class="btn btn-primary btn-sm" role="button">Discover more</a>
-              <button class="btn btn-secondary btn-sm"> <%= pet.status%> </button>
-            </div>
+  <div class="row">
+    <div class="col-md-12">
+      <%=  cl_image_tag @shelter.photo.key, :style => 'height:100%;width:50%;' %>
+    </div>
+  </div>
+  <br/>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-8">
+          <h1><%= @shelter.name %></h1>
+        </div>
+
+
+      <div class="row text-babu">
+          <hr/>
+        <div class="row text-center row-space-1">
+          <div class="col-md-6">
+            <h2>🏡</h2>
+          </div>
+          <div class="col-md-6">
+            <h3>☎️</h3>
           </div>
         </div>
-  <% end %>
+        <div class="row text-center">
+          <div class="col-md-6"><%= @shelter.address %></div>
+          <div class="col-md-6"><%= @shelter.phone_number %></div>
+        </div>
+    <hr/>
+      <div class="row">
+      <div class="col-md-12">
+        <h3>Hello, we are <%= @shelter.name %> 👋 and this is our story:</h3>
+        <br>
+        <p><%= @shelter.description %></p>
+      </div>
+    </div>
+    <hr/>
+    </div>
   </div>
+  </div>
+  <p><strong>Pets</strong></p>
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-4 g-0">
+    <% @shelter.pets.each do |pet| %>
+      <div class="col">
+            <div class="card card-border m-3">
+                <%= link_to(pet) do %>
+                <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top img-border" %>
+                <% end %>
+              <div class="card-body">
+                <h5 class="card-title title-inline" style="color: #6096B4";><%= pet.name %></h5>
+                <p class="card-text mb-0"><%= pet.species %></p>
+                <p class="card-text mt-0"><%= pet.breed %></p>
+                <p class="card-text mt-0"><%= "#{pet.age} years old" %></p>
+                <a href=<%= "/pets/#{pet.id}" %> class="btn btn-primary btn-sm" role="button">Discover more</a>
+                <button class="btn btn-secondary btn-sm"> <%= pet.status%> </button>
+              </div>
+            </div>
+          </div>
+    <% end %>
+    </div>
+  </div>
+  <br>
+  <form>
+  <div class="d-flex justify-content-end">
+    <div>
+      <% if policy(@shelter).destroy? %>
+        <%= button_to 'Delete', shelter_path(@shelter), method: :delete, class: "btn btn-outline-primary btn-lg"%>
+        <% end %> </div>
+        <% if policy(@shelter).edit? %>
+           <%= button_to 'Edit this shelter', edit_shelter_path(@shelter), method: :get, class: "btn btn-outline-primary btn-lg" %>
+        <% end %>
+          <%= button_to 'Back to all the shelters', shelters_path(@shelter), method: :get, class: "btn btn-outline-primary btn-lg" %>
+        </div>
 </div>
-
-<br>
-  <%= link_to 'Back to all shelters', shelters_path %>
-  <% if policy(@shelter).destroy? %>
-    <%= link_to 'Delete',
-    shelter_path(@shelter),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-    %>
-  <% end %>
-
-  <% if policy(@shelter).edit? %>
-    <%= link_to 'Edit this shelter', edit_shelter_path(@shelter) %>
-  <% end %>
-</div>
+  </form>
 </div>
