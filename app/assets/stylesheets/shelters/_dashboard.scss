@@ -50,23 +50,25 @@
 }
 
 .create-pet-card {
+  display: flex;
   border: solid #BFACE2;
   width: 1200px;
+  height: 320px;
   margin: 0 auto;
   padding: 15px;
   border-radius: 15px;
   box-shadow: 3px 3px 3px #BFACE2;
-}
-
-.tab-form {
-  display: flex;
-  padding: 50px;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
 }
 
 .flex-form {
   display: flex;
   justify-content: space-evenly;
+}
+
+#new_pet {
+  width: 100%;
 }
 
 .padding-blank {
@@ -76,8 +78,7 @@
 .upload-photo {
   display: flex;
   justify-content: space-between;
-  padding-left: 95px;
-  padding-right: 95px;
+  padding: 0 65px;
 }
 
 .position-btn {
