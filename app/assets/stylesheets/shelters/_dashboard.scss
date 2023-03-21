@@ -53,7 +53,7 @@
   display: flex;
   border: solid #BFACE2;
   width: 1200px;
-  height: 320px;
+  height: 360px;
   margin: 0 auto;
   padding: 15px;
   border-radius: 15px;
@@ -75,14 +75,19 @@
   padding-left: 65px;
 }
 
+.textarea-block {
+  display: block;
+  width: 400px;
+}
+
 .upload-photo {
   display: flex;
   justify-content: space-between;
-  padding: 0 65px;
+  padding: 0 60px;
 }
 
 .position-btn {
-  margin-top: 35px;
+  margin-top: 60px;
 }
 
 .justify-form {
@@ -123,6 +128,7 @@
 .pet-card-title {
   margin-top: 50px;
   margin-bottom: 50px;
+  margin-left: 88px;
 }
 
 .pet-index-card {
@@ -132,6 +138,7 @@
   border-radius: 15px;
   width: 360px;
   height: 130px;
+  position: relative;
 }
 
 .pet-index-avatar {
@@ -142,10 +149,13 @@
 
 .pet-index-info {
   padding: 5px 0 5px 15px;
+  width: 140px;
 }
 
 .pet-index-btn {
+  margin-left: 210px;
   padding-top: 10px;
+  position: absolute;
 }
 
 .edit-btn {
@@ -167,4 +177,12 @@
   &:hover {
     color: #A68BC2;
   }
+}
+
+.overflow-hidden{
+  overflow: hidden;
+}
+
+.wrap-line {
+  white-space: nowrap;
 }
