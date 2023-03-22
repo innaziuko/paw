@@ -17,6 +17,7 @@ class PagesController < ApplicationController
     @shelters = Shelter.where(user: current_user)
     @pets = Pet.where(user: current_user)
     @appointments = Appointment.where(user: current_user)
+    @favorites = Favorite.where(user: current_user)
   end
 
   private

@@ -51,7 +51,7 @@
 .user-function {
   display: flex;
   padding-left: 50px;
-  padding-right: 50px;
+  padding-right: 0px;
 }
 
 .list-dot {
@@ -88,7 +88,21 @@
 // }
 
 .appointment-list {
-  padding-left: 550px;
+  padding-left: 100px;
+}
+.favorite-list {
+  padding-left: 100px;
+}
+
+.favorite-card {
+  display: flex;
+  border: #BFACE2;
+  border-style: solid;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 40px;
+  border-radius: 15px;
+  margin-bottom: 10px;
 }
 
 .appointment-card {
@@ -110,8 +124,19 @@
   padding-left: 20px;
 }
 
+.favorite-avatar {
+  padding-left: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.favorite-name {
+  padding-left: 20px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
 .appointment-info {
-  padding-left: 25px;
+  padding-left: 30px;
 }
 
 .appointment-time {

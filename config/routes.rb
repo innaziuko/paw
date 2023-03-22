@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # post "pets", to: "pets#create", as: "create_pet"
   devise_for :users
   root to: "pages#home"
-  resources :pets, only: %i[index]
+  resources :pets
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -18,7 +18,8 @@ Rails.application.routes.draw do
       get :all
     end
     resources :appointments, only: %i[create destroy]
+    resources :favorites, only: %i[create destroy]
   end
-
+  resources :favorites, only: [:index]
   resources :appointments, only: [:index]
 end
