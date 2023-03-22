@@ -843,6 +843,15 @@ appointment9 = Appointment.create!(
 )
 appointment9.save!
 
+appointment10 = Appointment.create!(
+  date: "2023-8-5",
+  time: "18:00",
+  status: "pending",
+  pet: pet9,
+  user: user6
+)
+appointment10.save!
+
 puts "appointments created"
 
 review1 = Review.create!(
@@ -918,3 +927,17 @@ review9 = Review.create!(
 review9.save!
 
 puts "reviews created"
+
+favorite1 = Favorite.create!(
+  user: user6,
+  pet: pet10
+)
+favorite1.save!
+
+favorite2 = Favorite.create!(
+  user: user6,
+  pet: pet11
+)
+favorite2.save!
+
+puts "favorites created"

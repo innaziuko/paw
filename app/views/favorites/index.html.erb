@@ -1,0 +1,16 @@
+<% if @favorites.empty? %>
+  <h4 class="d-flex justify-content-center mt-4"><strong>You have no favorite yet 🥺</strong></h4>
+<% else %>
+  <div>
+    <% @favorites.each do |favorite| %>
+      <% pet = Pet.find_by(id: favorite.pet_id) %>
+      <a href=<%= "/pets/#{pet.id}" %> class="favorite-index-list">
+        <div class="justify-content-between top-index">
+          <br/>
+          <%= cl_image_tag pet.photo.key, width: 65, height: 65, class: "pet-avatar" %>
+          <h5 class="mb-2";><%= pet.name %></h5>
+        </div>
+      </a>
+    <% end %>
+  </div>
+<% end %>

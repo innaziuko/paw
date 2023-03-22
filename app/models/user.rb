@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   has_many :appointments
   has_many :shelters, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_pets, through: :favorites, source: :pet
 
   has_one_attached :photo
 end
