@@ -60,6 +60,24 @@
           <% end %>
         <% end %>
       </div>
+       <div class="favorite-list">
+        <h5><strong>Your Favorites</strong></h5>
+        <% if @favorites.empty? %>
+          <p>You have no favorites yet</p>
+        <% else %>
+          <% @favorites.each do |favorite| %>
+            <% pet = Pet.find_by(id: favorite.pet_id) %>
+              <div class="favorite-card">
+                <div class="favorite-avatar">
+                  <%= cl_image_tag pet.photo.key, width: 65, height: 65, class: "pet-avatar" %>
+                </div>
+                <div class="favorite-name">
+                  <a href=<%= "/pets/#{pet.id}" %> class="btn btn-primary btn-sm" role="button">Show <%= pet.name %></a>
+                </div>
+              </div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 <% end %>
