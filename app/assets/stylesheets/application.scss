@@ -1,5 +1,5 @@
 // Graphical variables
-@import 'fonts';
+@import "fonts";
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
@@ -24,8 +24,14 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+  background-color: #F0F2F8;
 }
 
 main {
   flex: 1;
+}
+
+p {
+  font-family: "Neue-Haas-D-Roman";
+  color: #2e2b2f;
 }
