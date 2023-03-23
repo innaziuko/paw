@@ -37,7 +37,7 @@ h1, h2, h3 {
 .headline {
   color:  #f2f2f2;
   font-family: 'Skillet-Regular';
-  font-size: 72pt;
+  font-size: 50pt;
   text-align: center;
   line-height: 60px;
   padding-top: 30px;
@@ -148,4 +148,79 @@ h1, h2, h3 {
 
 .subhead{
   font-size: 42pt;
+}
+
+
+
+
+
+
+
+.card-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 4px;
+  width: 900px;
+  margin: auto;
+  margin-bottom: 40px;
+  margin-top: 35px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-inline {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+  width: 144px;
+}
+
+.form-control,
+.btn-home {
+  width: 100%;
+  border-radius: 4px;
+  height: 38px;
+}
+
+.btn-home {
+  color: white;
+  font-family: "Neue-Haas-D-Medium";
+  padding: 8px 34px;
+  border-radius: 4px;
+  background: #FAB2CC;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-home:hover {
+  background: #644dfc;
+}
+
+.see_more {
+  color: #9787FD;
+  align-items: end;
+  font-family: 'Skillet-Regular';
+  font-size: 21pt;
+}
+
+.see-container{
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+  font-family: 'Skillet-Regular';
+  margin-bottom: -15px;
 }
