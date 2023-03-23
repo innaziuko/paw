@@ -74,7 +74,6 @@ class SheltersController < ApplicationController
         end
       end
     end
-    @pet = Pet.new
   end
 
   private
