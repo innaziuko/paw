@@ -4,7 +4,243 @@
       <%= cl_image_tag @shelter.photo.key, class: "border-img" %>
     </div>
     <div class="shelter-general">
-      <h1><%= @shelter.name %></h1>
+      <div class="general-info">
+        <h1 class="margin-shrink white-letter wrap-line"><%= @shelter.name %></h1>
+        <div class="adress-phone">
+          <p class="remove-margin-bottom white-letter wrap-line">Address: <%= @shelter.address %></p>
+          <p class="white-letter">Phone: <%= @shelter.phone_number %></p>
+        </div>
+        <div class="working-hour">
+          <h5 class="white-letter"><strong>Working Hours:</strong></h5>
+          <div class="flex-hour">
+            <div>
+              <p class="remove-margin-bottom white-letter">Monday</p>
+              <p class="remove-margin-bottom white-letter">Tuesday</p>
+              <p class="remove-margin-bottom white-letter">Wednesday</p>
+              <p class="remove-margin-bottom white-letter">Thrusday</p>
+              <p class="remove-margin-bottom white-letter">Friday</p>
+            </div>
+            <div class="time-margin">
+              <p class="remove-margin-bottom white-letter">9am - 6pm</p>
+              <p class="remove-margin-bottom white-letter">9am - 6pm</p>
+              <p class="remove-margin-bottom white-letter">9am - 4pm</p>
+              <p class="remove-margin-bottom white-letter">9am - 4pm</p>
+              <p class="remove-margin-bottom white-letter">9am - 8pm</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-photo">
+        <div class="edit-shelter-btn">
+          <%= button_to "Edit Profile", edit_shelter_path(@shelter), method: :get, class: "polish-button" %>
+        </div>
+        <div class="info-photo-flex">
+          <%= image_tag "pets_comp7.png", alt: "", width:"100%" %>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="shelter-description">
+    <div class="description">
+      <h4 class="white-letter"><strong>Description</strong></h4>
+      <p class="white-letter text-evenly"><%= @shelter.description %></p>
+    </div>
+    <div class="description-right">
+      <div class="pet-count">
+        <div>
+          <h4 class="white-letter"><strong>Cats</strong></h4>
+          <h4 class="white-letter"><%= @pets.where(species: "cat").count %></h4>
+        </div>
+        <div>
+          <h4 class="white-letter"><strong>Dogs</strong></h4>
+          <h4 class="white-letter"><%= @pets.where(species: "dog").count %></h4>
+        </div>
+        <div>
+          <h4 class="white-letter"><strong>Adopted</strong></h4>
+          <h4 class="white-letter"><%= @pets.where(status: "adopted").count %></h4>
+        </div>
+      </div>
+      <div class="description-photo">
+        <%= image_tag "pets_comp5.png", alt: "", width:"40%" %>
+      </div>
+    </div>
+  </div>
+  <div class="pets-of-shelter">
+    <div class="">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true">All</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="catall-tab" data-bs-toggle="tab" data-bs-target="#cats" type="button" role="tab" aria-controls="cats" aria-selected="false">Cats</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="dogall-tab" data-bs-toggle="tab" data-bs-target="#dogs" type="button" role="tab" aria-controls="dogs" aria-selected="false">Dogs</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="other-tab" data-bs-toggle="tab" data-bs-target="#other" type="button" role="tab" aria-controls="other" aria-selected="false">Others</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="adopted-tab" data-bs-toggle="tab" data-bs-target="#adopted" type="button" role="tab" aria-controls="adopted" aria-selected="false">Adopted</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active pet-index-container" id="all" role="tabpanel" aria-labelledby="all-tab">
+          <%= render "pet_card" %>
+        </div>
+        <div class="tab-pane fade pet-index-container" id="cats" role="tabpanel" aria-labelledby="catall-tab">
+          <% cats = @pets.where(species: "cat") %>
+          <% if cats.empty? %>
+            <h4 calss="text-center"><strong>This shelter has no cat yet.</strong></h4>
+          <% else %>
+            <div class="pet-index">
+              <% cats.each do |cat| %>
+                <div class="pet-index-card">
+                  <div class="pet-index-card-avatar">
+                    <%= cl_image_tag cat.photo.key, width: 85, class: "pet-index-avatar" %>
+                  </div>
+                  <div class="pet-index-info">
+                    <div class="pet-info overflow-hidden">
+                      <h5 class="wrap-line white-letter"><strong><%= cat.name %></strong></h5>
+                      <h6 class="wrap-line white-letter"> <%= cat.gender %> · <%= cat.age %> · <%= cat.breed %></h6>
+                    </div>
+                    <div class="edit-btn">
+                      <%= button_to "Edit", edit_pet_path(cat), method: :get, class: "pet-edit-btn" %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <div class="tab-pane fade pet-index-container" id="dogs" role="tabpanel" aria-labelledby="dogall-tab">
+          <% dogs = @pets.where(species: "dog") %>
+          <% if dogs.empty? %>
+            <h4 calss="text-center"><strong>This shelter has no dog yet.</strong></h4>
+          <% else %>
+            <div class="pet-index">
+              <% dogs.each do |dog| %>
+                <div class="pet-index-card">
+                  <div class="pet-index-card-avatar">
+                    <%= cl_image_tag dog.photo.key, width: 85, class: "pet-index-avatar" %>
+                  </div>
+                  <div class="pet-index-info">
+                    <div class="pet-info overflow-hidden">
+                      <h5 class="wrap-line white-letter"><strong><%= dog.name %></strong></h5>
+                      <h6 class="wrap-line white-letter"> <%= dog.gender %> · <%= dog.age %> · <%= dog.breed %></h6>
+                    </div>
+                    <div class="edit-btn">
+                      <%= button_to "Edit", edit_pet_path(dog), method: :get, class: "pet-edit-btn" %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <div class="tab-pane fade pet-index-container" id="other" role="tabpanel" aria-labelledby="other-tab">
+          <% others = @pets.where.not(species: ['cat', 'dog']) %>
+          <% if others.empty? %>
+            <h4 calss="text-center"><strong>Oops...</strong></h4>
+          <% else %>
+            <div class="pet-index">
+              <% others.each do |other| %>
+                <div class="pet-index-card">
+                  <div class="pet-index-card-avatar">
+                    <%= cl_image_tag other.photo.key, width: 85, class: "pet-index-avatar" %>
+                  </div>
+                  <div class="pet-index-info">
+                    <div class="pet-info overflow-hidden">
+                      <h5 class="wrap-line white-letter"><strong><%= other.name %></strong></h5>
+                      <h6 class="wrap-line white-letter"> <%= other.gender %> · <%= other.age %> · <%= other.breed %></h6>
+                    </div>
+                    <div class="edit-btn">
+                      <%= button_to "Edit", edit_pet_path(other), method: :get, class: "pet-edit-btn" %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <div class="tab-pane fade pet-index-container" id="adopted" role="tabpanel" aria-labelledby="adopted-tab">
+          <% adopted = @pets.where(status: "adopted") %>
+          <% if adopted.empty? %>
+            <h4 class="text-center"><strong>Waiting for adoption...</strong></h4>
+          <% else %>
+            <div class="pet-index">
+              <% adopted.each do |adopt| %>
+                <div class="pet-index-card">
+                  <div class="pet-index-card-avatar">
+                    <%= cl_image_tag adopt.photo.key, width: 85, class: "pet-index-avatar" %>
+                  </div>
+                  <div class="pet-index-info">
+                    <div class="pet-info overflow-hidden">
+                      <h5 class="wrap-line white-letter"><strong><%= adopt.name %></strong></h5>
+                      <h6 class="wrap-line white-letter"> <%= adopt.gender %> · <%= adopt.age %> · <%= adopt.breed %></h6>
+                    </div>
+                    <div class="edit-btn">
+                      <%= button_to "Edit", edit_pet_path(adopt), method: :get, class: "pet-edit-btn" %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="appointment-request">
+    <h4 class="white-letter"><strong>Appointment Requests</strong></h4>
+    <% if @appointments.empty? %>
+      <div class="appointment-card-empty">
+        <h1 class="white-letter">Oops...You have no upcoming appointment yet.</h1>
+      </div>
+    <% else %>
+      <div class="appointment-request-group">
+        <% @appointments.each do |appointment| %>
+          <% pet = Pet.find_by(id: appointment.pet_id) %>
+          <div class="appointment-request-card">
+            <div class="appointment-card-info">
+              <div class="appointment-card-date">
+                <h5 class="white-letter"><strong><%= appointment.date %></strong></h6>
+                <h5 class="white-letter"><strong>Pet:</strong>  <%= pet.name %></h6>
+              </div>
+              <div class="appointment-card-time">
+                <h5 class="white-letter"><strong>Time:</strong>  <%= appointment.time.strftime("%H:%M") %></h5>
+              </div>
+            </div>
+            <div class="appointment-card-btn">
+              <button class="accept-btn">Accept</button>
+              <button class="decline-btn">Decline</button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div class="shelter-review">
+    <h4 class="white-letter"><strong>Reviews</strong></h4>
+    <% if @reviews.empty? %>
+      <div class="review-empty">
+        <h1 class="white-letter">Oops...This shelter have no review yet.</h1>
+      </div>
+    <% else %>
+      <div class="review-list">
+        <% @reviews.each do |review| %>
+          <% review_user = User.find_by(id: review.user_id) %>
+          <div class="review-card">
+            <div class="review-photo">
+              <%= cl_image_tag review_user.photo.key, width: 100, height: 100, class: "review-avatar" %>
+            </div>
+            <div class="review-content">
+              <h5 class="white-letter"><strong><%= review.title %></strong></h5>
+              <p class="white-letter text-evenly"><%= review.comment %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>

@@ -45,18 +45,21 @@
         <% else %>
           <% @appointments.each do |appointment| %>
             <% pet = Pet.find_by(id: appointment.pet_id) %>
-              <div class="appointment-card">
-                <div class="appointment-avatar">
-                  <%= cl_image_tag pet.photo.key, width: 65, height: 65, class: "pet-avatar" %>
-                </div>
-                <div class="appointment-info">
-                  <h6><strong><%= appointment.date %></strong></h6>
-                  <h6><strong>Pet:</strong>  <%= pet.name %></h6>
-                </div>
-                <div class="appointment-time">
-                  <h6><strong>Time:</strong>  <%= appointment.time.strftime("%H:%M") %></h6>
-                </div>
-              </div>
+              <% @appointments.each do |appointment| %>
+          <% pet = Pet.find_by(id: appointment.pet_id) %>
+          <div class="appointment-card">
+            <div class="appointment-avatar">
+              <%= cl_image_tag pet.photo.key, width: 65, height: 65, class: "pet-avatar" %>
+            </div>
+            <div class="appointment-info">
+              <h6><strong><%= appointment.date %></strong></h6>
+              <h6><strong>Pet:</strong>  <%= pet.name %></h6>
+            </div>
+            <div class="appointment-time">
+              <h6><strong>Time:</strong>  <%= appointment.time.strftime("%H:%M") %></h6>
+            </div>
+          </div>
+        <% end %>
           <% end %>
         <% end %>
       </div>

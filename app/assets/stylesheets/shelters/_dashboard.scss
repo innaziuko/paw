@@ -1,15 +1,15 @@
 .dashboard-container {
   width: 90vw;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 
 .shelter-info {
   display: flex;
-  margin-top: 30px;
+  height: 320px;
 }
 
 .shelter-photo {
-  width: 45%;
+  width: 50%;
 }
 
 .border-img {
@@ -20,6 +20,305 @@
 }
 
 .shelter-general {
-  width: 45%;
+  display: flex;
+  width: 50%;
   margin-left: 20px;
+  background-color: #9787FD;
+  border-radius: 15px;
+  padding: 15px 20px 15px 60px;
+}
+
+.margin-shrink {
+  margin-bottom: 5px;
+}
+
+.remove-margin-bottom {
+  margin-bottom: 1px;
+}
+
+.white-letter {
+  color: white;
+}
+
+.flex-hour {
+  display: flex;
+}
+
+.time-margin {
+  margin-left: 95px;
+}
+
+.info-photo{
+  margin-left: 55px;
+  width: 250px;
+  padding-top: 10px;
+}
+
+.polish-button {
+  border: none;
+  background-color: #FAB2CC;
+  text-decoration: none;
+  color: white;
+  padding: 8px 21px;
+  border-radius: 5px;
+  &:hover {
+    background-color: #D27685;
+    color: white;
+  }
+}
+
+.edit-shelter-btn {
+  text-align: end;
+}
+
+.info-photo-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 65px;
+}
+
+.shelter-description {
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+  height: 380px;
+  background-color: #9787FD;
+  border-radius: 15px;
+}
+
+.description {
+  width: 60%;
+  padding: 20px 35px;
+}
+
+.text-evenly {
+  text-align: justify;
+}
+
+.description-right {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pet-count {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  padding: 20px 35px;
+}
+
+.description-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+}
+
+.pets-of-shelter {
+  margin-top: 30px;
+}
+
+.pet-index {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.pet-index {
+  margin-top: 20px;
+}
+
+.pet-index-card {
+  background-color: #9787FD;
+  border-radius: 15px;
+  height: 320px;
+}
+
+.pet-index-avatar {
+  width: 100%;
+  height: 250px;
+  border-radius: 15px 15px 0px 0px;
+  object-fit: cover;
+}
+
+.pet-index-info {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pet-info {
+  width: 70%;
+}
+
+.pet-edit-btn {
+  border: solid #FAB2CC;
+  text-decoration: none;
+  background: none;
+  color: white;
+  border-radius: 5px;
+  padding: 2px 15px;
+}
+
+.edit-btn {
+  display: flex;
+  align-items: end;
+  margin-bottom: 10px;
+}
+
+.overflow-hidden{
+  overflow: hidden;
+}
+
+.wrap-line {
+  white-space: nowrap;
+}
+
+.create-pet-btn {
+  border-radius: 15px;
+}
+
+.create-pet-btn-img {
+  display: flex;
+  height: 250px;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-btn {
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+  justify-content: end;
+}
+
+.create-new-btn {
+  border: none;
+  background-color: #FAB2CC;
+  text-decoration: none;
+  color: white;
+  // padding-top: 22px;
+  // padding-bottom: 22px;
+  height: 70px;
+  width: 100%;
+  font-weight: bolder;
+  font-size: 25px;
+  font-style: italic;
+  border-radius: 0 0 15px 15px;
+  &:hover {
+    background-color: #D27685;
+    color: white;
+  }
+}
+
+.appointment-request {
+  margin-top: 30px;
+  background-color: #9787FD;
+  border-radius: 15px;
+  padding: 20px 35px;
+}
+
+.appointment-card-empty {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.appointment-request-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.appointment-request-card {
+  border: solid white;
+  border-radius: 15px;
+  height: 160px;
+  padding: 15px;
+}
+
+.appointment-card-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.appointment-card-btn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  align-items: end;
+}
+
+.accept-btn {
+  border: solid #FAB2CC;
+  background-color: #FAB2CC;
+  text-decoration: none;
+  color: white;
+  padding: 4px 27px;
+  border-radius: 5px;
+  &:hover {
+    background-color: #D27685;
+    color: white;
+  }
+}
+
+.decline-btn {
+  border: solid #FAB2CC;
+  text-decoration: none;
+  background-color: #9787FD;
+  color: white;
+  padding: 4px 27px;
+  border-radius: 5px;
+  &:hover {
+    background-color: #b9b1ef;
+    color: white;
+  }
+}
+
+.shelter-review {
+  margin-top: 30px;
+  background-color: #9787FD;
+  border-radius: 15px;
+  padding: 20px 35px;
+}
+
+.review-empty {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-card {
+  display: flex;
+  border: solid white;
+  border-radius: 15px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 100%;
+  height: 160px;
+  padding: 20px;
+  position: relative;
+}
+
+.review_photo {
+  height: 100%;
+  position: absolute;
+}
+
+.review-avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-content {
+  margin-left: 35px;
+  margin-right: 35px;
 }
