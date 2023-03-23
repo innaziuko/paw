@@ -17,9 +17,15 @@
   margin-left: 30px;
 }
 
+.logo-image:hover {
+  color:  #b9b1ef;
+}
+
 .nav-link {
   color:  #9787FD;
   font-family: "Neue-Haas-D-Medium";
+  letter-spacing: 0.7pt;
+  font-size: 12pt;
 }
 
 .nav-link:hover {
@@ -29,6 +35,8 @@
 .dropdown-item{
   color:  #9787FD;
   font-family: "Neue-Haas-D-Medium";
+  letter-spacing: 0.7pt;
+  font-size: 14.5pt;
 }
 
 .dropdown-item:hover {
