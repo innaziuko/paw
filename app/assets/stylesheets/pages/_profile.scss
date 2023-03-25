@@ -1,12 +1,29 @@
+.profile-container {
+  width: 90vw;
+  margin: 30px auto;
+}
+
 .profile-banner {
+  width: 100%;
+  height: 260px;
+  background-color: #9787FD;
+  border-radius: 15px;
   display: flex;
-  padding: 50px;
+  padding: 30px;
   justify-content: space-between;
 }
 
 .profile-left {
   display: flex;
+  width: 60%;
 }
+
+.profile-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .profile-right {
   display: flex;
@@ -19,20 +36,39 @@
 }
 
 .user-info {
-  margin-left: 10px;
-  // padding-top: 5px;
+  width: 40%;
+  margin-left: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.user-edit-btn {
+  width: 45%;
+  padding-left: 0px;
+  border: none;
+  background-color: #FAB2CC;
+  text-decoration: none;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: asset-url("cursor.png") , default!important;
+  &:hover {
+    background-color: #FCC2FC;
+  }
 }
 
 .polish-button{
   padding-left: 0px;
   border: none;
-  background-color: #BFACE2;
+  background-color: #FAB2CC;
   text-decoration: none;
   color: white;
   padding: 5px 8px;
   border-radius: 5px;
+  cursor: asset-url("cursor.png") , default!important;
   &:hover {
-    background-color: #A68BC2;
+    background-color: #FCC2FC;
   }
 }
 
@@ -41,17 +77,143 @@
 }
 
 .user-description {
-  padding: 40px 550px 40px 50px;
+  text-align: justify;
 }
 
 .text-justify {
   text-align: justify;
 }
 
-.user-function {
+.profile-appointment {
+  margin-top: 25px;
+  background-color: #9787FD;
+  border-radius: 15px;
+  padding: 25px;
+}
+
+.profile-appointment-empty {
+  height: 170px;
   display: flex;
-  padding-left: 50px;
-  padding-right: 0px;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-appointment-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.profile-appointment-card {
+  display: flex;
+  border: solid white;
+  color: white;
+  text-decoration: none;
+  height: 120px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  transition: .3s ease;
+  cursor: asset-url("cursor.png") , default!important;
+  &:hover {
+    border: solid #FAB2CC;
+    color: #FAB2CC;
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+  }
+}
+
+.pet-avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-appointment-avatar {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-appointment-date {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profile-appointment-time {
+  padding-left: 70px;
+  padding-right: 20px;
+}
+
+.profile-shelter-favourites {
+  display: flex;
+  margin-top: 25px;
+  justify-content: space-between;
+}
+
+.profile-shelter-empty {
+  width: 50%;
+  background-color: #9787FD;
+  height: 220px;
+  border-radius: 15px;
+  padding: 25px;
+}
+
+.profile-create-shelter {
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-shelter-btn {
+  border: none;
+  background-color: #FAB2CC;
+  text-decoration: none;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: asset-url("cursor.png") , default!important;
+  &:hover {
+    background-color: #FCC2FC;
+  }
+}
+
+.profile-favorites-empty {
+  width: 50%;
+  background-color: #9787FD;
+  height: 220px;
+  border-radius: 15px;
+  margin-left: 20px;
+  padding: 25px;
+}
+
+.favorite-empty-sign {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+}
+
+.profile-shelter-list {
+  width: 50%;
+  background-color: #9787FD;
+  border-radius: 15px;
+  padding: 25px;
+}
+
+.profile-shelter-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .list-dot {
@@ -65,81 +227,22 @@
   a {
     display: block;
     text-decoration: none;
-    color: #BFACE2;
+    color: white;
     position: relative;
     width: 100%;
     margin-bottom: 20px;
-    background-image: url("https://www.toptal.com/designers/subtlepatterns/uploads/leaves.png");
     background-repeat: no-repeat;
     text-align: center;
-    border-radius: 20px;
-    border: solid #BFACE2;
+    border-radius: 15px;
+    border: solid white;
     transition: .3s ease;
+    cursor: asset-url("cursor.png") , default!important;
     &:hover {
-      transform: scale(1.1);
-      -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
+      border: solid #FAB2CC;
+      color: #FAB2CC;
+      transform: scale(1.05);
+      -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
     }
   }
-}
-
-// .list-decoration {
-//   text-decoration: none;
-// }
-
-.appointment-list {
-  padding-left: 100px;
-}
-.favorite-list {
-  padding-left: 100px;
-}
-
-.favorite-card {
-  display: flex;
-  border: #BFACE2;
-  border-style: solid;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-right: 40px;
-  border-radius: 15px;
-  margin-bottom: 10px;
-}
-
-.appointment-card {
-  display: flex;
-  border: #BFACE2;
-  border-style: solid;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-radius: 15px;
-  margin-bottom: 10px;
-}
-
-.pet-avatar {
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.appointment-avatar {
-  padding-left: 20px;
-}
-
-.favorite-avatar {
-  padding-left: 20px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
-
-.favorite-name {
-  padding-left: 20px;
-  padding-top: 25px;
-  padding-bottom: 25px;
-}
-.appointment-info {
-  padding-left: 30px;
-}
-
-.appointment-time {
-  padding-left: 70px;
-  padding-right: 20px;
 }

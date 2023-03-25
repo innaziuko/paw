@@ -61,6 +61,7 @@
   color: white;
   padding: 8px 21px;
   border-radius: 5px;
+  cursor: asset-url("cursor.png") , default!important;
   &:hover {
     background-color: #D27685;
     color: white;
@@ -162,6 +163,7 @@
   color: white;
   border-radius: 5px;
   padding: 2px 15px;
+  cursor: asset-url("cursor.png") , default!important;
 }
 
 .edit-btn {
@@ -194,6 +196,7 @@
   flex-direction: column;
   height: 70px;
   justify-content: end;
+  cursor: asset-url("cursor.png") , default!important;
 }
 
 .create-new-btn {
@@ -209,6 +212,7 @@
   font-size: 25px;
   font-style: italic;
   border-radius: 0 0 15px 15px;
+  cursor: asset-url("cursor.png") , default!important;
   &:hover {
     background-color: #D27685;
     color: white;
@@ -263,6 +267,7 @@
   color: white;
   padding: 4px 27px;
   border-radius: 5px;
+  cursor: asset-url("cursor.png") , default!important;
   &:hover {
     background-color: #D27685;
     color: white;
@@ -276,6 +281,7 @@
   color: white;
   padding: 4px 27px;
   border-radius: 5px;
+  cursor: asset-url("cursor.png") , default!important;
   &:hover {
     background-color: #b9b1ef;
     color: white;
