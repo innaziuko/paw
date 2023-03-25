@@ -18,8 +18,64 @@
     </div>
   </div>
   <div class="profile-appointment">
-    <h4 class="white-letter">Appointments</h4>
+    <h4 class="white-letter"><strong>Appointments</strong></h4>
     <% if @appointments.empty? %>
+      <div class="profile-appointment-empty">
+        <h1 class="white-letter">Go get your first appointment</h1>
+      </div>
+    <% else %>
+      <div class="profile-appointment-info">
+        <% @appointments.each do |appointment| %>
+          <% pet = Pet.find_by(id: appointment.pet_id) %>
+          <a href=<%= "/pets/#{pet.id}" %> class="profile-appointment-card">
+            <div class="profile-appointment-avatar">
+              <%= cl_image_tag pet.photo.key, width: 75, height: 75, class: "pet-avatar" %>
+            </div>
+            <div class="profile-appointment-date">
+              <div>
+                <h6><strong><%= appointment.date %></strong></h6>
+              </div>
+              <div>
+                <h6><strong>Pet:</strong>  <%= pet.name %></h6>
+              </div>
+            </div>
+            <div class="profile-appointment-time">
+              <h6><strong>Time:</strong>  <%= appointment.time.strftime("%H:%M") %></h6>
+            </div>
+          </a>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="profile-shelter-favourites">
+    <% if @shelters.empty? %>
+      <div class="profile-shelter-empty">
+        <h4 class="white-letter"><strong>My Shelters</strong></h4>
+        <div class="profile-create-shelter">
+          <h5 class="white-letter"><strong>Wanna Create A Shelter?</strong></h5>
+          <%= button_to "Create Shelter", new_shelter_path, method: :get, class: "create-shelter-btn" %>
+        </div>
+      </div>
+    <% else %>
+      <div class="profile-shelter-list">
+        <h4 class="white-letter"><strong>My Shelters</strong></h4>
+        <div class="profile-shelter-link">
+          <ul class="list-dot">
+            <% @shelters.each do |shelter| %>
+              <li class="equal-size"><a href=<%= "/shelters/#{shelter.id}/dashboard" %> class="list-decoration"><%= shelter.name %></a></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+    <% if @favorites.empty? %>
+      <div class="profile-favorites-empty">
+        <h4 class="white-letter"><strong>My Favorites</strong></h4>
+        <div class="favorite-empty-sign">
+          <h1 class="white-letter">You haven't liked any pet yet</h1>
+        </div>
+      </div>
     <% else %>
     <% end %>
   </div>
