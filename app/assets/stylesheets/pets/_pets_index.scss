@@ -1,0 +1,43 @@
+.container {
+  margin-top: 60px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.pet-index-card {
+  background-color: #9787FD;
+  border-radius: 15px;
+  height: 300px;
+}
+
+.pet-index-avatar {
+  width: 100%;
+  height: 180px;
+  border-radius: 15px 15px 0px 0px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-body {
+  display: flex;
+}
+
+.pet-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.pet-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.wrap-line {
+  white-space: nowrap;
+}
