@@ -5,7 +5,8 @@ class AppointmentsController < ApplicationController
 
   def create
     pet = Pet.find_by(id: params[:pet_id])
-    appointment = Appointment.new(pet: pet, user: current_user, date: Time.now, time: Time.now, status: 'pending')
+    appointment_schedule = DateTime.parse(params[:appointmentdate] + " " + params[:appointmenttime])
+    appointment = Appointment.new(pet: pet, user: current_user, date: appointment_schedule.to_date, time: appointment_schedule, status: 'pending')
     authorize appointment
     if appointment.save!
       redirect_to appointments_path
