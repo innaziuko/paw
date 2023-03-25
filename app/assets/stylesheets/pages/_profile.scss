@@ -1,12 +1,29 @@
+.profile-container {
+  width: 90vw;
+  margin: 30px auto;
+}
+
 .profile-banner {
+  width: 100%;
+  height: 260px;
+  background-color: #9787FD;
+  border-radius: 15px;
   display: flex;
-  padding: 50px;
+  padding: 30px;
   justify-content: space-between;
 }
 
 .profile-left {
   display: flex;
+  width: 60%;
 }
+
+.profile-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .profile-right {
   display: flex;
@@ -19,8 +36,25 @@
 }
 
 .user-info {
-  margin-left: 10px;
-  // padding-top: 5px;
+  width: 40%;
+  margin-left: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.user-edit-btn {
+  width: 45%;
+  padding-left: 0px;
+  border: none;
+  background-color: #FAB2CC;
+  text-decoration: none;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 5px;
+  &:hover {
+    background-color: #FCC2FC;
+  }
 }
 
 .polish-button{
@@ -41,105 +75,22 @@
 }
 
 .user-description {
-  padding: 40px 550px 40px 50px;
+  text-align: justify;
 }
 
 .text-justify {
   text-align: justify;
 }
 
-.user-function {
-  display: flex;
-  padding-left: 50px;
-  padding-right: 0px;
-}
-
-.list-dot {
-  display: flex;
-  flex-direction: column;
-  width: 250px;
-  padding: 0px;
-  margin: 0px;
-  list-style-type: none;
-  line-height: 60px;
-  a {
-    display: block;
-    text-decoration: none;
-    color: #BFACE2;
-    position: relative;
-    width: 100%;
-    margin-bottom: 20px;
-    background-image: url("https://www.toptal.com/designers/subtlepatterns/uploads/leaves.png");
-    background-repeat: no-repeat;
-    text-align: center;
-    border-radius: 20px;
-    border: solid #BFACE2;
-    transition: .3s ease;
-    &:hover {
-      transform: scale(1.1);
-      -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-    }
-  }
-}
-
-// .list-decoration {
-//   text-decoration: none;
-// }
-
-.appointment-list {
-  padding-left: 100px;
-}
-.favorite-list {
-  padding-left: 100px;
-}
-
-.favorite-card {
-  display: flex;
-  border: #BFACE2;
-  border-style: solid;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-right: 40px;
+.profile-appointment {
+  margin-top: 25px;
+  background-color: #9787FD;
   border-radius: 15px;
-  margin-bottom: 10px;
+  padding: 25px;
 }
 
-.appointment-card {
+.appointment-content {
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: flex;
-  border: #BFACE2;
-  border-style: solid;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-radius: 15px;
-  margin-bottom: 10px;
-}
-
-.pet-avatar {
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.appointment-avatar {
-  padding-left: 20px;
-}
-
-.favorite-avatar {
-  padding-left: 20px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
-
-.favorite-name {
-  padding-left: 20px;
-  padding-top: 25px;
-  padding-bottom: 25px;
-}
-.appointment-info {
-  padding-left: 30px;
-}
-
-.appointment-time {
-  padding-left: 70px;
-  padding-right: 20px;
 }
