@@ -453,12 +453,12 @@ pet12.save!
 
 file = URI.open("https://woodgreen.org.uk/wp-content/uploads/2023/03/Emmanuel.jpeg")
 pet13 = Pet.create!(
-  name: "Emmanuel & Matilda",
+  name: "Emma",
   age: 1,
   breed: "Domestic Short Hair",
-  description: "Emmanuel and Matilda came into us as their owner was not able to care for them anymore. Although they are not related, they are very close and are often found cuddled up together and grooming each other. Emmanuel is a bit shy until settled, but once he is comfortable, he is very affectionate and playful and enjoys a lap. Matilda is a very nervous, sensitive girl who will need a patient and understanding owner who is willing to give her the time and space she needs to feel safe. Once she is settled, she enjoys a gentle chin rub, but it may take her a long time to get to this point. Matilda seems to gain a lot of confidence from having Emmanuel around and seems much more relaxed around people when he is close by.",
+  description: "Emma came into us as his owner was not able to care for he anymore. Emma is a bit shy until settled, but once she is comfortable, she is very affectionate and playful and enjoys a lap. Emma is sensitive girl who will need a patient and understanding owner who is willing to give her the time and space she needs to feel safe. Once she is settled, she enjoys a gentle chin rub, but it may take her a long time to get to this point.",
   species: "cat",
-  gender: "Male & Female",
+  gender: "Female",
   shelter: shelter5
 )
 pet13.photo.attach(io: file, filename: 'Emmanuel.jpg', content_type: 'image/jpg')
@@ -533,7 +533,7 @@ file = URI.open("https://woodgreen.org.uk/wp-content/uploads/2022/10/Pishi-04302
 pet19 = Pet.create!(
   name: "Pishi",
   age: 9,
-  breed: "American CURI Cat Breed",
+  breed: "American Shorthair",
   description: "Meet Pishi! Pishi is looking for a new home with experienced cat owners who understand his behaviour and will offer him patience and time to settle in. He is very nervous about his new surroundings understandably and can be unpredictable. He has previously been kept indoors and has become frustrated, leading to some negative behaviour. Once settled, Pishi is a lovely cat that likes to sit near you and have a small amount of fuss. He is a playful boy, loving dangly toys and his tunnel.",
   species: "cat",
   gender: "Male",
@@ -559,7 +559,7 @@ file = URI.open("https://www.dogstrust.org.uk/images/800x600/dogs/3010030/0686M0
 pet21 = Pet.create!(
   name: "Alfie",
   age: 5,
-  breed: "Terrier (Jack Russell) Cross",
+  breed: "Terrier Cross",
   description: "Alfie is looking for a home with his brother Archie and they'd like to be the only dogs in the home. The pair will need an adult only household with owners who are around most of the day. They have been house trained so should pick this up quickly but will need their time away from human pals slowly building up. Alfie can demonstrate a sit but doesn't seem to know any other tricks. He may enjoy keeping his mind active learning some but shouldn't need to much in the way of other training.",
   species: "dog",
   gender: "Male",
@@ -585,7 +585,7 @@ file = URI.open("https://www.dogstrust.org.uk/images/800x600/dogs/1257198/0686M0
 pet23 = Pet.create!(
   name: "Ares",
   age: 6,
-  breed: "Terrier (Staffordshire Bull) Cross",
+  breed: "Terrier Cross",
   description: "Ares is a great boy who will make a wonderful addition to his furever home! He can be a sensitive sausage and will need his new guardians to go at his pace and give him plenty of time to settle and find his paws. He loves playing with his toys and is very affectionate once he gets to know you! He will need to be the only dog in the home and would prefer access to quiet walking areas as meeting other dogs can be uncomfortable for him. He is looking for a quiet adult only home with minimal visitors so he can have all the attention to himself. Ares has lived in a home before and was housetrained and good to be left alone for a few hours, though he may need a refresher (his favourite treats will help!). He isn't too used to traveling at the moment so this will need building up in his new home to make it a positive experience for him. Because Ares is a worried boy he will need his new owners to visit him a few times before he goes home so he can build a positive relationship up with you and show off al the things he is learning (and have lots of treats of course!). Ares will need access to his own secure garden so he can zoom around and play with his favourite toys!",
   species: "dog",
   gender: "Male",

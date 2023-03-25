@@ -1,0 +1,82 @@
+.container-pets {
+  margin-top: 0px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.pets-view-card{
+  border-radius: 15px;
+  height: 350px;
+  background-color: #9787FD;
+}
+
+.pet-view-info {
+  margin-top: 5px;
+  margin-left: 18px;
+  margin-right: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pet_image{
+  width: 100%;
+  height: 250px;
+  border-radius: 15px 15px 0px 0px;
+  object-fit: cover;
+}
+
+.card-body {
+  display: flex;
+  padding: 0px;
+}
+
+
+.pet-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.pets-card-header {
+  color: #fff;
+  font-size: 29pt;
+  margin-bottom: -1px;
+}
+
+.white-text {
+  font-family: "Neue-Haas-D-Roman";
+  color: #fff;
+  margin-bottom: 2px;
+  font-size: 10pt;
+}
+
+.shelter{
+  font-size: 15px;
+  font-family: 'Neue-Haas-D-Medium';
+  color: #fff;
+  margin-top:0px;
+  line-height: 1.1;
+  font-weight: 200;
+}
+
+.shelter-top{
+  font-family: "Neue-Haas-D-Roman";
+  color: #fff;
+  font-size: 10pt;
+  margin-top:20px;
+  margin-bottom: 0px;
+}
+
+.right-align-text {
+  text-align: right;
+}
+
+.shelter-container {
+  display: flex;
+  flex-direction: column-reverse;
+  height: 52px;
+  overflow: hidden;
+}

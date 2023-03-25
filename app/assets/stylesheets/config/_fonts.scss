@@ -1,9 +1,9 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: "Neue-Haas-D-Roman", "Helvetica", "sans-serif";
+$headers-font: "Skillet-Regular", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -14,3 +14,52 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+@font-face {
+  font-family: "Skillet-Regular";
+  src: font-url("Skillet-Regular.otf") format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Skillet-Condensed-Regular";
+  src: font-url("Skillet-Condensed-Regular.otf") format('opentype');
+  font-weight: condensed;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue-Haas-Text-Roman";
+  src: font-url("Neue-Haas-Text-Roman.otf") format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue-Haas-Text-Medium";
+  src: font-url("Neue-Haas-Text-Medium.otf") format('opentype');
+  font-weight: medium;
+  font-style: text;
+}
+
+@font-face {
+  font-family: "Neue-Haas-D-Roman";
+  src: font-url("Neue-Haas-D-Roman.otf") format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue-Haas-D-Medium";
+  src: font-url("Neue-Haas-D-Medium.otf") format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue-Haas-D-Black";
+  src: font-url("Neue-Haas-D-Black.otf") format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
