@@ -64,17 +64,32 @@
   <% end %>
 
 
-   <div class="d-flex justify-content-end">
+   <div class="d-flex justify-content-left">
     <div>
       <% if Appointment.find_by(pet: @pet, user: current_user).present? %>
         <div> <%= button_to 'Cancel Appointment', pet_appointment_path(@pet.id), method: :delete, class: "btn btn-outline-primary btn-lg" %></div>
         <% else %>
-        <div> <%= button_to 'Create Appointment', pet_appointments_path(@pet.id), method: :post, class: "btn btn-outline-primary btn-lg" %></div>
+        <div>
+          <form action=<%= "/pets/#{@pet.id}/appointments" %> method="post">
+            <div class="mb-3">
+              <label for="appointmentdate" class="form-label">Pick A Date</label>
+              <input type="date" class="form-control" id="appointmentdate" name="appointmentdate">
+            </div>
+            <div class="mb-3">
+              <label for="appointmenttime" class="form-label">Pick A Time</label>
+              <input type="time" class="form-control" id="appointmenttime" name="appointmenttime">
+            </div>
+            <button type="submit" class="btn btn-primary">Create Appointment</button>
+          </form>
+        </div>
       <% end %>
       </div>
-      <a href="/pets" class="btn btn-outline-primary btn-lg mb-2 mt-0" role="button">Go back to all pets</a>
     </div>
   </div>
+  <div class="col-md-8">
+    <a href="/pets" class="btn btn-outline-primary btn-lg mb-2 mt-0" role="button">Go back to all pets</a>
+  </div>
+
 
   <div data-controller="map"
           id='map'
