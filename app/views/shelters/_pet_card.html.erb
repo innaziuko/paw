@@ -14,8 +14,8 @@
       </div>
       <div class="pet-index-info">
         <div class="pet-info overflow-hidden">
-          <h5 class="wrap-line white-letter"><strong><%= pet.name %></strong></h5>
-          <h6 class="wrap-line white-letter"> <%= pet.gender %> · <%= pet.age %> · <%= pet.breed %></h6>
+          <h5 class="wrap-line white-letter-header"><%= pet.name %></h5>
+          <h6 class="wrap-line white-letter-text"> <%= pet.gender %> · <%= pet.age %> · <%= pet.breed %></h6>
         </div>
         <div class="edit-btn">
           <%= button_to "Edit", edit_pet_path(pet), method: :get, class: "pet-edit-btn" %>

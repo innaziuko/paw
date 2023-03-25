@@ -36,8 +36,18 @@
   margin-bottom: 1px;
 }
 
-.white-letter {
+.white-letter-header {
   color: white;
+  font-family: 'Skillet-Regular';
+  font-size: 27pt;
+  line-height: 0.8;
+  letter-spacing: 0.7pt;
+}
+
+.white-letter-text {
+  color: white;
+  font-family: "Neue-Haas-D-Roman";
+  font-size: 10pt;
 }
 
 .flex-hour {
@@ -135,7 +145,7 @@
 .pet-index-card {
   background-color: #9787FD;
   border-radius: 15px;
-  height: 320px;
+  height: 330px;
 }
 
 .pet-index-avatar {
@@ -153,6 +163,7 @@
 
 .pet-info {
   width: 70%;
+  margin-left: 10px;
 }
 
 .pet-edit-btn {

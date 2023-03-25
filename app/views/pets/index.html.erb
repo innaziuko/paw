@@ -1,20 +1,16 @@
-
 <div class="container">
-  <div class="row row-cols-1 row-cols-md-3 g-0">
+  <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
     <% @pets.each do |pet| %>
       <% if pet.photo.attached? %>
         <div class="col">
-          <div class="card card-border m-3">
-              <%= link_to(pet) do %>
-              <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top img-border" %>
-              <% end %>
-            <div class="card-body">
-              <h5 class="card-title title-inline" style="color: #6096B4";><%= pet.name %></h5>
-              <p class="card-text mb-0"><%= pet.species %></p>
-              <p class="card-text mt-0"><%= pet.breed %></p>
-              <p class="card-text mt-0"><%= "#{pet.age} years old" %></p>
-              <a href=<%= "/pets/#{pet.id}" %> class="btn btn-primary btn-sm" role="button">Discover more</a>
-              <button class="btn btn-secondary btn-sm"> <%= pet.status%> </button>
+          <div class="card h-100 pet-index-card">
+            <div class="pet-index-card-avatar">
+              <%= cl_image_tag pet.photo.key, width: 85, class: "pet-index-avatar" %>
+            </div>
+            <div class="card-body pet-index-info">
+              <h5 class="card-title wrap-line white-letter-header"><%= pet.name %></h5>
+              <h6 class="card-text wrap-line white-letter-text"> <%= pet.gender %> · <%= pet.age %> · <%= pet.breed %></h6>
+              <h6 class="card-text wrap-line white-letter-text"> <%= pet.shelter.name %> · <%= pet.age %></h6>
             </div>
           </div>
         </div>
@@ -22,3 +18,5 @@
     <% end %>
   </div>
 </div>
+
+
