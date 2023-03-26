@@ -143,26 +143,26 @@
   margin-top: 20px;
 }
 
-.pet-index-card {
+.dashboard-pet-index-card {
   background-color: #9787FD;
   border-radius: 15px;
   height: 330px;
 }
 
-.pet-index-avatar {
+.dashboard-pet-index-avatar {
   width: 100%;
   height: 250px;
   border-radius: 15px 15px 0px 0px;
   object-fit: cover;
 }
 
-.pet-index-info {
+.dashboard-pet-index-info {
   margin: 10px;
   display: flex;
   justify-content: space-between;
 }
 
-.pet-info {
+.dashboard-pet-info {
   width: 70%;
   margin-left: 10px;
 }
@@ -197,7 +197,7 @@
 
 .create-pet-btn-img {
   display: flex;
-  height: 250px;
+  height: 260px;
   justify-content: center;
   align-items: center;
 }
@@ -217,7 +217,7 @@
   color: white;
   // padding-top: 22px;
   // padding-bottom: 22px;
-  height: 70px;
+  height: 80px;
   width: 100%;
   font-weight: bolder;
   font-size: 25px;
