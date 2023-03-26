@@ -609,10 +609,10 @@ pet24.save!
 
 file = URI.open("https://www.dogstrust.org.uk/images/800x600/dogs/1263860/0686M00000aNRr4QAG.jpeg")
 pet25 = Pet.create!(
-  name: "Annabelle",
+  name: "Annie",
   age: 1,
   breed: "Lurcher Cross",
-  description: "Annabelle is an adorable 1 year old Lurcher. She can live with children 14 years and older. She is looking for a home as the only pet but she is dog sociable and will happily have walking buddies. She will benefit from a private, enclosed garden to run around in. She will need her new owners to be around all the time initially to help her adjust to her new environment and then build up the time that she can be left. Annabelle enjoys travelling in the car which will help when it comes to going for walks as she will need walking in quieter areas away from busy roads and traffic. Annabelle is housetrained but she might need a little refresher when she goes into her new home.",
+  description: "Annie is an adorable 1 year old Lurcher. She can live with children 14 years and older. She is looking for a home as the only pet but she is dog sociable and will happily have walking buddies. She will benefit from a private, enclosed garden to run around in. She will need her new owners to be around all the time initially to help her adjust to her new environment and then build up the time that she can be left. Annie enjoys travelling in the car which will help when it comes to going for walks as she will need walking in quieter areas away from busy roads and traffic. Annie is housetrained but she might need a little refresher when she goes into her new home.",
   species: "dog",
   gender: "Female",
   shelter: shelter10

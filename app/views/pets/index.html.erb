@@ -7,21 +7,23 @@
             <div class="pets-view-card pet_image">
               <%= cl_image_tag pet.photo.key, width: 100, class: "pet_image" %>
             </div>
-            <div class="card-body pet-view-info">
-              <div class="w-50">
-                <h5 class="pets-card-header"><%= pet.name %></h5>
-                <h6 class="card-text white-text"> <%= pet.breed %></h6>
-                <h6 class="card-text white-text"> <%= pet.gender %> · <%= pet.age %> years old</h6>
-              </div>
-              <div class="pet-details">
-                <h6 class="shelter-top right-align-text">Located at</h6>
-                <div class="shelter-container">
-                  <div class="shelter-content">
-                    <h5 class="shelter right-align-text"><%= pet.shelter.name %></h5>
+              <a href="<%= "/pets/#{pet.id}" %>" class="discover-more-link">
+                <div class="card-body pet-view-info">
+                  <div class="w-50">
+                    <h5 class="pets-card-header"><%= pet.name %></h5>
+                    <h6 class="card-text white-text"> <%= pet.breed %></h6>
+                    <h6 class="card-text white-text"> <%= pet.gender %> · <%= pet.age %> years old</h6>
+                  </div>
+                <div class="pet-details">
+                  <h6 class="shelter-top right-align-text">Located at</h6>
+                  <div class="shelter-container">
+                    <div class="shelter-content">
+                      <h5 class="shelter right-align-text"><%= pet.shelter.name %></h5>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+                </div>
+              </a>
           </div>
         </div>
       <% end %>

@@ -40,7 +40,7 @@ h1, h2, h3 {
   font-size: 50pt;
   text-align: center;
   line-height: 60px;
-  padding-top: 30px;
+  padding-top: 15px;
 }
 
 .headline_search{
@@ -112,6 +112,14 @@ h1, h2, h3 {
   margin-right: 0px ;
 }
 
+.home-content-no-margin{
+    display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-left: 0px ;
+  margin-right: 0px;
+}
 
 .image-container {
   margin: 0px;
@@ -125,7 +133,7 @@ h1, h2, h3 {
 }
 
 .text-container {
-  margin-left: 17px;
+  margin-left: 1px;
 }
 
 .lilac-card{
@@ -223,4 +231,14 @@ h1, h2, h3 {
   align-items: end;
   font-family: 'Skillet-Regular';
   margin-bottom: -15px;
+}
+
+.container-top{
+  margin-top: 20px;
+}
+
+.container-pets-home{
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
