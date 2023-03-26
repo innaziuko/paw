@@ -95,12 +95,12 @@
           <% else %>
             <div class="pet-index">
               <% cats.each do |cat| %>
-                <div class="pet-index-card">
-                  <div class="pet-index-card-avatar">
-                    <%= cl_image_tag cat.photo.key, width: 85, class: "pet-index-avatar" %>
+                <div class="dashboard-pet-index-card">
+                  <div class="dashboard-pet-index-avatar">
+                    <%= cl_image_tag cat.photo.key, width: 85, class: "dashboard-pet-index-avatar" %>
                   </div>
-                  <div class="pet-index-info">
-                    <div class="pet-info overflow-hidden">
+                  <div class="dashboard-pet-index-info">
+                    <div class="dashboard-pet-info overflow-hidden">
                       <h5 class="wrap-line white-letter"><strong><%= cat.name %></strong></h5>
                       <h6 class="wrap-line white-letter"> <%= cat.gender %> · <%= cat.age %> · <%= cat.breed %></h6>
                     </div>
