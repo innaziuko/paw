@@ -1,0 +1,51 @@
+.new-form-container {
+  width: 100%;
+  padding-bottom: 55px;
+  background-color: #9787FD;
+}
+
+.new-pet-head {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 45px;
+}
+
+.new-pet-form {
+  padding-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-new-pet-form {
+  width: 40%;
+  padding: 25px;
+  background-color: #f2f2f2;
+  border-radius: 15px;
+}
+
+.new-pet-form-top {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-gap: 20px;
+}
+
+.new-pet-form-bottom {
+  padding-top: 15px;
+}
+
+.create-new-pet-form-btn {
+  border: none;
+  background-color: #FAB2CC;
+  text-decoration: none;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 5px;
+  cursor: asset-url("cursor.png") , default!important;
+  &:hover {
+    background-color: #FCC2FC;
+    color: white;
+  }
+}
