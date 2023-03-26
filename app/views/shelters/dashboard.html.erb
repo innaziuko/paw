@@ -120,12 +120,12 @@
           <% else %>
             <div class="pet-index">
               <% dogs.each do |dog| %>
-                <div class="pet-index-card">
-                  <div class="pet-index-card-avatar">
-                    <%= cl_image_tag dog.photo.key, width: 85, class: "pet-index-avatar" %>
+                <div class="dashboard-pet-index-card">
+                  <div class="dashboard-pet-index-avatar">
+                    <%= cl_image_tag dog.photo.key, width: 85, class: "dashboard-pet-index-avatar" %>
                   </div>
-                  <div class="pet-index-info">
-                    <div class="pet-info overflow-hidden">
+                  <div class="dashboard-pet-index-info">
+                    <div class="dashboard-pet-info overflow-hidden">
                       <h5 class="wrap-line white-letter"><strong><%= dog.name %></strong></h5>
                       <h6 class="wrap-line white-letter"> <%= dog.gender %> · <%= dog.age %> · <%= dog.breed %></h6>
                     </div>
@@ -145,12 +145,12 @@
           <% else %>
             <div class="pet-index">
               <% others.each do |other| %>
-                <div class="pet-index-card">
-                  <div class="pet-index-card-avatar">
-                    <%= cl_image_tag other.photo.key, width: 85, class: "pet-index-avatar" %>
+                <div class="dashboard-pet-index-card">
+                  <div class="dashboard-pet-index-avatar">
+                    <%= cl_image_tag other.photo.key, width: 85, class: "dashboard-pet-index-avatar" %>
                   </div>
-                  <div class="pet-index-info">
-                    <div class="pet-info overflow-hidden">
+                  <div class="dashboard-pet-index-info">
+                    <div class="dashboard-pet-info overflow-hidden">
                       <h5 class="wrap-line white-letter"><strong><%= other.name %></strong></h5>
                       <h6 class="wrap-line white-letter"> <%= other.gender %> · <%= other.age %> · <%= other.breed %></h6>
                     </div>
@@ -170,12 +170,12 @@
           <% else %>
             <div class="pet-index">
               <% adopted.each do |adopt| %>
-                <div class="pet-index-card">
-                  <div class="pet-index-card-avatar">
-                    <%= cl_image_tag adopt.photo.key, width: 85, class: "pet-index-avatar" %>
+                <div class="dashboard-pet-index-card">
+                  <div class="dashboard-pet-index-avatar">
+                    <%= cl_image_tag adopt.photo.key, width: 85, class: "dashboard-pet-index-avatar" %>
                   </div>
-                  <div class="pet-index-info">
-                    <div class="pet-info overflow-hidden">
+                  <div class="dashboard-pet-index-info">
+                    <div class="dashboard-pet-info overflow-hidden">
                       <h5 class="wrap-line white-letter"><strong><%= adopt.name %></strong></h5>
                       <h6 class="wrap-line white-letter"> <%= adopt.gender %> · <%= adopt.age %> · <%= adopt.breed %></h6>
                     </div>
