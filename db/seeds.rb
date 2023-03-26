@@ -940,4 +940,11 @@ favorite2 = Favorite.create!(
 )
 favorite2.save!
 
+favorite3 = Favorite.create!(
+  user: user2,
+  pet: pet12
+)
+favorite3.save!
+
+
 puts "favorites created"

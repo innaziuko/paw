@@ -194,6 +194,12 @@
   margin-left: 20px;
   padding: 25px;
 }
+.profile-pet-list {
+  width: 45%;
+  background-color: #9787FD;
+  border-radius: 15px;
+  padding: 25px;
+}
 
 .favorite-empty-sign {
   display: flex;
@@ -203,10 +209,18 @@
 }
 
 .profile-shelter-list {
-  width: 50%;
+  width: 45%;
   background-color: #9787FD;
   border-radius: 15px;
   padding: 25px;
+}
+
+.profile-pet-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .profile-shelter-link {

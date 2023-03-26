@@ -77,6 +77,17 @@
         </div>
       </div>
     <% else %>
+      <div class="profile-pet-list">
+        <h4 class="white-letter"><strong>My Favorite Pets</strong></h4>
+          <div class="profile-pet-link">
+          <ul class="list-dot">
+            <% @favorites.each do |favorite| %>
+              <% pet = Pet.find_by(id: favorite.pet_id) %>
+              <li class="equal-size"><a href=<%= "/pets/     #{pet.id}/dashboard" %> class="list-decoration"><%= pet.name %></a></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
