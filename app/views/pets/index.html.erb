@@ -8,6 +8,11 @@
               <%= link_to(pet) do %>
               <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top img-border" %>
               <% end %>
+               <% if current_user %>
+                <div class="faves">
+                  <%= button_to "♥️ Fave", pet_favorites_path(@pet) %>
+                </div>
+              <% end %>
             <div class="card-body">
               <h5 class="card-title title-inline" style="color: #6096B4";><%= pet.name %></h5>
               <p class="card-text mb-0"><%= pet.species %></p>
