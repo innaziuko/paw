@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       get :all
     end
     resources :appointments, only: %i[create destroy]
-    resources :favorites, only: %i[create destroy]
+    resources :favorites
   end
   resources :favorites, only: [:index]
   resources :appointments, only: [:index]
