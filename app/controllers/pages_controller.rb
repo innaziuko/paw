@@ -2,6 +2,8 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
+    @pets = Pet.all
+    @random_pets = @pets.shuffle.take(8)
     @shelters = policy_scope(Shelter).all
     @markers = @shelters.geocoded.map do |shelter|
       {

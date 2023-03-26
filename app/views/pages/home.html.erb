@@ -1,5 +1,5 @@
  <div class="banner" style="background-color: #9787FD;">
-  <div class="container">
+  <div class="container-top">
     <h1 class="headline">Find new best friend</h1>
     <div class="center-container">
       <p class= "tag_line">Paws: discover the perfect pet match through our extensive network of trusted shelters.</p>
@@ -87,7 +87,7 @@
 
 <br>
 <div class="container_home">
-  <div class="home-content-wrap">
+  <div class="home-content-no-margin">
     <div class="text-container">
       <h2 class="subhead">Our Pets</h2>
     </div>
@@ -95,12 +95,38 @@
       <p class="see_more">See More</p>
     </div>
   </div>
-
-
-<br>
-<br>
-<br>
-
+  <div class="container-pets-home">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <% @random_pets.each do |pet| %>
+        <% if pet.photo.attached? %>
+          <div class="col">
+            <div class="card pets-view-card">
+              <div class="pets-view-card pet_image">
+                <%= cl_image_tag pet.photo.key, width: 100, class: "pet_image" %>
+              </div>
+                <a href="<%= "/pets/#{pet.id}" %>" class="discover-more-link">
+                  <div class="card-body pet-view-info">
+                    <div class="w-50">
+                      <h5 class="pets-card-header"><%= pet.name %></h5>
+                      <h6 class="card-text white-text"> <%= pet.breed %></h6>
+                      <h6 class="card-text white-text"> <%= pet.gender %> · <%= pet.age %> years old</h6>
+                    </div>
+                  <div class="pet-details">
+                    <h6 class="shelter-top right-align-text">Located at</h6>
+                    <div class="shelter-container">
+                      <div class="shelter-content">
+                        <h5 class="shelter right-align-text"><%= pet.shelter.name %></h5>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                </a>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
 
   <div class="container">
