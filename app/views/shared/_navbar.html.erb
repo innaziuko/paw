@@ -1,26 +1,18 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-paw sticky-top ">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "logo.png", alt: "Logo", width: 100, class: "d-inline-block align-top logo-image" %>
+      <%= image_tag "logo8.png", alt: "Logo", width: 100, class: "d-inline-block align-top logo-image" %>
     <% end %>
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto paw-color">
       <li class="nav-item">
-        <a class="nav-link" href="/#about">About</a>
+        <a class="nav-link" href="/pets">Pets</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/shelters">Shelters</a>
       </li>
-      <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Pets
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="/pets" role="button">All</a></li>
-            <% @pet_types.each do |type| %>
-              <li><a class="dropdown-item" href=<%= "/pets?species=#{type}" %> role="button"><%= type.capitalize %></a></li>
-            <% end %>
-          </ul>
-        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/#about">Events</a>
+      </li>
     </ul>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

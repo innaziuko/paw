@@ -1,169 +1,341 @@
-.round-avatar {
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.shelter-banner {
-  display: flex;
-  padding: 50px;
-  justify-content: space-between;
-}
-
-.shelter-left {
-  display: flex;
+.dashboard-container {
+  width: 90vw;
+  margin: 30px auto;
 }
 
 .shelter-info {
-  margin-left: 10px;
+  display: flex;
+  height: 320px;
 }
 
-.polish-button{
-  padding-left: 0px;
+.shelter-photo {
+  width: 50%;
+}
+
+.border-img {
+  border-radius: 15px;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.shelter-general {
+  display: flex;
+  width: 50%;
+  margin-left: 20px;
+  background-color: #9787FD;
+  border-radius: 15px;
+  padding: 15px 20px 15px 60px;
+}
+
+.margin-shrink {
+  margin-bottom: 5px;
+}
+
+.remove-margin-bottom {
+  margin-bottom: 1px;
+}
+
+.white-letter-header {
+  color: white;
+  font-family: 'Skillet-Regular';
+  font-size: 27pt;
+  line-height: 0.8;
+  letter-spacing: 0.7pt;
+}
+
+.white-letter-text {
+  color: white;
+  font-family: "Neue-Haas-D-Roman";
+  font-size: 10pt;
+}
+
+.flex-hour {
+  display: flex;
+}
+
+.time-margin {
+  margin-left: 95px;
+}
+
+.info-photo{
+  margin-left: 55px;
+  width: 250px;
+  padding-top: 10px;
+}
+
+.polish-button {
   border: none;
-  background-color: #BFACE2;
+  background-color: #FAB2CC;
   text-decoration: none;
   color: white;
-  padding: 5px 8px;
+  padding: 8px 21px;
   border-radius: 5px;
+  cursor: asset-url("cursor.png") , default!important;
   &:hover {
-    background-color: #A68BC2;
+    background-color: #D27685;
     color: white;
   }
 }
 
-.shelter-right {
+.edit-shelter-btn {
+  text-align: end;
+}
+
+.info-photo-flex {
   display: flex;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 65px;
 }
 
-.dog-margin {
-  margin-left: 40px;
-}
-
-.text-center {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.dashboard-main {
-  padding: 50px;
-}
-
-.create-pet-card {
-  border: solid #BFACE2;
-  width: 1200px;
-  margin: 0 auto;
-  padding: 15px;
+.shelter-description {
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+  height: 380px;
+  background-color: #9787FD;
   border-radius: 15px;
-  box-shadow: 3px 3px 3px #BFACE2;
 }
 
-.tab-form {
+.description {
+  width: 60%;
+  padding: 20px 35px;
+}
+
+.text-evenly {
+  text-align: justify;
+}
+
+.description-right {
+  width: 40%;
   display: flex;
-  padding: 50px;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
 }
 
-.flex-form {
+.pet-count {
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
+  text-align: center;
+  padding: 20px 35px;
 }
 
-.padding-blank {
-  padding-left: 65px;
-}
-
-.upload-photo {
+.description-photo {
   display: flex;
-  justify-content: space-between;
-  padding-left: 95px;
-  padding-right: 95px;
-}
-
-.position-btn {
+  justify-content: center;
+  align-items: center;
   margin-top: 35px;
 }
 
-.justify-form {
-  justify-content: space-evenly;
-}
-
-.review-appointment {
-  display: flex;
-  width: 1200px;
-  justify-content: space-between;
-  margin: 0 auto;
-  padding-top: 50px;
-}
-
-.review {
-  width: 500px;
-}
-
-.margin-btm {
-  margin-bottom: 15px;
-}
-
-.pet-card {
-  width: 1200px;
-  margin: 0 auto;
-}
-
-.pet-index-container {
-  padding: 20px;
+.pets-of-shelter {
+  margin-top: 30px;
 }
 
 .pet-index {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
 }
 
-.pet-card-title {
-  margin-top: 50px;
-  margin-bottom: 50px;
+.pet-index {
+  margin-top: 20px;
 }
 
 .pet-index-card {
-  display: flex;
-  border: #BFACE2;
-  border-style: solid;
+  background-color: #9787FD;
   border-radius: 15px;
-  width: 360px;
-  height: 130px;
+  height: 330px;
 }
 
 .pet-index-avatar {
-  border-radius: 13px 0px 0px 13px;
+  width: 100%;
+  height: 250px;
+  border-radius: 15px 15px 0px 0px;
   object-fit: cover;
-  height: 100%;
 }
 
 .pet-index-info {
-  padding: 5px 0 5px 15px;
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.pet-index-btn {
-  padding-top: 10px;
+.pet-info {
+  width: 70%;
+  margin-left: 10px;
+}
+
+.pet-edit-btn {
+  border: solid #FAB2CC;
+  text-decoration: none;
+  background: none;
+  color: white;
+  border-radius: 5px;
+  padding: 2px 15px;
+  cursor: asset-url("cursor.png") , default!important;
 }
 
 .edit-btn {
-  padding-left: 85px;
+  display: flex;
+  align-items: end;
+  margin-bottom: 10px;
 }
 
-.status-btn {
-  padding-left: 20px;
-  padding-top: 25px;
+.overflow-hidden{
+  overflow: hidden;
 }
 
-.status-btn-purple {
-  padding-left: 0px;
-  border: solid #BFACE2;
+.wrap-line {
+  white-space: nowrap;
+}
+
+.create-pet-btn {
+  border-radius: 15px;
+}
+
+.create-pet-btn-img {
+  display: flex;
+  height: 250px;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-btn {
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+  justify-content: end;
+  cursor: asset-url("cursor.png") , default!important;
+}
+
+.create-new-btn {
+  border: none;
+  background-color: #FAB2CC;
   text-decoration: none;
   color: white;
-  padding: 1px 2px;
-  border-radius: 5px;
+  // padding-top: 22px;
+  // padding-bottom: 22px;
+  height: 70px;
+  width: 100%;
+  font-weight: bolder;
+  font-size: 25px;
+  font-style: italic;
+  border-radius: 0 0 15px 15px;
+  cursor: asset-url("cursor.png") , default!important;
   &:hover {
-    color: #A68BC2;
+    background-color: #D27685;
+    color: white;
   }
+}
+
+.appointment-request {
+  margin-top: 30px;
+  background-color: #9787FD;
+  border-radius: 15px;
+  padding: 20px 35px;
+}
+
+.appointment-card-empty {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.appointment-request-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.appointment-request-card {
+  border: solid white;
+  border-radius: 15px;
+  height: 160px;
+  padding: 15px;
+}
+
+.appointment-card-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.appointment-card-btn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  align-items: end;
+}
+
+.accept-btn {
+  border: solid #FAB2CC;
+  background-color: #FAB2CC;
+  text-decoration: none;
+  color: white;
+  padding: 4px 27px;
+  border-radius: 5px;
+  cursor: asset-url("cursor.png") , default!important;
+  &:hover {
+    background-color: #D27685;
+    color: white;
+  }
+}
+
+.decline-btn {
+  border: solid #FAB2CC;
+  text-decoration: none;
+  background-color: #9787FD;
+  color: white;
+  padding: 4px 27px;
+  border-radius: 5px;
+  cursor: asset-url("cursor.png") , default!important;
+  &:hover {
+    background-color: #b9b1ef;
+    color: white;
+  }
+}
+
+.shelter-review {
+  margin-top: 30px;
+  background-color: #9787FD;
+  border-radius: 15px;
+  padding: 20px 35px;
+}
+
+.review-empty {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-card {
+  display: flex;
+  border: solid white;
+  border-radius: 15px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 100%;
+  height: 160px;
+  padding: 20px;
+  position: relative;
+}
+
+.review_photo {
+  height: 100%;
+  position: absolute;
+}
+
+.review-avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-content {
+  margin-left: 35px;
+  margin-right: 35px;
 }

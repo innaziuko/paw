@@ -1,29 +1,24 @@
 <div class="pet-index">
+  <div class="create-pet-btn" style="background-color: white">
+    <div class="create-pet-btn-img">
+      <%= image_tag "pets_comp6.png", alt: "", width:"100%" %>
+    </div>
+    <div class="create-btn">
+      <%= button_to "Create New Pet", new_shelter_pet_path(@shelter), method: :get, class: "create-new-btn" %>
+    </div>
+  </div>
   <% @pets.each do |pet| %>
     <div class="pet-index-card">
       <div class="pet-index-card-avatar">
         <%= cl_image_tag pet.photo.key, width: 85, class: "pet-index-avatar" %>
       </div>
       <div class="pet-index-info">
-        <h5><strong><%= pet.name %></strong></h5>
-        <h6><%= pet.breed %></h6>
-        <h6>Age:  <%= pet.age %></h6>
-        <h6>Gender:  <%= pet.gender %></h6>
-      </div>
-      <div class="pet-index-btn">
-        <div class="edit-btn">
-          <%= button_to "Edit", edit_pet_path(pet), method: :get, class: "polish-button" %>
+        <div class="pet-info overflow-hidden">
+          <h5 class="wrap-line white-letter-header"><%= pet.name %></h5>
+          <h6 class="wrap-line white-letter-text"> <%= pet.gender %> · <%= pet.age %> · <%= pet.breed %></h6>
         </div>
-        <div class="status-btn">
-          <div class="dropdown status-btn-purple">
-            <button class="btn dropdown-toggle" style="color: #BFACE2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Adopted
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">Pending</a></li>
-              <li><a class="dropdown-item" href="#">Available</a></li>
-            </ul>
-          </div>
+        <div class="edit-btn">
+          <%= button_to "Edit", edit_pet_path(pet), method: :get, class: "pet-edit-btn" %>
         </div>
       </div>
     </div>

@@ -1,5 +1,4 @@
 // Graphical variables
-@import 'fonts';
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
@@ -14,8 +13,8 @@
 @import "components/index";
 @import "pages/index";
 @import "shelters/index";
-@import "shelters/show";
 @import "appointments/index";
+@import "pets/index";
 
 html, body {
   height: 100%;
@@ -25,8 +24,14 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+  background-color: #F0F2F8;
 }
 
 main {
   flex: 1;
+}
+
+p {
+  font-family: "Neue-Haas-D-Roman";
+  color: #2e2b2f;
 }

@@ -1,56 +1,108 @@
-<div class="container">
-
-  <%= image_tag "dog_cat.jpg", alt: "", width:"100%" %>
-  <h1>One Paw Across</h1>
-  <p>Find your fur-ever friend with us</p>
-  <h1>Search Your New Best Friend</h1>
-  <div class="search-bar">
-    <form action="/pets" method="get" class="form-inline padded">
-      <div class="form-group">
-        <label for="location">Location:</label>
-        <select name="location" id="location" class="form-control border-radius input-lg">
-          <option value="">Select</option>
-          <option value="France">France</option>
-          <option value="Germany">Germany</option>
-          <option value="Poland">Poland</option>
-          <option value="Hungary">Hungary</option>
-          <option value="Latvia">Latvia</option>
-          <option value="Romania">Romania</option>
-          <option value="Slovenia">Slovenia</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="gender">Gender:</label>
-        <select name="gender" id="gender" class="form-control border-radius input-lg">
-          <option value="">Select</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="species">Type of pets:</label>
-          <select name="species" id="species" class="form-control border-radius input-lg">
-          <option value="">Select</option>
-          <% @pet_types.each do |type| %>
-          <option value= <%= type %> ><%= type.capitalize %></option>
-          <% end %>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="age_from">Age from:</label>
-        <input type="number" name="age_from" id="age_from" min="1" class="form-control border-radius input-lg" placeholder="Enter age">
-      </div>
-
-     <div class="form-group">
-        <label for="age_to">Age to:</label>
-        <input type="number" name="age_to" id="age_to" min="1" class="form-control border-radius input-lg" placeholder="Enter age">
-      </div>
-
-      <div class="form-group">
-        <button type="submit" class="btn btn-outline-primary mb-2 mt-0">Search</button>
-      </div>
-    </form>
+ <div class="banner" style="background-color: #9787FD;">
+  <div class="container">
+    <h1 class="headline">Find new best friend</h1>
+    <div class="center-container">
+      <p class= "tag_line">Paws: discover the perfect pet match through our extensive network of trusted shelters.</p>
+    </div>
+    <div class="center-container">
+      <%= image_tag "pets_comp2.png", alt: "", width:"100%", class: "top_image"%>
+    </div>
+    <div class="center-container">
+      <%= link_to "SEE ALL", "/pets", class: "btn btn-flat" %>
+    </div>
   </div>
+</div>
+
+
+<div class="container_home">
+
+  <div class="home-content-wrap">
+    <div class="lilac-card" style="background-color: #9787FD;">
+      <div class="image-container">
+        <%= image_tag "pets_comp3.png", alt: "" %>
+      </div>
+    </div>
+    <div class="text-container">
+      <h2 class="subhead">About Us</h2>
+      <p class="home-text">At Paws, our mission is to forge enduring bonds between pets in need and caring families throughout Europe. We recognize the significance of discovering an ideal companion, and our devoted team is committed to guiding you through the pet adoption process with ease and assurance.</p>
+      <p class="home-text">Our platform links you to an extensive network of reputable shelters and pet owners, providing a diverse selection of carefully chosen pets that align with your preferences, lifestyle, and living space. We firmly believe that every pet is deserving of a loving and nurturing home.</p>
+      <p class="home-text">As a trusted partner in your pet adoption journey, we strive to ensure a seamless experience by offering personalized support and a wealth of resources. Together, we can help make a difference in the lives of countless pets and families, creating a brighter future for all.</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="banner" style="background-color: #9787FD;">
+  <div class="container">
+    <div class="center-container">
+      <%= image_tag "pets_comp8.png", alt: "", width:"100%", class: "search_image"%>
+    </div>
+    <h1 class="headline_search">Start Your Search Now</h1>
+    <div class="center-container">
+      <div class="card-search">
+      <div class="search-bar">
+        <form action="/pets" method="get" class="form-inline">
+          <div class="form-group">
+            <select name="location" id="location" class="form-select form-control border-radius input-lg">
+              <option value="">Location</option>
+              <option value="France">France</option>
+              <option value="Germany">Germany</option>
+              <option value="Poland">Poland</option>
+              <option value="Hungary">Hungary</option>
+              <option value="Latvia">Latvia</option>
+              <option value="Romania">Romania</option>
+              <option value="Slovenia">Slovenia</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <select name="species" id="species" class="form-select form-control border-radius input-lg">
+              <option value="">Pet Type</option>
+              <% @pet_types.each do |type| %>
+              <option value= <%= type %> ><%= type.capitalize %></option>
+              <% end %>
+            </select>
+          </div>
+          <div class="form-group">
+            <select name="gender" id="gender" class="form-select form-control border-radius input-lg">
+              <option value="">Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <input type="number" name="age" id="age" min="1" class="form-select form-control border-radius input-lg" placeholder="Age">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn-home">Search</button>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<br>
+<div class="container_home">
+  <div class="home-content-wrap">
+    <div class="text-container">
+      <h2 class="subhead">Our Pets</h2>
+    </div>
+    <div class="see-container">
+      <p class="see_more">See More</p>
+    </div>
+  </div>
+
+
+<br>
+<br>
+<br>
+
+
+
   <div class="container">
     <div data-controller="map"
           id='map'
@@ -88,5 +140,11 @@
   <section style="width:50%;">
     <p>Paws is platform brings together shelters from all over Europe onto one webpage, allowing users to easily find and adopt pets from different countries.</p>
   </div>
+
+
+
+
+
+
 
 </div>

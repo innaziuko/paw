@@ -1,7 +1,6 @@
-
 .navbar-paw {
   justify-content: space-between;
-  background:  #ddf4d7;
+  background:  #121212;
 }
 
 .navbar-paw .navbar-collapse {
@@ -15,4 +14,52 @@
 .logo-image {
   object-fit: contain;
   height: 40px;
+  margin-left: 30px;
+}
+
+.logo-image:hover {
+  color:  #b9b1ef;
+}
+
+.nav-link {
+  color:  #9787FD;
+  font-family: "Neue-Haas-D-Medium";
+  letter-spacing: 0.7pt;
+  font-size: 12pt;
+}
+
+.nav-link:hover {
+  color:  #b9b1ef;
+}
+
+.dropdown-item{
+  color:  #9787FD;
+  font-family: "Neue-Haas-D-Medium";
+  letter-spacing: 0.7pt;
+  font-size: 14.5pt;
+}
+
+.dropdown-item:hover {
+  color:  #b9b1ef;
+}
+
+.dropdown-menu{
+  background:  #121212;
+}
+
+.dropdown-menu:hover {
+  background:  #121212;
+}
+
+.nav-item .dropdown-menu a:hover {
+  background-color: #121212;
+}
+
+.avatar-nav{
+  margin-left: 15px;
+  margin-right: 30px;
+}
+
+a:hover {
+  color:  #b9b1ef;
 }
