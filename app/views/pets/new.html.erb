@@ -1,38 +1,49 @@
-<h1>Create a new pet</h1>
+<div class="new-form-container">
+  <div class="new-pet-head">
+    <%= image_tag "pets_comp2.png", alt: "", width:"70%" %>
+  </div>
+  <h1 class="headline">New Pet</h1>
+  <div class="new-pet-form">
+    <%= simple_form_for [@shelter, @pet], html: { class: 'create-new-pet-form' } do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-<%= simple_form_for [@shelter, @pet] do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <div class="new-pet-form-top">
+        <div class="form-inputs">
+          <%= f.input :name, placeholder: 'Name', label: false %>
+        </div>
 
-    <div class="form-inputs">
-      <%= f.input :name %>
-    </div>
+        <div class="form-inputs">
+          <%= f.input :species, placeholder: 'Species', label: false %>
+        </div>
 
-    <div class="form-inputs">
-      <%= f.input :species %>
-    </div>
+        <div class="form-inputs">
+          <%= f.input :breed, placeholder: 'Breed', label: false %>
+        </div>
 
-    <div class="form-inputs">
-      <%= f.input :description %>
-    </div>
+        <div class="form-inputs">
+          <%= f.input :gender, collection: ['Female', 'Male'], prompt: 'Select a gender', placeholder: '', label: false %>
+        </div>
 
-    <div class="form-inputs">
-      <%= f.input :breed %>
-    </div>
+        <div class="form-inputs">
+          <%= f.input :age, placeholder: 'Age', label: false %>
+        </div>
 
-    <div class="form-inputs">
-      <%= f.input :gender %>
-    </div>
+        <div class="form-inputs">
+          <%= f.input :photo, as: :file, placeholder: 'Photo', label: false %>
+        </div>
+      </div>
 
-    <div class="form-inputs">
-      <%= f.input :age %>
-    </div>
+      <div class="new-pet-form-bottom">
+        <div class="form-inputs">
+          <%= f.input :description, as: :text, input_html: { style: 'height: 125px;' }, placeholder: 'Description', label: false %>
+        </div>
 
-    <div class="form-inputs">
-      <%= f.input :photo, as: :file, label: "Image of Pet" %>
-    </div>
+        <div class="form-actions mb-2">
+          <%= f.button :submit, class: "create-new-pet-form-btn" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
-    <div class="form-actions mb-2">
-      <%= f.button :submit, class: "btn btn-outline-primary" %>
-    </div>
-  <% end %>
+</div>
