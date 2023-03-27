@@ -31,6 +31,10 @@
       </div>
 
       <div class="form-inputs">
+        <%= f.input :status, collection: ["not adopted", "adopted"] %>
+      </div>
+
+      <div class="form-inputs">
         <%= f.input :photo, as: :file, label: "Image of Pet" %>
       </div>
     </div>
