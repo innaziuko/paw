@@ -87,7 +87,7 @@
 }
 
 .profile-appointment {
-  margin-top: 25px;
+  margin-top: 20px;
   background-color: #9787FD;
   border-radius: 15px;
   padding: 20px 50px;
@@ -155,7 +155,7 @@
 
 .profile-shelter-favourites {
   display: flex;
-  margin-top: 25px;
+  margin-top: 20px;
   justify-content: space-between;
 }
 
@@ -226,6 +226,8 @@
 }
 
 .profile-shelter-link {
+  justify-content: left;
+  align-items: center;
   margin-top: 20px;
 }
 
@@ -237,9 +239,9 @@
   border: solid #9787FD;
   background-color: #FAB2CC;
   text-decoration: none;
-  font-weight: bolder;
-  padding: 18px 75px;
-  border-radius: 15px;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 10px;
   cursor: asset-url("cursor.png") , default!important;
   transition: all 0.3s ease;
   &:hover {
@@ -264,7 +266,7 @@
     text-decoration: none;
     color: white;
     position: relative;
-    width: 205%;
+    width: 210%;
     margin-bottom: 20px;
     background-repeat: no-repeat;
     text-align: center;
