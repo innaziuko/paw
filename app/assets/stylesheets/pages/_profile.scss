@@ -226,22 +226,26 @@
 }
 
 .profile-shelter-link {
-  display: flex;
-  justify-content: left;
-  align-items: center;
   margin-top: 20px;
 }
 
 .create-shelter-list-btn {
-  border: none;
+  font-family:"Neue-Haas-D-Medium";
+  font-size: 14pt;
+  width: 92.5%;
+  color: #ffffff;
+  border: solid #9787FD;
   background-color: #FAB2CC;
   text-decoration: none;
-  color: white;
+  font-weight: bolder;
   padding: 18px 75px;
   border-radius: 15px;
   cursor: asset-url("cursor.png") , default!important;
+  transition: all 0.3s ease;
   &:hover {
-    background-color: #644dfc;
+    background-color: #9787FD;
+    color: white;
+    border-color: white;
   }
 }
 

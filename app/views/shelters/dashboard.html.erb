@@ -7,7 +7,7 @@
       <div class="general-info">
         <h1 class="margin-shrink white-letter wrap-line"><%= @shelter.name %></h1>
         <div class="adress-phone">
-          <p class="remove-margin-bottom white-letter wrap-line">Address: <%= @shelter.address %></p>
+          <p class="remove-margin-bottom white-letter wrap-line overflow-hidden">Address: <%= @shelter.address %></p>
           <p class="white-letter">Phone: <%= @shelter.phone_number %></p>
         </div>
         <div class="working-hour">
@@ -43,7 +43,7 @@
   <div class="shelter-description">
     <div class="description">
       <h4 class="white-letter dashboard-header">Description</h4>
-      <p class="white-letter text-evenly width"><%= @shelter.description %></p>
+      <p class="white-letter text-evenly"><%= @shelter.description %></p>
     </div>
     <div class="description-right">
       <div class="pet-count">
@@ -211,10 +211,10 @@
                 <h5 class="white-letter">Time:  <%= appointment.time.strftime("%H:%M") %></h5>
               </div>
             </div>
-            <div class="appointment-card-btn">
+            <%# <div class="appointment-card-btn">
               <button class="accept-btn">Accept</button>
               <button class="decline-btn">Decline</button>
-            </div>
+            </div> %>
           </div>
         <% end %>
       </div>
