@@ -9,7 +9,7 @@
   background-color: #9787FD;
   border-radius: 15px;
   display: flex;
-  padding: 30px;
+  padding: 20px 50px;
   justify-content: space-between;
 }
 
@@ -78,6 +78,8 @@
 
 .user-description {
   text-align: justify;
+  line-height: 17px;
+  font-size: 11pt;
 }
 
 .text-justify {
@@ -88,7 +90,7 @@
   margin-top: 25px;
   background-color: #9787FD;
   border-radius: 15px;
-  padding: 25px;
+  padding: 20px 50px;
 }
 
 .profile-appointment-empty {
@@ -195,10 +197,10 @@
   padding: 25px;
 }
 .profile-pet-list {
-  width: 45%;
+  width: 49%;
   background-color: #9787FD;
   border-radius: 15px;
-  padding: 25px;
+  padding: 20px 50px;
 }
 
 .favorite-empty-sign {
@@ -209,24 +211,23 @@
 }
 
 .profile-shelter-list {
-  width: 45%;
+  width: 49%;
   background-color: #9787FD;
   border-radius: 15px;
-  padding: 25px;
+  padding: 20px 50px;
 }
 
 .profile-pet-link {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 20px 50px;
 }
 
 .profile-shelter-link {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   margin-top: 20px;
 }
@@ -254,10 +255,12 @@
   line-height: 60px;
   a {
     display: block;
+    font-family:"Neue-Haas-D-Medium";
+    font-size: 14pt;
     text-decoration: none;
     color: white;
     position: relative;
-    width: 100%;
+    width: 205%;
     margin-bottom: 20px;
     background-repeat: no-repeat;
     text-align: center;
@@ -273,4 +276,16 @@
       -ms-transform: scale(1.05);
     }
   }
+}
+.white-letter{
+  color: white;
+  letter-spacing: 1.2;
+
+}
+.spacing{
+  letter-spacing: 1.2;
+}
+
+.profile-header{
+  font-size: 30pt;
 }
