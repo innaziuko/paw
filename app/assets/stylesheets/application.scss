@@ -35,3 +35,11 @@ p {
   font-family: "Neue-Haas-D-Roman";
   color: #2e2b2f;
 }
+
+button {
+  cursor: asset-url("cursor.png") , default!important;
+}
+
+a {
+  cursor: asset-url("cursor.png") , default!important;
+}
