@@ -66,6 +66,7 @@
               <li class="equal-size"><a href=<%= "/shelters/#{shelter.id}/dashboard" %> class="list-decoration"><%= shelter.name %></a></li>
             <% end %>
           </ul>
+          <%= button_to "Create Shelter", new_shelter_path, method: :get, class: "create-shelter-list-btn" %>
         </div>
       </div>
     <% end %>
