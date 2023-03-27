@@ -11,7 +11,7 @@
           <p class="white-letter">Phone: <%= @shelter.phone_number %></p>
         </div>
         <div class="working-hour">
-          <h5 class="white-letter"><strong>Working Hours:</strong></h5>
+          <h5 class="white-letter hours">Working Hours:</h5>
           <div class="flex-hour">
             <div>
               <p class="remove-margin-bottom white-letter">Monday</p>
@@ -42,22 +42,22 @@
   </div>
   <div class="shelter-description">
     <div class="description">
-      <h4 class="white-letter"><strong>Description</strong></h4>
-      <p class="white-letter text-evenly"><%= @shelter.description %></p>
+      <h4 class="white-letter dashboard-header">Description</h4>
+      <p class="white-letter text-evenly width"><%= @shelter.description %></p>
     </div>
     <div class="description-right">
       <div class="pet-count">
         <div>
-          <h4 class="white-letter"><strong>Cats</strong></h4>
-          <h4 class="white-letter"><%= @pets.where(species: "cat").count %></h4>
+          <h4 class="white-letter count">Cats</h4>
+          <h4 class="white-letter count"><%= @pets.where(species: "cat").count %></h4>
         </div>
         <div>
-          <h4 class="white-letter"><strong>Dogs</strong></h4>
-          <h4 class="white-letter"><%= @pets.where(species: "dog").count %></h4>
+          <h4 class="white-letter count">Dogs</h4>
+          <h4 class="white-letter count"><%= @pets.where(species: "dog").count %></h4>
         </div>
         <div>
-          <h4 class="white-letter"><strong>Adopted</strong></h4>
-          <h4 class="white-letter"><%= @pets.where(status: "adopted").count %></h4>
+          <h4 class="white-letter count">Adopted</h4>
+          <h4 class="white-letter count"><%= @pets.where(status: "adopted").count %></h4>
         </div>
       </div>
       <div class="description-photo">
@@ -91,7 +91,7 @@
         <div class="tab-pane fade pet-index-container" id="cats" role="tabpanel" aria-labelledby="catall-tab">
           <% cats = @pets.where(species: "cat") %>
           <% if cats.empty? %>
-            <h4 calss="text-center"><strong>This shelter has no cat yet.</strong></h4>
+            <h4 calss="text-center">This shelter has no cat yet.</h4>
           <% else %>
             <div class="pet-index">
               <% cats.each do |cat| %>
@@ -101,7 +101,7 @@
                   </div>
                   <div class="dashboard-pet-index-info">
                     <div class="dashboard-pet-info overflow-hidden">
-                      <h5 class="wrap-line white-letter"><strong><%= cat.name %></strong></h5>
+                      <h5 class="wrap-line white-letter"><%= cat.name %></h5>
                       <h6 class="wrap-line white-letter"> <%= cat.gender %> · <%= cat.age %> · <%= cat.breed %></h6>
                     </div>
                     <div class="edit-btn">
@@ -116,7 +116,7 @@
         <div class="tab-pane fade pet-index-container" id="dogs" role="tabpanel" aria-labelledby="dogall-tab">
           <% dogs = @pets.where(species: "dog") %>
           <% if dogs.empty? %>
-            <h4 calss="text-center"><strong>This shelter has no dog yet.</strong></h4>
+            <h4 calss="text-center">This shelter has no dog yet.</h4>
           <% else %>
             <div class="pet-index">
               <% dogs.each do |dog| %>
@@ -126,7 +126,7 @@
                   </div>
                   <div class="dashboard-pet-index-info">
                     <div class="dashboard-pet-info overflow-hidden">
-                      <h5 class="wrap-line white-letter"><strong><%= dog.name %></strong></h5>
+                      <h5 class="wrap-line white-letter"><%= dog.name %></h5>
                       <h6 class="wrap-line white-letter"> <%= dog.gender %> · <%= dog.age %> · <%= dog.breed %></h6>
                     </div>
                     <div class="edit-btn">
@@ -141,7 +141,7 @@
         <div class="tab-pane fade pet-index-container" id="other" role="tabpanel" aria-labelledby="other-tab">
           <% others = @pets.where.not(species: ['cat', 'dog']) %>
           <% if others.empty? %>
-            <h4 calss="text-center"><strong>Oops...</strong></h4>
+            <h4 calss="text-center">Oops...</h4>
           <% else %>
             <div class="pet-index">
               <% others.each do |other| %>
@@ -151,7 +151,7 @@
                   </div>
                   <div class="dashboard-pet-index-info">
                     <div class="dashboard-pet-info overflow-hidden">
-                      <h5 class="wrap-line white-letter"><strong><%= other.name %></strong></h5>
+                      <h5 class="wrap-line white-letter"><%= other.name %></h5>
                       <h6 class="wrap-line white-letter"> <%= other.gender %> · <%= other.age %> · <%= other.breed %></h6>
                     </div>
                     <div class="edit-btn">
@@ -166,7 +166,7 @@
         <div class="tab-pane fade pet-index-container" id="adopted" role="tabpanel" aria-labelledby="adopted-tab">
           <% adopted = @pets.where(status: "adopted") %>
           <% if adopted.empty? %>
-            <h4 class="text-center"><strong>Waiting for adoption...</strong></h4>
+            <h4 class="text-center">Waiting for adoption...</h4>
           <% else %>
             <div class="pet-index">
               <% adopted.each do |adopt| %>
@@ -176,7 +176,7 @@
                   </div>
                   <div class="dashboard-pet-index-info">
                     <div class="dashboard-pet-info overflow-hidden">
-                      <h5 class="wrap-line white-letter"><strong><%= adopt.name %></strong></h5>
+                      <h5 class="wrap-line white-letter"><%= adopt.name %></h5>
                       <h6 class="wrap-line white-letter"> <%= adopt.gender %> · <%= adopt.age %> · <%= adopt.breed %></h6>
                     </div>
                     <div class="edit-btn">
@@ -192,10 +192,10 @@
     </div>
   </div>
   <div class="appointment-request">
-    <h4 class="white-letter"><strong>Appointment Requests</strong></h4>
+    <h4 class="white-letter dashboard-header">Appointment Requests</h4>
     <% if @appointments.empty? %>
       <div class="appointment-card-empty">
-        <h1 class="white-letter">Oops...You have no upcoming appointment yet.</h1>
+        <h1 class="white-letter empty">Oops...You have no upcoming appointment yet.</h1>
       </div>
     <% else %>
       <div class="appointment-request-group">
@@ -204,11 +204,11 @@
           <div class="appointment-request-card">
             <div class="appointment-card-info">
               <div class="appointment-card-date">
-                <h5 class="white-letter"><strong><%= appointment.date %></strong></h6>
-                <h5 class="white-letter"><strong>Pet:</strong>  <%= pet.name %></h6>
+                <h5 class="white-letter"><%= appointment.date %></h6>
+                <h5 class="white-letter">Pet:  <%= pet.name %></h6>
               </div>
               <div class="appointment-card-time">
-                <h5 class="white-letter"><strong>Time:</strong>  <%= appointment.time.strftime("%H:%M") %></h5>
+                <h5 class="white-letter">Time:  <%= appointment.time.strftime("%H:%M") %></h5>
               </div>
             </div>
             <div class="appointment-card-btn">
@@ -221,10 +221,10 @@
     <% end %>
   </div>
   <div class="shelter-review">
-    <h4 class="white-letter"><strong>Reviews</strong></h4>
+    <h4 class="white-letter dashboard-header">Reviews</h4>
     <% if @reviews.empty? %>
       <div class="review-empty">
-        <h1 class="white-letter">Oops...This shelter have no review yet.</h1>
+        <h1 class="white-letter empty">Oops...This shelter have no review yet.</h1>
       </div>
     <% else %>
       <div class="review-list">
@@ -235,7 +235,7 @@
               <%= cl_image_tag review_user.photo.key, width: 100, height: 100, class: "review-avatar" %>
             </div>
             <div class="review-content">
-              <h5 class="white-letter"><strong><%= review.title %></strong></h5>
+              <h5 class="white-letter"><%= review.title %></h5>
               <p class="white-letter text-evenly"><%= review.comment %></p>
             </div>
           </div>

@@ -6,7 +6,7 @@
       </div>
       <div class="user-info">
         <div class="user-basic-info">
-          <h1 class="white-letter"><%= current_user.email %></h1>
+          <h1 class="white-letter spacing"><%= current_user.email %></h1>
           <h5 class="small-info white-letter">Berlin, Germany</h5>
           <p class="white-letter user-description">Sarah is looking to adopt a dog to provide her with companionship and encourage her to get outside and be more active.</p>
         </div>
@@ -18,7 +18,7 @@
     </div>
   </div>
   <div class="profile-appointment">
-    <h4 class="white-letter"><strong>Appointments</strong></h4>
+    <h4 class="white-letter profile-header">Appointments</h4>
     <% if @appointments.empty? %>
       <div class="profile-appointment-empty">
         <h1 class="white-letter">Go get your first appointment</h1>
@@ -33,14 +33,14 @@
             </div>
             <div class="profile-appointment-date">
               <div>
-                <h6><strong><%= appointment.date %></strong></h6>
+                <h6><%= appointment.date %></h6>
               </div>
               <div>
-                <h6><strong>Pet:</strong>  <%= pet.name %></h6>
+                <h6></h6>Pet: <%= pet.name %></h6>
               </div>
             </div>
             <div class="profile-appointment-time">
-              <h6><strong>Time:</strong>  <%= appointment.time.strftime("%H:%M") %></h6>
+              <h6>Time: <%= appointment.time.strftime("%H:%M") %></h6>
             </div>
           </a>
         <% end %>
@@ -59,7 +59,7 @@
       </div>
     <% else %>
       <div class="profile-shelter-list">
-        <h4 class="white-letter"><strong>My Shelters</strong></h4>
+        <h4 class="white-letter profile-header">My Shelters</h4>
         <div class="profile-shelter-link">
           <ul class="list-dot">
             <% @shelters.each do |shelter| %>
@@ -71,14 +71,14 @@
     <% end %>
     <% if @favorites.empty? %>
       <div class="profile-favorites-empty">
-        <h4 class="white-letter"><strong>My Favorites</strong></h4>
+        <h4 class="white-letter">My Favorites</h4>
         <div class="favorite-empty-sign">
           <h1 class="white-letter">You haven't liked any pet yet</h1>
         </div>
       </div>
     <% else %>
       <div class="profile-pet-list">
-        <h4 class="white-letter"><strong>My Favorite Pets</strong></h4>
+        <h4 class="white-letter profile-header">My Favorite Pets</h4>
           <div class="profile-pet-link">
           <ul class="list-dot">
             <% @favorites.each do |favorite| %>

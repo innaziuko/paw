@@ -100,7 +100,7 @@
 
 .description {
   width: 60%;
-  padding: 20px 35px;
+  padding: 20px 50px;
 }
 
 .text-evenly {
@@ -119,7 +119,7 @@
   display: flex;
   justify-content: space-evenly;
   text-align: center;
-  padding: 20px 35px;
+  padding: 26px 35px;
 }
 
 .description-photo {
@@ -200,6 +200,9 @@
   height: 260px;
   justify-content: center;
   align-items: center;
+  background-color: #9787FD;
+  border-radius: 15px;
+
 }
 
 .create-btn {
@@ -211,6 +214,7 @@
 }
 
 .create-new-btn {
+  font-family: "Neue-Haas-D-Medium";
   border: none;
   background-color: #FAB2CC;
   text-decoration: none;
@@ -219,9 +223,7 @@
   // padding-bottom: 22px;
   height: 80px;
   width: 100%;
-  font-weight: bolder;
   font-size: 25px;
-  font-style: italic;
   border-radius: 0 0 15px 15px;
   cursor: asset-url("cursor.png") , default!important;
   &:hover {
@@ -234,7 +236,7 @@
   margin-top: 30px;
   background-color: #9787FD;
   border-radius: 15px;
-  padding: 20px 35px;
+  padding: 20px 50px;
 }
 
 .appointment-card-empty {
@@ -303,7 +305,7 @@
   margin-top: 30px;
   background-color: #9787FD;
   border-radius: 15px;
-  padding: 20px 35px;
+  padding: 20px 50px;
 }
 
 .review-empty {
@@ -338,4 +340,23 @@
 .review-content {
   margin-left: 35px;
   margin-right: 35px;
+}
+
+.hours{
+  font-family: "Neue-Haas-D-Medium";
+}
+.dashboard-header{
+  font-size: 30pt;
+}
+
+.empty{
+  font-size: 16pt;
+  font-family: "Neue-Haas-D-Medium";
+}
+
+.width{
+  width: 82%;
+}
+.count{
+  font-size: 25pt;
 }

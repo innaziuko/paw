@@ -1,117 +1,108 @@
-<!-- Image -->
-<div class="container">
-<div class="row">
-  <div class="col-md-12">
-    <%= image_tag(@pet.photo, :alt => "Avatar", :style => 'height:100%;width:50%;') %>
+<div class="pet_container">
+  <div class="bread-crumbs">
+    <div class="user-btn">
+      <a href="/pets"  role="button">← Back</a>
+    </div>
+    <div class="user-btn">
+      <a href="/pets" role="button">Next →</a>
+    </div>
   </div>
-</div>
-<br/>
-
-
-<div class="row">
-
-  <!-- LEFT PANEL -->
-  <div class="col-md-8">
-
-    <!-- Listing Name -->
-    <div class="row">
-      <div class="col-md-8">
-        <h1><%= @pet.name %></h1>
-      </div>
-    <hr/>
-
+  <div class="pet_show_info">
+  <!-- Image -->
+    <div class="pet_show_img">
+      <%= cl_image_tag @pet.photo.key, class: "pet_avatar" %>
+    </div>
     <!-- Pet Info -->
-    <div class="row text-babu">
-      <div class="row text-center row-space-1">
-        <div class="col-md-3">
-         <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-          <lord-icon
-            src="https://cdn.lordicon.com/vwstgulc.json"
-            trigger="morph"
-            style="width:100px;height:100px">
-          </lord-icon>
+    <div class="pet-show-general">
+      <div class="pet-show-info">
+        <h1 class="pet-name-text"><%= @pet.name %></h1>
+          <div class="owner-btn">
+          <% if policy(@pet).destroy? %>
+            <%= link_to 'Delete',
+            pet_path(@pet),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          <% end %>
+          <% if policy(@pet).edit? %>
+            <%= link_to 'Edit this pet', edit_pet_path(@pet) %>
+          <% end %>
         </div>
-        <div class="col-md-3">
-          <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-            <lord-icon
-              src="https://cdn.lordicon.com/ymazxyae.json"
-                trigger="hover"
-                style="width:100px;height:100px">
-            </lord-icon>
+        <div class="pet-texts">
+          <p class="pet-details">Age: <span class="pet-detail-text"><%= @pet.age %> years old</span></p><br>
+          <p class="pet-details">Breed: <span class="pet-detail-text"><%= @pet.breed %></span></p><br>
+          <p class="pet-details">Gender: <span class="pet-detail-text"><%= @pet.gender %></span></p><br>
+          <p class="pet-details">Status: <span class="pet-detail-text"><%= @pet.status %></span></p><br>
         </div>
-        <div class="col-md-3">
-            <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-            <lord-icon
-                src="https://cdn.lordicon.com/bxxnzvfm.json"
-                trigger="hover"
-                style="width:100px;height:100px">
-            </lord-icon>
-        </div>
+        <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
       </div>
 
-      <div class="row text-center">
-        <div class="col-md-3"><%= @pet.species %></div>
-        <div class="col-md-3"><%= @pet.age %></div>
-        <div class="col-md-3"><%= @pet.status %></div>
-      </div>
-    <hr/>
-
-    <!-- About -->
-    <div class="row">
-      <div class="col-md-12">
-        <h3>About This Pet</h3>
-        <p><%= @pet.description %></p>
-      </div>
-    </div>
-    <hr/>
-<div>
-</div>
-
-  <% if policy(@pet).destroy? %>
-    <%= link_to 'Delete',
-    pet_path(@pet),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-    %>
-  <% end %>
-
-  <% if policy(@pet).edit? %>
-    <%= link_to 'Edit this pet', edit_pet_path(@pet) %>
-  <% end %>
-
-
-   <div class="d-flex justify-content-left">
-    <div>
-      <% if Appointment.find_by(pet: @pet, user: current_user).present? %>
-        <div> <%= button_to 'Cancel Appointment', pet_appointment_path(@pet.id), method: :delete, class: "btn btn-outline-primary btn-lg" %></div>
+      <%# BUTTON FOR APPOINTMENTS %>
+        <div class="appointment-card">
+        <% if Appointment.find_by(pet: @pet, user: current_user).present? %>
+          <%= button_to 'Cancel Appointment', pet_appointment_path(@pet.id), method: :delete, class: "btn btn-outline-primary btn-cancel" %>
         <% else %>
-        <div>
-          <form action=<%= "/pets/#{@pet.id}/appointments" %> method="post">
-            <div class="mb-3">
-              <label for="appointmentdate" class="form-label">Pick A Date</label>
-              <input type="date" class="form-control" id="appointmentdate" name="appointmentdate">
-            </div>
-            <div class="mb-3">
-              <label for="appointmenttime" class="form-label">Pick A Time</label>
-              <input type="time" class="form-control" id="appointmenttime" name="appointmenttime">
-            </div>
-            <button type="submit" class="btn btn-primary">Create Appointment</button>
-          </form>
+        <form action=<%= "/pets/#{@pet.id}/appointments" %> method="post">
+        <div class="mb-3">
+          <label for="appointmentdate" class="form-label">Pick A Date</label>
+          <input type="date" class="form-control" id="appointmentdate" name="appointmentdate" >
         </div>
-      <% end %>
+        <div class="mb-3">
+          <label for="appointmenttime" class="form-label">Pick A Time</label>
+          <input type="time" class="form-control" id="appointmenttime" name="appointmenttime">
+        </div>
+        <button type="submit" class="btn btn-primary">Create Appointment</button>
+      </form>
+        <% end %>
       </div>
     </div>
   </div>
-  <div class="col-md-8">
-    <a href="/pets" class="btn btn-outline-primary btn-lg mb-2 mt-0" role="button">Go back to all pets</a>
+
+ <!-- Pet Description -->
+  <div class="pet-description">
+    <div class="description-text">
+      <h4 class="pet-description-header">About <%= @pet.name %></h4>
+      <p class="pet-description-paragraph"><%= @pet.description %></p>
+    </div>
+    <!-- Image -->
+    <div class="pet-description-right">
+      <%= image_tag "pets_comp5.png", alt: "", width:"80%" %>
+    </div>
   </div>
 
-
-  <div data-controller="map"
-          id='map'
-          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-          data-map-markers-value="<%= @markers.to_json %>"
-          style='width: 100%; height: 300px;'>
+  <!-- Shelter -->
+  <div class="pet_show_info-map">
+    <div class="pet-show-general-left">
+      <h1 class="shelter-description-header"><%= @pet.shelter.name %></h1>
+      <p class="description-shelter-text">Address: <%= @pet.shelter.address %></p>
+      <p class="description-shelter-text">Phone: <%= @pet.shelter.phone_number %></p>
+      <div class="working-hour margin">
+          <h5 class="description-shelter-text"><strong>Working Hours:</strong></h5>
+          <div class="flex-hour">
+            <div>
+              <p class="description-shelter-text">Monday</p>
+              <p class="description-shelter-text">Tuesday</p>
+              <p class="description-shelter-text">Wednesday</p>
+              <p class="description-shelter-text">Thrusday</p>
+              <p class="description-shelter-text">Friday</p>
+            </div>
+            <div class="time-margin">
+              <p class="description-shelter-text">9am - 6pm</p>
+              <p class="description-shelter-text">9am - 6pm</p>
+              <p class="description-shelter-text">9am - 4pm</p>
+              <p class="description-shelter-text">9am - 4pm</p>
+              <p class="description-shelter-text">9am - 8pm</p>
+            </div>
+          </div>
         </div>
-
-
+    </div>
+    <!-- MAP -->
+    <div class="pet-show-general-right">
+      <div data-controller="map"
+        id='pet-map'
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+        data-map-markers-value="<%= @markers.to_json %>"
+        style='width: 100%; height: 300px; border-radius: 15px;'>
+      </div>
+    </div>
+  </div>
 </div>
+
