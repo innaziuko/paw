@@ -36,23 +36,27 @@
       </div>
 
       <%# BUTTON FOR APPOINTMENTS %>
-        <div class="appointment-card">
+
         <% if Appointment.find_by(pet: @pet, user: current_user).present? %>
-          <%= button_to 'Cancel Appointment', pet_appointment_path(@pet.id), method: :delete, class: "btn btn-outline-primary btn-cancel" %>
+          <div class="cancel-btn">
+            <%= button_to 'Cancel Appointment', pet_appointment_path(@pet.id), method: :delete, class: "btn btn-cancel" %>
+          </div>
         <% else %>
-        <form action=<%= "/pets/#{@pet.id}/appointments" %> method="post">
+      <div class="appointment-card">
+        <form action=<%= "/pets/#{@pet.id}/appointments" %> method="post" class="d-flex align-items-center justify-content-between">
         <div class="mb-3">
           <label for="appointmentdate" class="form-label">Pick A Date</label>
-          <input type="date" class="form-control" id="appointmentdate" name="appointmentdate" >
+          <input type="date" class="form-control py-3" id="appointmentdate" name="appointmentdate" >
         </div>
         <div class="mb-3">
           <label for="appointmenttime" class="form-label">Pick A Time</label>
-          <input type="time" class="form-control" id="appointmenttime" name="appointmenttime">
+          <input type="time" class="form-control py-3" id="appointmenttime" name="appointmenttime">
         </div>
-        <button type="submit" class="btn btn-primary">Create Appointment</button>
+        <button type="submit" class="btn btn-appointment">Create Appointment</button>
       </form>
-        <% end %>
       </div>
+        <% end %>
+
     </div>
   </div>
 
@@ -105,4 +109,3 @@
     </div>
   </div>
 </div>
-

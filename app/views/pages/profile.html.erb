@@ -59,14 +59,16 @@
       </div>
     <% else %>
       <div class="profile-shelter-list">
-        <h4 class="white-letter profile-header">My Shelters</h4>
+        <div class="d-flex justify-content-between">
+          <h4 class="white-letter profile-header">My Shelters</h4>
+          <%= button_to "Create Shelter", new_shelter_path, method: :get, class: "create-shelter-list-btn" %>
+        </div>
         <div class="profile-shelter-link">
           <ul class="list-dot">
             <% @shelters.each do |shelter| %>
               <li class="equal-size"><a href=<%= "/shelters/#{shelter.id}/dashboard" %> class="list-decoration"><%= shelter.name %></a></li>
             <% end %>
           </ul>
-          <%= button_to "Create Shelter", new_shelter_path, method: :get, class: "create-shelter-list-btn" %>
         </div>
       </div>
     <% end %>
