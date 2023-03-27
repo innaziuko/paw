@@ -1,3 +1,41 @@
-<h1>Create a new shelter</h1>
+<div class="new-form-container">
+  <div class="new-pet-head">
+    <%= image_tag "pets_comp2.png", alt: "", width:"70%" %>
+  </div>
+  <h1 class="headline">New Shelter</h1>
 
-<%= render 'form', shelter: @shelter %>
+  <div class="new-pet-form">
+    <%= simple_form_for @shelter, html: { class: 'create-new-pet-form' } do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+      <div class="new-pet-form-top">
+        <div class="form-inputs">
+          <%= f.input :name, placeholder: 'Name', label: false %>
+        </div>
+
+        <div class="form-inputs">
+          <%= f.input :phone_number, placeholder: 'Phone number', label: false %>
+        </div>
+
+        <div class="form-inputs">
+          <%= f.input :address, placeholder: 'Adress', label: false %>
+        </div>
+
+        <div class="form-inputs">
+          <%= f.input :photo, as: :file, placeholder: 'Photo', label: false %>
+        </div>
+      </div>
+
+      <div class="new-pet-form-bottom">
+        <div class="form-inputs">
+          <%= f.input :description, as: :text, input_html: { style: 'height: 125px;' } %>
+        </div>
+
+        <div class="form-actions mb-2">
+          <%= f.button :submit, class: "create-new-pet-form-btn" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
