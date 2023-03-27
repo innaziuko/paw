@@ -56,22 +56,17 @@ class SheltersController < ApplicationController
   def dashboard
     authorize @shelter
     @pets = Pet.where(shelter: @shelter)
+    @appointments = []
     @pets.each do |pett|
       if Appointment.where(pet: pett).present?
-        @appointments = Appointment.where(pet: pett)
-      else
-        @appointments = []
+        @appointments += Appointment.where(pet: pett).to_a
       end
     end
-    if @appointments.empty?
-      @reviews = []
-    else
-      @appointments.each do |appoint|
-        if Review.where(appointment: appoint).present?
-          @reviews = Review.where(appointment: appoint)
-        else
-          @reviews = []
-        end
+
+    @reviews = []
+    @appointments.each do |appoint|
+      if Review.where(appointment: appoint).present?
+        @reviews = Review.where(appointment: appoint).to_a
       end
     end
   end

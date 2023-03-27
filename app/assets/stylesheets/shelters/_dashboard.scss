@@ -28,6 +28,10 @@
   padding: 15px 20px 15px 60px;
 }
 
+.general-info {
+  width: 55%;
+}
+
 .margin-shrink {
   margin-bottom: 5px;
 }
@@ -65,16 +69,20 @@
 }
 
 .polish-button {
-  border: none;
+  font-family:"Neue-Haas-D-Medium";
+  border: solid #9787FD;
   background-color: #FAB2CC;
   text-decoration: none;
+  font-weight: bold;
   color: white;
   padding: 8px 21px;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: asset-url("cursor.png") , default!important;
+  transition: all 0.3s ease;
   &:hover {
-    background-color: #D27685;
+    background-color: #9787FD;
     color: white;
+    border-color: white;
   }
 }
 
@@ -226,6 +234,7 @@
   font-size: 25px;
   border-radius: 0 0 15px 15px;
   cursor: asset-url("cursor.png") , default!important;
+  transition: all 0.3s ease;
   &:hover {
     background-color: #D27685;
     color: white;
@@ -257,7 +266,7 @@
 .appointment-request-card {
   border: solid white;
   border-radius: 15px;
-  height: 160px;
+  height: 100px;
   padding: 15px;
 }
 
