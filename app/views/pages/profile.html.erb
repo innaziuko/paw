@@ -83,7 +83,7 @@
           <ul class="list-dot">
             <% @favorites.each do |favorite| %>
               <% pet = Pet.find_by(id: favorite.pet_id) %>
-              <li class="equal-size"><a href=<%= "/pets/     #{pet.id}/dashboard" %> class="list-decoration"><%= pet.name %></a></li>
+              <li class="equal-size"><a href=<%= "/pets/#{pet.id}" %> class="list-decoration"><%= pet.name %></a></li>
             <% end %>
           </ul>
         </div>

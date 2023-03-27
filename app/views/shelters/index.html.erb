@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-shelters">
 
   <div data-controller="map"
           id='map'
@@ -7,19 +7,21 @@
           style='width: 100%; height: 300px;'>
         </div>
 
-  <div class="row row-cols-1 row-cols-md-3 g-0">
+  <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
       <% @shelters.each do |shelter| %>
         <% if shelter.photo.attached? %>
           <div class="col">
-            <div class="card card-border m-3">
+            <div class="card shelter-view-card">
+              <div class="shelter-view-card shelter_image">
                 <%= link_to(shelter) do %>
-                <%= cl_image_tag shelter.photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top img-border" %>
+                <%= cl_image_tag shelter.photo.key, width: 100, class: "shelter_image" %>
                 <% end %>
-              <div class="card-body">
-                <h5 class="card-title title-inline" style="color: #6096B4";><%= shelter.name %></h5>
-                <p class="card-text mb-0"><%= shelter.address %></p>
-                <p class="card-text mt-0"><%= shelter.phone_number %></p>
-                <a href=<%= "/shelters/#{shelter.id}" %> class="btn btn-primary btn-sm" role="button">Discover more</a>
+                <div class="card-body shelter-view-info">
+                  <div class="w-100">
+                    <h4 class="shelters-card-header"><%= shelter.name %></h4>
+                    <p class="card-text-white-text">📍<%= shelter.address %></p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
