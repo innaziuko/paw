@@ -232,15 +232,22 @@
 }
 
 .create-shelter-list-btn {
-  border: none;
+  font-family:"Neue-Haas-D-Medium";
+  font-size: 14pt;
+  width: 92.5%;
+  color: #ffffff;
+  border: solid #9787FD;
   background-color: #FAB2CC;
   text-decoration: none;
   color: white;
   padding: 8px 20px;
   border-radius: 10px;
   cursor: asset-url("cursor.png") , default!important;
+  transition: all 0.3s ease;
   &:hover {
-    background-color: #644dfc;
+    background-color: #9787FD;
+    color: white;
+    border-color: white;
   }
 }
 
