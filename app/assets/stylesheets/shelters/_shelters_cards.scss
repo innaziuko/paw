@@ -2,10 +2,11 @@
   margin-top: 0px;
   margin-left: 60px;
   margin-right: 60px;
+  margin-bottom: 40px;
 }
 .shelter-view-card{
   border-radius: 15px;
-  height: 350px;
+  height: 340px;
   background-color: #9787FD;
 }
 .shelter_image{
@@ -23,8 +24,10 @@
 }
 .shelters-card-header {
   color: #fff;
-  font-size: 28pt;
+  font-size: 25pt;
   margin-bottom: -1px;
+  line-height: 1.2;
+  margin-top: 6px;
 }
 .right-align-text {
   text-align: right;
@@ -34,7 +37,7 @@
   font-family: "Neue-Haas-D-Roman";
   color: #fff;
   margin-bottom: 2px;
-  font-size: 12pt;
+  font-size: 11pt;
 }
 
 .card-body {

@@ -82,13 +82,10 @@
     </div>
   </div>
 </div>
-
-
-
-<br>
+<!-- Pets -->
 <div class="container_home">
   <div class="home-content-no-margin">
-    <div class="text-container">
+    <div class="text-container mt-5">
       <h2 class="subhead">Our Pets</h2>
     </div>
     <div class="see-container">
@@ -127,50 +124,76 @@
       <% end %>
     </div>
   </div>
-
-
-  <div class="container">
-    <div data-controller="map"
-          id='map'
-          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-          data-map-markers-value="<%= @markers.to_json %>"
-          style='width: 100%; height: 300px;'>
+  <!-- Events -->
+  <div class="home-content-wrap">
+    <div class="lilac-card" style="background-color: #9787FD;">
+      <div class="image-container mt-1">
+        <%= image_tag "pets_comp7.png", alt: "", style: "width: 98%;" %>
+      </div>
+    </div>
+    <div class="text-container">
+      <h2 class="subhead">Events</h2>
+      <p class="home-text">Join us at our adoption events and take the first step towards creating a lifelong bond with your perfect pet match. Our heartwarming events showcase a diverse array of lovable pets from trusted shelters, making it easy for you to meet and interact with your potential new companion in a friendly and supportive environment. We believe that every pet deserves a loving and nurturing home, and our goal is to connect you with the perfect pet that aligns with your preferences and lifestyle.</p>
+      <p class="home-text">We understand that finding the right pet can be a challenging and overwhelming process, which is why our adoption events are designed to make the experience as enjoyable and stress-free as possible. Our events are held regularly at various locations throughout Europe, and our team is dedicated to ensuring that each event is a fun and memorable experience for both you and the pets.</p>
+    </div>
+  </div>
+  <!-- Map -->
+  <div data-controller="map"
+    id='map'
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+    data-map-markers-value="<%= @markers.to_json %>"
+    style='width: 100%; height: 300px;'>
+  </div>
+<!-- Shelters -->
+  <div class="home-content-no-margin mt-4">
+    <div class="text-container">
+      <h2 class="subhead">Shelters</h2>
+    </div>
+    <div class="see-container">
+      <p class="see_more">See More</p>
+    </div>
+  </div>
+  <div class="container-shelters-home">
+  <div class="row row-cols-1 row-cols-md-4 g-4 mb-5">
+  <% @shelters.sample(8).each do |shelter| %>
+    <% if shelter.photo.attached? %>
+      <div class="col">
+        <div class="card shelter-view-card">
+          <div class="shelter-view-card shelter_image">
+            <%= link_to(shelter) do %>
+            <%= cl_image_tag shelter.photo.key, width: 100, class: "shelter_image" %>
+            <% end %>
+            <div class="card-body shelter-view-info">
+              <div class="w-100">
+                <h4 class="shelters-card-header"><%= shelter.name %></h4>
+                <p class="card-text-white-text">📍<%= shelter.address %></p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+      <% end %>
+      <% end %>
   </div>
-  <br>
-  <br>
-  <br>
-  <section id="about" style="width:50%;">
-    <h2>About Us</h2>
-    <p>Paws is platform brings together shelters from all over Europe onto one webpage, allowing users to easily find and adopt pets from different countries.</p>
-    <h2>Find Your Perfect Match</h2>
-    <p>Are you looking for a furry friend to join your family, but can't find the perfect match in your local shelter? Our platform makes it easy for you to search for pets across Europe and find your perfect match. Whether you're in Germany looking to adopt a Polish dog or in France looking for a Spanish cat, we've got you covered.</p>
-    <h2>Seamless Adoption Process</h2>
-    <p>Our platform also makes the adoption process seamless by connecting you directly with the shelter where your potential new pet is located. You can easily communicate with the shelter, ask any questions you may have, and complete the adoption process online, all through our platform.</p>
-    <h2>Make a Positive Impact</h2>
-    <p>At the same time, we are proud to help shelters all over Europe find loving homes for their animals. By bringing shelters together onto one webpage, we increase their exposure and make it easier for them to find adopters across borders. This means that by adopting through our platform, you're not only finding your perfect furry friend, but you're also making a positive impact on animal welfare across Europe.</p>
-  </section>
-
-
-  <h1 id="cats">Cats</h1>
-  <a href="/pets?species=cat">
-    <%= image_tag "cat.jpg", alt: "", height: "720px" %>
-  </a>
-
-  <h1 id="dogs">Dogs</h1>
-  <a href="/pets?species=dog">
-    <%= image_tag "dog.jpg", alt: "", height: "720px" %>
-  </a>
-
-  <h1>Shelters</h1>
-  <section style="width:50%;">
-    <p>Paws is platform brings together shelters from all over Europe onto one webpage, allowing users to easily find and adopt pets from different countries.</p>
   </div>
+</div>
+<!-- Reasons-->
+<div class="banner" style="background-color: #9787FD;">
+  <div class="home-content-wrap-banner">
+    <div class="text-container">
+      <h2 class="subhead-white">Reasons to Adopt</h2>
+      <p class="home-subhead-white">💜 Save a Life</p>
+      <p class="home-text-white">By adopting a pet from a shelter, you  are giving a deserving animal a second chance at life. Many shelters are overcrowded, and adoption can help make room for other animals in need.</p>
+      <p class="home-subhead-white">💜 Combat Pet Overpopulation</p>
+      <p class="home-text-white">Adopting a pet helps reduce the number  of animals in shelters, which can become overwhelmed due to pet overpopulation.</p>
+      <p class="home-subhead-white">💜 Reduce Overbreeding</p>
+      <p class="home-text-white">Taking a pet from a shelter helps combat overbreeding and discourages irresponsible breeding practices. Many unscrupulous breeders contribute to pet overpopulation and unhealthy animals.</p>
 
-
-
-
-
-
-
+    </div>
+    <div class="lilac-card" style="background-color: #9787FD;">
+      <div class="image-container mt-1">
+        <%= image_tag "pets_comp4.png", alt: "", style: "width: 100%;" %>
+      </div>
+    </div>
+  </div>
 </div>
