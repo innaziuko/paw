@@ -115,7 +115,7 @@ shelter2.save!
 file = URI.open("https://www.seattleareafelinerescue.org/wp-content/uploads/2019/07/Shawna-199793-_MG_8281-1-436x272.jpg")
 shelter3 = Shelter.create!(
   name: "Cat Rescue",
-  address: "70 Av. du Roule, 92200 Neuilly-sur-Seine",
+  address: "Bahnhofstraße 90402 Nürnberg",
   phone_number: "06 34 56 78 90",
   description: "We are a small, volunteer run, no-kill cat charity. We rescue cats and kittens, and with your help we treat them and find them loving new forever homes.
 
@@ -171,9 +171,9 @@ shelter6.save!
 file = URI.open("https://kittenrescue.org/wp-content/uploads/2015/01/KittenRescue_FB3.jpg")
 shelter7 = Shelter.create!(
   name: "The Catty Shack",
-  address: "Bois de Boulogne, Rte de la Prte Dauphine à la Prte des Sablons, 75116 Paris",
+  address: "Václavské nám. 22, 110 00 Praha",
   phone_number: "07 71 35 89 12",
-  description: "The Catty Shack is the City of Paris' adoption facility for our feline friends. With the main goal that all healthy, adoptable cats have an opportunity to be placed in a forever home, the Catty Shack welcomes visitors to come and meet available cats.
+  description: "The Catty Shack is Prague's adoption facility for our feline friends. With the main goal that all healthy, adoptable cats have an opportunity to be placed in a forever home, the Catty Shack welcomes visitors to come and meet available cats.
 
   Located in a cozy house with a storefront concept, The Catty Shack is a temporary home for healthy, well-adjusted and vaccinated cats. The facility offers Londoners a convenient, accessible location to visit, view and take home adoptable cats.",
   user: user7
