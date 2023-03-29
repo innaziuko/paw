@@ -36,7 +36,7 @@
 }
 
 .user-info {
-  width: 40%;
+  width: 50%;
   margin-left: 35px;
   display: flex;
   flex-direction: column;
@@ -234,7 +234,7 @@
 .create-shelter-list-btn {
   font-family:"Neue-Haas-D-Medium";
   font-size: 14pt;
-  width: 92.5%;
+  width: 100%;
   color: #ffffff;
   border: solid #9787FD;
   background-color: #FAB2CC;
@@ -266,7 +266,7 @@
     text-decoration: none;
     color: white;
     position: relative;
-    width: 210%;
+    width: 185%;
     margin-bottom: 20px;
     background-repeat: no-repeat;
     text-align: center;
@@ -294,4 +294,9 @@
 
 .profile-header{
   font-size: 30pt;
+}
+
+.profile-subhead{
+  font-family:"Neue-Haas-D-Medium";
+  font-size: 14pt;
 }

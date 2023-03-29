@@ -7,21 +7,21 @@
       <%# <div class="user-info"> %>
         <div class="user-info">
           <h1 class="white-letter spacing"><%= current_user.email %></h1>
-          <h5 class="small-info white-letter">Berlin, Germany</h5>
+          <h5 class="small-info white-letter profile-subhead">Berlin, Germany</h5>
           <p class="white-letter user-description">Looking to adopt a dog to provide they with companionship and encourage they to get outside and be more active.</p>
         </div>
         <%# <button class="user-edit-btn">Edit profile</button> %>
       </div>
     <%# </div> %>
     <div class="profile-right">
-      <%= image_tag "pets_comp8.png", alt: "", width:"100%" %>
+      <%= image_tag "pets_comp4.png", alt: "", width:"100%" %>
     </div>
   </div>
   <div class="profile-appointment">
     <h4 class="white-letter profile-header">Appointments</h4>
     <% if @appointments.empty? %>
       <div class="profile-appointment-empty">
-        <h1 class="white-letter">Go get your first appointment</h1>
+        <h1 class="white-letter empty">Go get your first appointment</h1>
       </div>
     <% else %>
       <div class="profile-appointment-info">
