@@ -345,11 +345,7 @@ pet6 = Pet.create!(
 
   She was previously an indoor cat but now loves to go outside, especially on sunny days, watches the wildlife and pretends to catch the squirrels (When they turn round and shout at her she stops trying!).
 
-  Because of her previous lifestyle she is used to being close to one person and is quite needy and affectionate. She often ‘demands’ that you sit down so she can be on your lap. She can be extremely vocal about this and is generally a chatty cat like most Bengals and Savannahs.
-
-  She gets bored easily and wants to play with someone very energetically two or three times a day. This is not a cat that can be left on her own all day as she becomes lonely and bored and starts to overgroom. She is very friendly to people, not nervous at all, but hasn't made friends with the cats she meets outside (though some have tried) so we can’t be sure it would work out if you already have a pet (although she got on with her brother for many years).
-
-  She is a highly intelligent, beautiful girl and will make a lovely pet in the right home.",
+  Because of her previous lifestyle she is used to being close to one person and is quite needy and affectionate.",
   species: "cat",
   gender: "female",
   shelter: shelter2
@@ -398,11 +394,7 @@ pet9 = Pet.create!(
 
   Ruby is a lovely cat with a strong personality; she isn't shy of strangers and is happy to meet new people. Ruby hasn't lived with other cats but does seem to enjoy their company, and is inquisitive when she sees the neighbour's cat.
 
-  She knows a lot of words, too, including 'foodie' and 'birdie' which both make her come running! 'Come here' is another known but less loved word (where she actually tends to run the other way, thinking there's going to be picking up involved!)
-
-  Ruby does go outside to spend time in the garden, so will need a new home with safe back garden access. She doesn't tend to roam far or be very adventurous, however.
-
-  We are heartbroken to have to give her up, due to allergies. We'd love for her to find a loving, calm home without children where she can get the attention and time that she needs and deserves. Ruby does like her food, so this will need to be managed carefully by her new home.",
+  She knows a lot of words, including 'foodie' and 'birdie' which both make her come running!",
   species: "cat",
   gender: "female",
   shelter: shelter3
@@ -430,7 +422,7 @@ pet11 = Pet.create!(
   name: "Boris",
   age: 7,
   breed: "Domestic Short Hair",
-  description: "Boris has been a stray for a number of years we suspect, but for the past year was being fed by some locals - they decided to bring him in so that he can hopefully find a suitable and permanent home. He is a very independent cat but with those he trusts, he can be friendly and will accept some fuss on his body/back. However, he is quite head shy and would rather not have fuss on his head. Boris is looking for a home with patient owners who are understanding of the fact he will spend the majority of his time outside and isn't an overly affectionate cat. He is a huge foodie and that is the best way to bond with him! He really is a sweet boy, he is just reserved and can be startled by people sometimes. With patience, the right expectations and some love, he is sure to show you his appreciation. Boris would make a wonderful outdoor cat for the right home.",
+  description: "Boris has been a stray for a number of years we suspect, but for the past year was being fed by some locals - they decided to bring him in so that he can hopefully find a suitable and permanent home. He is a very independent cat but with those he trusts, he can be friendly and will accept some fuss on his body/back. However, he is quite head shy and would rather not have fuss on his head. Boris is looking for a home with patient owners who are understanding of the fact he will spend the majority of his time outside and isn't an overly affectionate cat.",
   species: "cat",
   gender: "male",
   shelter: shelter4
@@ -733,7 +725,7 @@ pet34 = Pet.create!(
 
   Like his siblings, he appreciates a good and mixed veggie bowl, although toys and floor time are his absolute favorite. He can be a bit skittish around new people, but with enough time to adapt, and of course, you guessed it, space, he will become a perfect companion.
 
-  Barry was recently neutered, so his litter skills are expected to improve even more, and has received the 1st dose of the RHDV vaccine.",
+  Barry was recently neutered, so his litter skills are expected to improve even more.",
   species: "rabbit",
   gender: "Male",
   shelter: shelter12
@@ -750,7 +742,7 @@ pet35 = Pet.create!(
 
   Brinn loves her food, and is not picky at all. Dandelion greens, cilantro, lettuce, cucumber, you name it, she'll devour it. The only thing that matches her appetite is her love of life.
 
-  Brinn is spayed and has received the 1st dose of the RHDV vaccine. Her litter skills are quite good, and are expected to improve even more.",
+  Brinn is spayed and has received the 1st dose of the RHDV vaccine.",
   species: "rabbit",
   gender: "Female",
   shelter: shelter12
