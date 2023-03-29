@@ -1,58 +1,83 @@
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <%=  cl_image_tag @shelter.photo.key, :style => 'height:100%;width:50%;' %>
+<div class="shelter_container">
+  <div class="bread-crumbs">
+    <div class="user-btn">
+      <a href="/shelters"  role="button">← Back</a>
+    </div>
+    <div class="user-btn">
+      <a href="/shelters" role="button">Next →</a>
     </div>
   </div>
-  <br/>
-
-  <div class="row">
-    <div class="col-md-8">
-      <div class="row">
-        <div class="col-md-8">
-          <h1><%= @shelter.name %></h1>
+  <div class="shelter_show_info">
+<!-- Image -->
+    <div class="shelter_show_img">
+      <%=  cl_image_tag @shelter.photo.key, class: "shelter_avatar" %>
+    </div>
+<!-- Shelter Info -->
+   <div class="shelter-show-general">
+      <div class="shelter-show-info">
+        <h1 class="shelter-name-text"><%= @shelter.name %></h1>
+          <div class="owner-btn">
+          <% if policy(@shelter).destroy? %>
+            <%= link_to 'Delete',
+            shelter_path(@shelter),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          <% end %>
+          <% if policy(@shelter).edit? %>
+            <%= link_to 'Edit this shelter', edit_shelter_path(@shelter) %>
+          <% end %>
         </div>
-
-
-      <div class="row text-babu">
-          <hr/>
-        <div class="row text-center row-space-1">
-          <div class="col-md-6">
-            <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-              <lord-icon
-                  src="https://cdn.lordicon.com/hgdunpng.json"
-                  trigger="hover"
-                  colors="primary:#c69cf4,secondary:#d4d1fa,tertiary:#fad1e6,quaternary:#848484"
-                  style="width:100px;height:100px">
-              </lord-icon>
-          </div>
-          <div class="col-md-6">
-           <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+        <div class="shelter-texts">
+          <p class="shelter-details"><script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
             <lord-icon
-                src="https://cdn.lordicon.com/nfpubwhs.json"
+                src="https://cdn.lordicon.com/bjnaomnr.json"
                 trigger="hover"
-                colors="primary:#d4d1fa,secondary:#3a3347,tertiary:#2ea28b,quaternary:#e7e2eb,quinary:#646e78"
-                style="width:100px;height:100px">
+                colors="outline:#121331,primary:#e5d1fa,secondary:#3a3347,tertiary:#2ea28b"
+                style="width:35px;height:35px">
             </lord-icon>
+          <span class="shelter-detail-text"> <%= @shelter.phone_number %></span></p><br>
+          <p class="shelter-details"><script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+          <lord-icon
+              src="https://cdn.lordicon.com/etqbfrgp.json"
+              trigger="hover"
+              colors="outline:#131432,primary:#d4d1fa,secondary:#a39cf4,tertiary:#b26836,quaternary:#ebe6ef"
+              style="width:25px;height:25px">
+          </lord-icon> <span class="shelter-detail-text"> <%= @shelter.address %></span></p><br>
+        </div>
+        <div class="working-hour margin">
+          <h5 class="description-shelter-text"><strong>Working Hours:</strong></h5>
+          <div class="flex-hour">
+            <div>
+              <p class="description-shelter-text">Monday</p>
+              <p class="description-shelter-text">Tuesday</p>
+              <p class="description-shelter-text">Wednesday</p>
+              <p class="description-shelter-text">Thrusday</p>
+              <p class="description-shelter-text">Friday</p>
+            </div>
+            <div class="time-margin">
+              <p class="description-shelter-text">9am - 6pm</p>
+              <p class="description-shelter-text">9am - 6pm</p>
+              <p class="description-shelter-text">9am - 4pm</p>
+              <p class="description-shelter-text">9am - 4pm</p>
+              <p class="description-shelter-text">9am - 8pm</p>
+            </div>
           </div>
         </div>
-        <div class="row text-center">
-          <div class="col-md-6"><%= @shelter.address %></div>
-          <div class="col-md-6"><%= @shelter.phone_number %></div>
-        </div>
-    <hr/>
-      <div class="row">
-      <div class="col-md-12">
-        <h3>Hello, we are <%= @shelter.name %> 👋 and this is our story:</h3>
-        <br>
-        <p><%= @shelter.description %></p>
       </div>
     </div>
-    <hr/>
+  </div>
+ <!-- Shelter Description -->
+  <div class="shelter-description">
+    <div class="description-text">
+      <h4 class="shelter-description-header">About <%= @shelter.name %></h4>
+      <p class="shelter-description-paragraph"><%= @shelter.description %></p>
+    </div>
+<!-- Image -->
+    <div class="shelter-description-right">
+      <%= image_tag "pets_comp5.png", alt: "", width:"80%" %>
     </div>
   </div>
-  </div>
+
+
   <p><strong>Pets</strong></p>
   <div class="container">
     <div class="row row-cols-1 row-cols-md-4 g-0">

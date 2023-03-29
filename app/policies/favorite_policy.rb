@@ -11,6 +11,18 @@ class FavoritePolicy < ApplicationPolicy
   end
 
   def create?
-    user
+    true
+  end
+
+  def new?
+    true
+  end
+
+  def show?
+    true
+  end
+
+  def new_favorite?
+    true
   end
 end
