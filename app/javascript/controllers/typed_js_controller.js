@@ -8,7 +8,9 @@ export default class extends Controller {
     new Typed(this.element, {
       strings: ["Find New Best Friend"],
       typeSpeed: 40,
-      loop: true
+      loop: true,
+      loopCount: 1,
+      showCursor: false
     })
   }
 }
