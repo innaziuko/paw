@@ -54,6 +54,8 @@ h1, h2, h3 {
   text-align: center;
   line-height: 60px;
   padding-top: 0px;
+  margin-top: 10px;
+  margin-bottom: -20px;
 }
 
 
@@ -79,7 +81,7 @@ h1, h2, h3 {
 }
 .search_image{
   align-content: center;
-  width: 1200px;
+  width: 1102px;
   height: auto;
   margin-bottom: -80px;
   margin-left: 60px;
@@ -103,8 +105,8 @@ h1, h2, h3 {
 }
 
 .container_home{
-  margin-left: 80px;
-  margin-right: 80px;
+  margin-left: 60px;
+  margin-right: 60px;
 }
 
 .home-content-wrap{
@@ -159,7 +161,7 @@ h1, h2, h3 {
 .lilac-card{
   overflow: hidden;
   height: 402px;
-  width: 612px;
+  width: 575px;
   background: #9787FD;
   align-items: center;
   border-radius: 35px;
@@ -167,10 +169,10 @@ h1, h2, h3 {
 }
 
 .home-text{
-  width: 483px;
+  width: 453px;
   line-height: 1.5;
   max-height: 7.5;
-  margin-right: 112px;
+  margin-right: 0px !important;
   size: 26pt;
 }
 
@@ -198,6 +200,8 @@ h1, h2, h3 {
 
 .subhead{
   font-size: 42pt;
+  width:300px;
+  line-height: 0.8;
 }
 
 .subhead-white{
@@ -285,6 +289,16 @@ h1, h2, h3 {
   margin-right: 0px;
 }
 
+form input[type='number']::-webkit-outer-spin-button,
+form input[type='number']::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+.search-container{
+  margin-left: 0px;
+  margin-right: 0px;
+  
 .container-video {
   margin-top: 0px;
   margin-left: 100px;
