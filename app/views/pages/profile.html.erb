@@ -4,15 +4,15 @@
       <div class="profile-img">
         <%= cl_image_tag current_user.photo.key, width: 150, height: 150, class: "round-avatar" %>
       </div>
-      <div class="user-info">
-        <div class="user-basic-info">
+      <%# <div class="user-info"> %>
+        <div class="user-info">
           <h1 class="white-letter spacing"><%= current_user.email %></h1>
           <h5 class="small-info white-letter">Berlin, Germany</h5>
-          <p class="white-letter user-description">Sarah is looking to adopt a dog to provide her with companionship and encourage her to get outside and be more active.</p>
+          <p class="white-letter user-description">Looking to adopt a dog to provide they with companionship and encourage they to get outside and be more active.</p>
         </div>
-        <button class="user-edit-btn">Edit profile</button>
+        <%# <button class="user-edit-btn">Edit profile</button> %>
       </div>
-    </div>
+    <%# </div> %>
     <div class="profile-right">
       <%= image_tag "pets_comp8.png", alt: "", width:"100%" %>
     </div>

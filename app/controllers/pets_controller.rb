@@ -24,15 +24,22 @@ class PetsController < ApplicationController
 
   def show
     authorize @pet
-    @shelters = policy_scope(Shelter).all
-    @markers = @shelters.geocoded.map do |shelter|
-      {
-        lat: shelter.latitude,
-        lng: shelter.longitude,
-        info: render_to_string(partial: "pages/popup", locals: { shelter: shelter }),
-        marker_html: render_to_string(partial: "pages/marker")
-      }
-    end
+    # @shelters = policy_scope(Shelter).all
+    @shelter = @pet.shelter
+    # @markers = @shelter.geocoded.map do |shelters|
+    #   {
+    #     lat: shelters.latitude,
+    #     lng: shelters.longitude,
+    #     info: render_to_string(partial: "pages/popup", locals: { shelter: shelters }),
+    #     marker_html: render_to_string(partial: "pages/marker")
+    #   }
+    # end
+    @markers = [
+      lat: @shelter.latitude,
+      lng: @shelter.longitude,
+      info: render_to_string(partial: "pages/popup", locals: { shelter: @shelter }),
+      marker_html: render_to_string(partial: "pages/marker")
+    ]
   end
 
   def new
