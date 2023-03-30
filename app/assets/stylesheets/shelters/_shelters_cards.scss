@@ -51,3 +51,10 @@
   grid-template-columns: 1fr 1fr;
   grid-gap:10px;
 }
+
+.sticky-map{
+  position: sticky;
+  top: 80px;
+  align-self: flex-start;
+  margin-top: 0px;
+}
