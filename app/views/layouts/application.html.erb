@@ -17,8 +17,9 @@
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
 
-    
-    <%= yield %>
-    <%= render "shared/footer" %>
+    <div class=<%="padding-top-pages" unless current_page?(shelters_path) %>>
+      <%= yield %>
+      <%= render "shared/footer" %>
+    </div>
   </body>
 </html>
