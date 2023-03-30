@@ -42,8 +42,7 @@
               colors="outline:#131432,primary:#d4d1fa,secondary:#a39cf4,tertiary:#b26836,quaternary:#ebe6ef"
               style="width:25px;height:25px">
           </lord-icon> <span class="shelter-detail-text"> <%= @shelter.address %></span></p><br>
-        </div>
-        <div class="working-hour margin">
+        <div class="working-hour-margin">
           <h5 class="description-shelter-text"><strong>Working Hours:</strong></h5>
           <div class="flex-hour">
             <div>
@@ -59,6 +58,7 @@
               <p class="description-shelter-text">9am - 4pm</p>
               <p class="description-shelter-text">9am - 4pm</p>
               <p class="description-shelter-text">9am - 8pm</p>
+                      </div>
             </div>
           </div>
         </div>
@@ -68,7 +68,13 @@
  <!-- Shelter Description -->
   <div class="shelter-description">
     <div class="description-text">
-      <h4 class="shelter-description-header">About <%= @shelter.name %></h4>
+      <h4 class="shelter-description-header">Hello, nice to meet you <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+<lord-icon
+    src="https://cdn.lordicon.com/lzwckydi.json"
+    trigger="hover"
+    colors="primary:#ebe6ef,secondary:#121331,tertiary:#d1e3fa,quaternary:#7166ee,quinary:#f49cc8"
+    style="width:60px;height:60px;">
+</lord-icon> </h4>
       <p class="shelter-description-paragraph"><%= @shelter.description %></p>
     </div>
 <!-- Image -->
@@ -76,42 +82,42 @@
       <%= image_tag "pets_comp5.png", alt: "", width:"80%" %>
     </div>
   </div>
-
-
-  <p><strong>Pets</strong></p>
   <div class="container">
-    <div class="row row-cols-1 row-cols-md-4 g-0">
-    <% @shelter.pets.each do |pet| %>
-      <div class="col">
-            <div class="card card-border m-3">
+    <h4 class="pets-description-header">Our Pets</h4>
+  </div>
+<div class="container_home">
+  <div class="home-content-no-margin">
+    <div class="text-container mt-5">
+    </div>
+  </div>
+  <div class="container-pets-home">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <% @shelter.pets.each do |pet| %>
+        <% if pet.photo.attached? %>
+          <div class="col">
+            <div class="card pets-view-card">
+              <div class="pets-view-card pet_image">
                 <%= link_to(pet) do %>
-                <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top img-border" %>
-                <% end %>
-              <div class="card-body">
-                <h5 class="card-title title-inline" style="color: #6096B4";><%= pet.name %></h5>
-                <p class="card-text mb-0"><%= pet.species %></p>
-                <p class="card-text mt-0"><%= pet.breed %></p>
-                <p class="card-text mt-0"><%= "#{pet.age} years old" %></p>
-                <a href=<%= "/pets/#{pet.id}" %> class="btn btn-primary btn-sm" role="button">Discover more</a>
-                <button class="btn btn-secondary btn-sm"> <%= pet.status%> </button>
+                <%= cl_image_tag pet.photo.key, width: 100, class: "pet_image" %>
               </div>
+                <a href="<%= "/pets/#{pet.id}" %>" class="discover-more-link">
+                  <div class="card-body pet-view-info">
+                    <div class="left-block">
+                      <h5 class="pets-card-header"><%= pet.name %></h5>
+                      <h6 class="card-text white-text"> <%= pet.breed %></h6>
+                      <h6 class="card-text white-text"> <%= pet.gender %> · <%= pet.age %> years old</h6>
+                    </div>
+                  </div>
+                </a>
             </div>
           </div>
-    <% end %>
+           <% end %>
+        <% end %>
+      <% end %>
     </div>
+  </div>
   </div>
   <br>
-  <form class="show-form">
-  <div class="d-flex justify-content-end">
-    <div>
-      <% if policy(@shelter).destroy? %>
-        <%= button_to 'Delete', shelter_path(@shelter), method: :delete, class: "btn btn-outline-primary btn-lg"%>
-        <% end %> </div>
-        <% if policy(@shelter).edit? %>
-           <%= button_to 'Edit this shelter', edit_shelter_path(@shelter), method: :get, class: "btn btn-outline-primary btn-lg" %>
-        <% end %>
-         <%= button_to 'Back to all the shelters', shelters_path(@shelter), method: :get, class: "btn btn-outline-primary btn-lg" %>
-    </div>
-  </div>
-  </form>
+  <br>
+  <br>
 </div>

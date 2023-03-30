@@ -5,6 +5,7 @@
         <div class="col">
           <div class="card pets-view-card">
             <div class="pets-view-card pet_image">
+              <%= link_to(pet) do %>
               <%= cl_image_tag pet.photo.key, width: 100, class: "pet_image" %>
             </div>
               <a href="<%= "/pets/#{pet.id}" %>" class="discover-more-link">
@@ -26,6 +27,7 @@
               </a>
           </div>
         </div>
+        <% end %>
       <% end %>
     <% end %>
   </div>
