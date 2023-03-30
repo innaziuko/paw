@@ -30,19 +30,19 @@
 }
 
 .shelter_show_img{
-  width: 1%;
+  width: 50%;
 }
 
 .shelter_avatar{
   border-radius: 15px;
-  width: 50%;
-  height: 30px;
+  width: 100%;
+  height: 320px;
   object-fit: cover;
 }
 
 .shelter-show-general{
   display: flex;
-  width: 20%;
+  width: 50%;
   margin-left: 20px;
   background-color: #9787FD;
   border-radius: 15px;
@@ -72,7 +72,6 @@
   position: relative;
 }
 
-
 .shelter-name-text{
   color: white;
   font-family: 'Skillet-Regular';
@@ -86,8 +85,8 @@
   margin-bottom: 5px;
   align-items: flex-end;
   margin-top: 7px;
+  text-align: left;
 }
-
 
 .shelter-details{
   display: inline;
@@ -132,27 +131,24 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 .shelter-description {
   display: flex;
   width: 100%;
   margin-top: 20px;
-  margin-bottom: 20px;
-  height: 380px;
+  margin-bottom: 0px;
+  height: 500px;
   background-color: #9787FD;
   border-radius: 15px;
 }
-
+.shelter-description-paragraph{
+  display:flex;
+  color: white;
+  font-family: "Neue-Haas-D-Roman";
+  font-size: 13.5pt;
+  line-height: 1.3;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+}
 
 .description-text{
   width: 50%;
@@ -176,28 +172,44 @@
   margin-bottom: 70px;
 }
 
-.shelter-description-paragraph{
-  display:flex;
-  color: white;
+// Pets
+
+.container-pets {
+  padding-bottom: 45px;
+}
+
+.pets-description-header{
+  color: #9787FD;
+  font-family: 'Skillet-Regular';
+  font-size: 45pt;
+  line-height: 0.8;
+  letter-spacing: 0.7pt;
+  margin-bottom: 70px;
+}
+
+.pet-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.pets-card-header {
+  color: #fff;
+  font-size: 29pt;
+  margin-bottom: -1px;
+}
+
+.white-text {
   font-family: "Neue-Haas-D-Roman";
-  font-size: 13.5pt;
-  line-height: 1.3;
-  flex-direction: column-reverse;
-  align-items: flex-end;
+  color: #fff;
+  margin-bottom: 2px;
+  font-size: 10pt;
 }
 
-#shelter-map {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 15px;
-}
 
-.shelter-photo {
-  width: 50%;
-}
 
 .border-img {
   border-radius: 15px;
@@ -207,26 +219,58 @@
 }
 
 
-.shelter-description-header{
-  color: white;
-  font-family: 'Skillet-Regular';
-  font-size: 35pt;
-  line-height: 0.8;
-  letter-spacing: 0.7pt;
-  margin-bottom: 14px;
-  margin-top: 6px;
-
-}
-
-.description-shelter-text{
-  color: white;
-  font-family: "Neue-Haas-D-Roman";
-  font-size: 12pt;
-  line-height: 0.8;
-  letter-spacing: 0.7pt;
-  margin-bottom: 8px;
-}
-
 .margin{
-  margin-top: 40px;
+  margin-top: 10px;
+}
+
+.container {
+  margin-top: 60px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.container-pets {
+  padding-bottom: 45px;
+}
+
+.pet-index-card {
+  background-color: #9787FD;
+  border-radius: 15px;
+  height: 300px;
+}
+
+.pet-index-avatar {
+  width: 100%;
+  height: 180px;
+  border-radius: 15px 15px 0px 0px;
+  background-size: cover;
+  background-position: center;
+}
+
+.container-pets {
+  margin-top: 0px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.pets-view-card{
+  border-radius: 15px;
+  width: 100%;
+  height: 600px;
+  background-color: #9787FD;
+  align-items: flex-end;
+}
+
+.pet_image_shelter{
+  width: 100%;
+  height: 250px;
+  border-radius: 15px 15px;
+  object-fit: cover;
+}
+
+.block{
+  width: 100%;
+  margin-right: 0%;
+  margin-left: 0%;
+  background-size: cover;
 }

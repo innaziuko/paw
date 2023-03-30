@@ -75,8 +75,20 @@
   <div class="pet_show_info-map">
     <div class="pet-show-general-left">
       <h1 class="shelter-description-header"><%= @pet.shelter.name %></h1>
-      <p class="description-shelter-text">Address: <%= @pet.shelter.address %></p>
-      <p class="description-shelter-text">Phone: <%= @pet.shelter.phone_number %></p>
+      <p class="description-shelter-text"><script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+          <lord-icon
+              src="https://cdn.lordicon.com/etqbfrgp.json"
+              trigger="hover"
+              colors="outline:#131432,primary:#d4d1fa,secondary:#a39cf4,tertiary:#b26836,quaternary:#ebe6ef"
+              style="width:25px;height:25px">
+          </lord-icon> <%= @pet.shelter.address %></p>
+      <p class="description-shelter-text"><script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+            <lord-icon
+                src="https://cdn.lordicon.com/bjnaomnr.json"
+                trigger="hover"
+                colors="outline:#121331,primary:#e5d1fa,secondary:#3a3347,tertiary:#2ea28b"
+                style="width:35px;height:35px">
+            </lord-icon> <%= @pet.shelter.phone_number %></p>
       <div class="working-hour margin">
           <h5 class="description-shelter-text"><strong>Working Hours:</strong></h5>
           <div class="flex-hour">
