@@ -299,11 +299,11 @@ h1, h2, h3 {
   margin-right: 0px;
 }
 
-form input[type='number']::-webkit-outer-spin-button,
-form input[type='number']::-webkit-inner-spin-button {
--webkit-appearance: none;
-margin: 0;
-}
+// form input[type='number']::-webkit-outer-spin-button,
+// form input[type='number']::-webkit-inner-spin-button {
+// -webkit-appearance: none;
+// margin: 0;
+// }
 
 .search-container{
   margin-left: 0px;
@@ -333,4 +333,8 @@ margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.padding-search{
+  padding: 9.2px;
 }
