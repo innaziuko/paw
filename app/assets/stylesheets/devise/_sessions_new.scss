@@ -1,0 +1,69 @@
+.login-container {
+  height: 100%;
+  display: flex;
+  width: 100%;
+  background-color: #9787FD;
+  padding-bottom: 75px;
+  padding-top: 55px;
+}
+
+.login-form {
+  width: 50%;
+  padding-left: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form-polish {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  padding: 25px 25px 25px 95px;
+  background-color: #FAB2CC;
+  border-radius: 15px;
+  margin-top: 25px;
+  color: #ffffff;
+}
+
+.user-login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-form-inputs input {
+  width: 75%;
+}
+
+.login-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 25px;
+}
+
+.login-form-btn {
+  font-family:"Neue-Haas-D-Medium";
+  font-size: 14pt;
+  color: #ffffff;
+  border: solid #FAB2CC;
+  background-color: #9787FD;
+  text-decoration: none;
+  color: white;
+  padding: 5px 30px;
+  border-radius: 10px;
+  cursor: asset-url("cursor.png") , default!important;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: #FAB2CC;
+    color: white;
+    border-color: white;
+  }
+}
+
+.login-form-link {
+  padding-left: 5px;
+}
