@@ -1,7 +1,7 @@
 class AppointmentsController < ApplicationController
-  def index
-    @appointments = policy_scope(Appointment)
-  end
+  # def index
+  #   @appointments = policy_scope(Appointment)
+  # end
 
   def create
     pet = Pet.find_by(id: params[:pet_id])
@@ -9,7 +9,7 @@ class AppointmentsController < ApplicationController
     appointment = Appointment.new(pet: pet, user: current_user, date: appointment_schedule.to_date, time: appointment_schedule, status: 'pending')
     authorize appointment
     if appointment.save!
-      redirect_to appointments_path
+      redirect_to pet_path(pet)
     else
       flash[:notice] = "Creating an appointment is not successful"
       redirect_to pet_path(pet)
