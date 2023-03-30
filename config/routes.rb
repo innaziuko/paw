@@ -22,5 +22,4 @@ Rails.application.routes.draw do
     get 'new_favorite', to: 'pets#new_favorite', as: 'new_favorite'
   end
   resources :favorites, only: [:index]
-  resources :appointments, only: [:index]
 end
