@@ -184,7 +184,7 @@ shelter7.save!
 file = URI.open("https://heartlandhumane.org/wp-content/uploads/web-cats.png")
 shelter8 = Shelter.create!(
   name: "Adopt a Cat Today",
-  address: "624 Clarke Road, London, ON, N5V 3K5",
+  address: "Oberbottigenweg 72, 3019 Bern",
   phone_number: "519-601-2650",
   description: "Adopt a Cat Today was established as a non-profit organization in 1899 and exists to improve the lives of animals in our community by providing temporary shelter and appropriate new families for surrendered animals.
 
@@ -417,7 +417,7 @@ pet10 = Pet.create!(
 pet10.photo.attach(io: file, filename: 'shambu.jpg', content_type: 'image/jpg')
 pet10.save!
 
-file = URI.open("https://woodgreen.org.uk/wp-content/uploads/2023/02/093742.jpg")
+file = URI.open("https://cdn.pixabay.com/photo/2017/11/09/21/41/cat-2934720_960_720.jpg")
 pet11 = Pet.create!(
   name: "Boris",
   age: 7,
