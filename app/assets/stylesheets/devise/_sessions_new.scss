@@ -21,11 +21,11 @@
   flex-direction: column;
   justify-content: center;
   width: 70%;
-  padding: 25px 25px 25px 95px;
-  background-color: #FAB2CC;
+  padding: 25px 0px 25px 79px;
+  background-color: #fcfcfc;
   border-radius: 15px;
   margin-top: 25px;
-  color: #ffffff;
+  color: #000000;
 }
 
 .user-login-form {
@@ -51,7 +51,7 @@
   font-size: 14pt;
   color: #ffffff;
   border: solid #FAB2CC;
-  background-color: #9787FD;
+  background-color: #FAB2CC;
   text-decoration: none;
   color: white;
   padding: 5px 30px;
@@ -59,7 +59,7 @@
   cursor: asset-url("cursor.png") , default!important;
   transition: all 0.3s ease;
   &:hover {
-    background-color: #FAB2CC;
+    background-color: #9787FD;
     color: white;
     border-color: white;
   }
@@ -67,4 +67,9 @@
 
 .login-form-link {
   padding-left: 5px;
+}
+
+.login-image-class{
+  margin-left: 138px;
+  width: 119%;
 }
