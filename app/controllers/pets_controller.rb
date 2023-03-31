@@ -22,6 +22,12 @@ class PetsController < ApplicationController
     end
   end
 
+  def new_favorite
+    @pet = Pet.find(params[:pet_id])
+    @favorite = @pet.favorites.new
+    authorize @favorite
+  end
+
   def show
     authorize @pet
     # @shelters = policy_scope(Shelter).all

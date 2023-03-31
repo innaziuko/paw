@@ -1,4 +1,5 @@
 class FavoritesController < ApplicationController
+  skip_before_action :authenticate_user!
   def index
     @favorites = policy_scope(Favorite).all
   end
