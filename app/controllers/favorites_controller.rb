@@ -12,8 +12,8 @@ class FavoritesController < ApplicationController
   def create
     @pet = Pet.find(params[:pet_id])
     @favorite = Favorite.new(user: current_user, pet: @pet)
-    authorize favorite
-    if favorite.save
+    authorize @favorite # Fix typo here
+    if @favorite.save # Fix variable name here
       redirect_to favorites_path
     else
       flash[:notice] = "Creating a favorite was not successful"
@@ -26,5 +26,4 @@ class FavoritesController < ApplicationController
     @favorite = @pet.favorites.new
     authorize @favorite
   end
-
 end
