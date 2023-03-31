@@ -273,3 +273,11 @@
 .working-hour-margin{
   margin-top: 10px;
 }
+
+.btn-favorite i {
+  transition: color 0.2s ease;
+}
+
+.btn-favorite .favorited {
+  color: red;
+}
