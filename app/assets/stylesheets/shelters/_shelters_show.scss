@@ -75,10 +75,11 @@
 .shelter-name-text{
   color: white;
   font-family: 'Skillet-Regular';
-  font-size: 60pt;
+  font-size: 40pt;
   line-height: 0.8;
   letter-spacing: 0.7pt;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
+  margin-top: 8px;
 }
 
 .shelter-texts{
@@ -100,15 +101,15 @@
 .shelter-detail-text{
   color: white;
   font-family: "Neue-Haas-D-Roman";
-  font-size: 14pt;
+  font-size: 12pt;
   line-height: 0.8;
   letter-spacing: 0.7pt;
 }
 
 
 // Button
-.owner-btn a{
-  margin-top: 18px;
+.owner-btn-shelter a{
+  margin-top: -12px;
   color: #FAB2CC;
   text-decoration: none;
   font-family: "Neue-Haas-D-Medium";
@@ -155,12 +156,12 @@
   padding: 20px 50px;
 }
 .shelter-description-right{
-  width: 40%;
+  width: 48%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 17px;
-  margin-left: 72px;
+  margin-top: 58px;
+  margin-left: -4px;
 }
 
 .shelter-description-header{
@@ -185,6 +186,7 @@
   line-height: 0.8;
   letter-spacing: 0.7pt;
   margin-bottom: 20px;
+  margin-top: 60px;
 }
 
 .pet-details {
@@ -273,4 +275,8 @@
   margin-right: 0%;
   margin-left: 0%;
   background-size: cover;
+}
+
+.working-hour-margin-shelter{
+  margin-top: 20px;
 }

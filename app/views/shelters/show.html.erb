@@ -16,7 +16,7 @@
    <div class="shelter-show-general">
       <div class="shelter-show-info">
         <h1 class="shelter-name-text"><%= @shelter.name %></h1>
-          <div class="owner-btn">
+          <div class="owner-btn-shelter">
           <% if policy(@shelter).destroy? %>
             <%= link_to 'Delete',
             shelter_path(@shelter),
@@ -27,22 +27,28 @@
           <% end %>
         </div>
         <div class="shelter-texts">
+
+
+        <p class="shelter-details"><script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+          <lord-icon
+              src="https://cdn.lordicon.com/etqbfrgp.json"
+              trigger="hover"
+              colors="outline:#131432,primary:#d4d1fa,secondary:#a39cf4,tertiary:#b26836,quaternary:#ebe6ef"
+              style="width:25px;height:25px;margin-bottom:-8px;margin-left: -4px;">
+          </lord-icon> <span class="shelter-detail-text"> <%= @shelter.address %></span></p><br>
+
+
           <p class="shelter-details"><script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
             <lord-icon
                 src="https://cdn.lordicon.com/bjnaomnr.json"
                 trigger="hover"
                 colors="outline:#121331,primary:#e5d1fa,secondary:#3a3347,tertiary:#2ea28b"
-                style="width:35px;height:35px">
+                style="width:35px;height:35px;margin-bottom:-8px;margin-left: -9px;margin-right: -4px;">
             </lord-icon>
           <span class="shelter-detail-text"> <%= @shelter.phone_number %></span></p><br>
-          <p class="shelter-details"><script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-          <lord-icon
-              src="https://cdn.lordicon.com/etqbfrgp.json"
-              trigger="hover"
-              colors="outline:#131432,primary:#d4d1fa,secondary:#a39cf4,tertiary:#b26836,quaternary:#ebe6ef"
-              style="width:25px;height:25px">
-          </lord-icon> <span class="shelter-detail-text"> <%= @shelter.address %></span></p><br>
-        <div class="working-hour-margin">
+
+
+        <div class="working-hour-margin-shelter">
           <h5 class="description-shelter-text"><strong>Working Hours:</strong></h5>
           <div class="flex-hour">
             <div>
@@ -69,27 +75,24 @@
   <div class="shelter-description">
     <div class="description-text">
       <h4 class="shelter-description-header">Hello, nice to meet you <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
-<lord-icon
-    src="https://cdn.lordicon.com/lzwckydi.json"
-    trigger="hover"
-    colors="primary:#ebe6ef,secondary:#121331,tertiary:#d1e3fa,quaternary:#7166ee,quinary:#f49cc8"
-    style="width:60px;height:60px;">
-</lord-icon> </h4>
+  <lord-icon
+      src="https://cdn.lordicon.com/lzwckydi.json"
+      trigger="hover"
+      colors="primary:#ebe6ef,secondary:#121331,tertiary:#d1e3fa,quaternary:#7166ee,quinary:#f49cc8"
+      style="width:60px;height:60px;margin-bottom:-13px; margin-left:-18px">
+  </lord-icon> </h4>
 <br>
       <p class="shelter-description-paragraph"><%= @shelter.description %></p>
     </div>
 <!-- Image -->
     <div class="shelter-description-right">
-      <%= image_tag "pets_comp5.png", alt: "", width:"80%" %>
+      <%= image_tag "pets_comp4.png", alt: "", width:"100%" %>
     </div>
   </div>
-  <div class="container">
+  <div class="">
     <h4 class="pets-description-header">Our Pets</h4>
   </div>
-<div class="container_home">
-  <div class="home-content-no-margin">
-    <div class="text-container mt-5">
-    </div>
+<div class="">
   </div>
   <div class="container-pets-home">
     <div class="row row-cols-1 row-cols-md-4 g-4">
