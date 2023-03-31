@@ -14,7 +14,7 @@
       </div>
     <%# </div> %>
     <div class="profile-right">
-      <%= image_tag "pets_comp4.png", alt: "", width:"100%" %>
+      <%= image_tag "pets_comp9.png", alt: "", width:"95%" %>
     </div>
   </div>
   <div class="profile-appointment">
@@ -51,10 +51,12 @@
   <div class="profile-shelter-favourites">
     <% if @shelters.empty? %>
       <div class="profile-shelter-empty">
-        <h4 class="white-letter"><strong>My Shelters</strong></h4>
+        <div class="d-flex justify-content-between">
+          <h4 class="white-letter profile-header">My Shelters</h4>
+          <%= button_to "Create Shelter", new_shelter_path, method: :get, class: "create-shelter-list-btn" %>
+        </div>
         <div class="profile-create-shelter">
-          <h5 class="white-letter"><strong>Wanna Create A Shelter?</strong></h5>
-          <%= button_to "Create Shelter", new_shelter_path, method: :get, class: "create-shelter-btn" %>
+          <h5 class="white-letter empty">You haven't created a shelter yet</h5>
         </div>
       </div>
     <% else %>
@@ -74,9 +76,9 @@
     <% end %>
     <% if @favorites.empty? %>
       <div class="profile-favorites-empty">
-        <h4 class="white-letter">My Favorites</h4>
+        <h4 class="white-letter profile-header">My Favorites</h4>
         <div class="favorite-empty-sign">
-          <h1 class="white-letter">You haven't liked any pet yet</h1>
+          <h1 class="white-letter empty">You haven't liked any pet yet</h1>
         </div>
       </div>
     <% else %>

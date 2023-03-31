@@ -97,7 +97,7 @@
   margin-top: 65px;
 }
 
-.shelter-description {
+.shelter-description-dashboard {
   display: flex;
   width: 100%;
   margin-top: 30px;
@@ -107,12 +107,12 @@
 }
 
 .description {
-  width: 60%;
+  width: 50%;
   padding: 20px 50px;
 }
 
 .text-evenly {
-  text-align: justify;
+  text-align: left;
 }
 
 .description-right {
@@ -120,6 +120,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 30px;
 }
 
 .pet-count {
@@ -127,14 +128,16 @@
   display: flex;
   justify-content: space-evenly;
   text-align: center;
-  padding: 26px 35px;
+  padding-left: 5px;
+  padding-top: 20px;
+  padding-bottom: 0px;
 }
 
 .description-photo {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 35px;
+  margin-top: 10px;
 }
 
 .pets-of-shelter {
